@@ -1,0 +1,268 @@
+/*
+ici redefinir les variable oubine cree un fichier 
+dns le quel on definis nos variable ensuite l'importer en 1er
+*/
+$white: #fff;
+$primary: #e51c25;
+$bg-body: #e5e5e5;
+$border-radius: 10px;
+@import "bootstrap/bootstrap";
+
+@import "header";
+@import "menu";
+@import "utilities";
+
+@import "profil";
+@import "register";
+@import "search";
+@import "theme";
+@import "chat";
+
+// scss-docs-start import-stack
+// Configuration
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+body {
+  background-color: #e5e5e5;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 100px 100px;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+}
+.modal {
+  z-index: 99999999999999999 !important;
+}
+main {
+  // border: 1px solid red;
+  // background: green;
+  position: relative;
+  width: calc(100% - 50px);
+  // height: calc(100vh - 8vh);
+  margin: 0 auto;
+  padding-top: 50px;
+}
+// .border {
+//   border: 1px solid blue;
+// }
+
+h3 {
+  text-transform: lowercase;
+}
+
+/*les boites de categories*/
+.main-categories {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  // grid-template-rows: repeat(100% / 4);
+  // grid-gap: 24px;
+  gap: 24px;
+}
+.categories--content {
+  width: calc(calc(100% - 60px) / 4);
+  flex: 1 1 0;
+  // height: 250px;
+  .boite {
+    position: relative;
+    overflow-wrap: break-word;
+    .boite-content {
+      position: absolute;
+      top: 0px;
+      padding: 15px;
+      font-size: 14px;
+    }
+  }
+  .card-img {
+    width: 100%;
+    filter: blur(1px);
+    img {
+      max-width: 100%;
+      box-shadow: inset 0px -5px red;
+    }
+  }
+}
+
+/*block-posts*/
+
+.block-posts {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  // margin: 0 auto;
+  align-content: center;
+}
+.posts,
+.aside {
+  border-radius: $border-radius;
+  flex: 1 1 auto;
+  color: #000 !important;
+  padding: 0.625rem;
+  background-color: $white !important;
+}
+.posts {
+  color: #000 !important;
+  margin-bottom: 1.25rem;
+  background: $white !important;
+  height: auto;
+  .content-img {
+    max-width: calc(100%);
+    // max-height: 500px;
+    img {
+      max-width: 100%;
+      // height: 600px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /*les boites de categories*/
+  .main-categories {
+    // background: red;
+    width: 100%;
+    display: flex;
+    // grid-template-rows: repeat(100% / 4);
+    // grid-gap: 24px;
+    gap: 24px;
+  }
+  /* For desktop: */
+
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    // width: calc(33.33% ;
+    width: 33.33%;
+    margin-left: 20px;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: calc(66.66% - 20px);
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+
+  .header-desktop {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &__form {
+      width: 30rem;
+      position: relative;
+      img {
+        position: absolute;
+        top: 5px;
+      }
+      ::placeholder {
+        padding-left: 1.4rem;
+      }
+    }
+    &__content-right {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  .header-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  /* For desktop: */
+  .col-lg-1 {
+    width: 8.33%;
+  }
+  .col-lg-2 {
+    width: 16.66%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33%;
+    margin-left: 20px;
+  }
+  .col-lg-5 {
+    width: 41.66%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33%;
+  }
+  .col-lg-8 {
+    width: calc(66.66% - 20px);
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.33%;
+  }
+  .col-lg-11 {
+    width: 91.66%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  // main {
+  //   width: calc(100% - 200px);
+  // }
+  // .main-categories {
+  //   // margin-bottom: 100px;
+  // }
+  // @media only screen and (min-width: 1200px) {
+  main {
+    width: calc(100% - 500px);
+  }
+}

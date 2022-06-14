@@ -1,0 +1,37 @@
+#mode {
+  border: 1px;
+  border-radius: 15px;
+  // padding: 15px;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: #112f41;
+  color: #000;
+}
+
+.dark #mode {
+  background: #144098;
+  color: #fff;
+}
+.dark h3 {
+  color: #fff;
+}
+.card-title {
+  color: #000 !important;
+}
+.dropdown-menu li {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+  }
+}
+.dropdown-menu li:hover {
+  background: $primary;
+  border-radius: $border-radius;
+  a {
+    color: white;
+  }
+}
