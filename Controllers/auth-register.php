@@ -1,5 +1,6 @@
 <?php
 require '../config.php';
+$authDB = require '../Models/User.php';
 
 // declaration du tableau d'erreur
 $errors = [
@@ -25,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = ERROR_EMAIL_INVALID;
     } else {
         $reqUser = $authDB->checkMail($email);
-        $emailExist = $reqUser->rowCount();
-        if ($emailExist != 0) {
+        // $emailExist = $reqUser->rowCount();
+        if ($reqUser != false) {
             $errors['email'] = ERROR_EMAIL_EXIST;
         }
     }
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'password' => $password
         ]);
         // creation de de la session
-        header('Location: /views/profile.php');
+
+        // header('Location: /views/profile.php');
     }
 }

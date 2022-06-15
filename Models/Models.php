@@ -8,7 +8,7 @@ class Models
   public function __construct(PDO $pdo)
   {
     $this->statementRegister = $pdo->prepare('INSERT INTO user(
-            id_user,
+            idUser,
             email,
             password
             )VALUES(
@@ -32,10 +32,6 @@ class Models
   public function register(array $user): void
   {
     $hashedPassword = password_hash($user['password'], PASSWORD_ARGON2I);
-    $this->statementRegister->bindValue(':firstname', $user['firstname']);
-    $this->statementRegister->bindValue(':lastname', $user['lastname']);
-    $this->statementRegister->bindValue(':speudo', $user['speudo']);
-    $this->statementRegister->bindValue(':images', $user['images']);
     $this->statementRegister->bindValue(':email', $user['email']);
     $this->statementRegister->bindValue(':password', $hashedPassword);
     $this->statementRegister->execute();
@@ -56,7 +52,7 @@ class Models
     $this->statementUpdateUser->bindValue(':images', $user['images']);
     $this->statementUpdateUser->bindValue(':email', $user['email']);
     $this->statementUpdateUser->bindValue(':password', $user['password']);
-    $this->statementUpdateUser->bindValue(':id', (int)$user['id_user']);
+    $this->statementUpdateUser->bindValue(':id', (int)$user['idUser']);
     $this->statementUpdateUser->execute();
     return;
   }

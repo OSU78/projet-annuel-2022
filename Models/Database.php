@@ -1,6 +1,6 @@
 <?php
 
-$dns = 'mysql:host=localhost;dbname=reseau';
+$dns = 'mysql:host=localhost;dbname=gravure';
 $user = 'root';
 $pwd = '';
 

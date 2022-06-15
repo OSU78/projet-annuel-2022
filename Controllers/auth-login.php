@@ -1,5 +1,7 @@
 <?php
 require '../config.php';
+$authDB = require '../Models/User.php';
+
 
 $errors = [
   'email' => '',
@@ -20,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors['email'] = ERROR_EMAIL_INVALID;
   } else {
     $reqUser = $authDB->checkMail($email);
-    $emailExist = $reqUser->rowCount();
-    if ($emailExist == 0) {
+    // $emailExist = $reqUser->rowCount();
+    if ($reqUser == 0) {
       $errors['email'] = ERROR_EMAIL_EXIST;
     }
   }
@@ -29,18 +31,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // verification du mdp
   if (!$password) {
     $errors['password'] = ERROR_REQUIRED;
-  } elseif (mb_strlen($password) < 6) {
-    $errors['password'] = ERROR_PASSWORD_TOO_SHORT;
   } else {
     $userByemail = $authDB->checkMail($email);
-    if (!password_verify($password, $userByemail['password'])) {
-      $errors['password'] = ERROR_PASSWORD_MISMATCH;
-    }
+    var_dump($userByemail);
   }
+
+  if (!password_verify($password, $userByemail['password'])) {
+    $errors['password'] = ERROR_PASSWORD_MISMATCH;
+  }
+
 
   // verification du tableu d'erreur
   if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
     // creation de de la session
-    header('Location: /views/profile.php');
+    // header('Location: /views/profile.php');
   }
 }

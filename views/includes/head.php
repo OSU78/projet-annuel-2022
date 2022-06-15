@@ -6,9 +6,9 @@
 <link href="/public/css/style.css" rel="stylesheet">
 
 <!-- JS -->
-<!-- <script defer src="/public/js/jquery.js"></script>
-<script defer src="/public/js/script.js"></script>
-<script defer src="/public/js/menu.js"></script>
+<script defer src="/Public/Js/forms.js"></script>
+<script defer src="/Api/etsy/getEtsy.js"></script>
+<!--<script defer src="/public/js/menu.js"></script>
 <script defer src="/public/js/search.js"></script>
 <script defer src="/public/js/chat.js"></script>
 <script defer src="/public/js/theme.js"></script>

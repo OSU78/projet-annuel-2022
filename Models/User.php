@@ -1,5 +1,5 @@
 <?php
-require './Models.php';
+require 'Models.php';
 class User extends Models
 {
 }

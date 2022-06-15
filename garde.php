@@ -1,95 +1,29 @@
-<aside class="asides block">
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, laboriosam quibusdam ipsa unde tenetur
-    veritatis
-    natus, sint aperiam, a porro ab! Eum beatae perspiciatis animi earum omnis? Vero, at porro.
-  </p>
-  <img src="/public/img/log-in-g39b6b228d_1920.jpg" class="card-img" alt="inscription" srcset="">
-</aside>
-<div class="aside block">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <a href="#">
-          <div class="logo">Straight Talk</div>
-        </a>
-      </div>
-      <h3 class="modal-title text-center" id="exampleModalLabel">Inscription</h3>
-      <div class="modal-body">
-        <form action="" , method="POST" id="form">
-          <div class="inline">
-            <div>
-              <label for="firstname" class="col-form-label">Nom:</label>
-              <input type="text" value="<?= $firstname ?? '' ?>"
-                class="form-control <?= $firstname ? 'is-valid' : '' ?> <?= $errors['firstname'] ? 'is-invalid' : '' ?>"
-                name="firstname" id="recipient-firstname">
-              <?php if ($errors['firstname']) : ?>
-              <p class="text-danger"><?= $errors['firstname'] ?></p>
-              <?php endif; ?>
-            </div>
+$url = "https://api.etsy.com/v3/public/oauth/token?grant_type=authorization_code&client_id={MY_ Etsy_App_ API_ Key
+}&redirect_uri={MY_REDIRECT_URL}&code=".$code."&code_verifier=".$code_verifier;
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$headers = array(
+'x-api-key: ={ MY_ Etsy_App_ API_ Key } ',
+);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$response_body = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+if (intval($status) != 200) throw new Exception("HTTP $status\n$response_body");
 
-            <div>
-              <label for="recipient-lastname" class="col-form-label">Prénom:</label>
-              <input type="text" value="<?= $lastname ?? '' ?>"
-                class=" form-control <?= $lastname ? 'is-valid' : '' ?> <?= $errors['lastname'] ? 'is-invalid' : '' ?>"
-                name="lastname" id="recipient-lastname">
-              <?php if ($errors['lastname']) : ?>
-              <p class="text-danger"><?= $errors['lastname'] ?></p>
-              <?php endif; ?>
-            </div>
-          </div>
-          <div class="">
-            <label for="recipient-speudo" class="col-form-label">Speudo:</label>
-            <input type="text" value="<?= $speudo ?? '' ?>"
-              class="form-control <?= $speudo ? 'is-valid' : '' ?> <?= $errors['speudo'] ? 'is-invalid' : '' ?>"
-              name="speudo" id="recipient-speudo">
-            <?php if ($errors['speudo']) : ?>
-            <p class="text-danger"><?= $errors['speudo'] ?></p>
-            <?php endif; ?>
-          </div>
-          <div class="">
-            <label for="recipient-email" class="col-form-label">Mail:</label>
-            <input type="email" value="<?= $email ?? '' ?>"
-              class="form-control <?= $email ? 'is-valid' : '' ?> <?= $errors['email'] ? 'is-invalid' : '' ?>"
-              name="email" id="recipient-email">
-            <?php if ($errors['email']) : ?>
-            <p class="text-danger"><?= $errors['email'] ?></p>
-            <?php endif; ?>
-          </div>
-          <div class="">
-            <label for="recipient-password" class="col-form-label">Password:</label>
-            <input type="password" value="<?= $password ?? '' ?>"
-              class="form-control <?= $password ? 'is-valid' : '' ?> <?= $errors['password'] ? 'is-invalid' : '' ?>"
-              name="password" id="password" data-toggle="password">
-            <?php if ($errors['password']) : ?>
-            <p class="text-danger"><?= $errors['password'] ?></p>
-            <?php endif; ?>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-password-confirm" class="col-form-label">Confirmer Password:</label>
-            <input type="password" value="<?= $confirmpassword ?? '' ?>"
-              class="form-control <?= $confirmpassword ? 'is-valid' : '' ?> <?= $errors['confirmpassword'] ? 'is-invalid' : '' ?>"
-              name="confirmpassword" id="confirmpassword" data-toggle="password">
-            <?php if ($errors['confirmpassword']) : ?>
-            <p class="text-danger"><?= $errors['confirmpassword'] ?></p>
-            <?php endif; ?>
-          </div>
-          <div class="modal-more">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Se souvenir de moi </label>
-            </div>
-            <div class="more">
-              Deja membre? <a href="/views/login.php">Connexion</a>
-            </div>
-          </div>
-          <div class="modal-footer mb-3">
-            <button type="reset" class="btn btn-secondary">Fermer</button>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-          </div>
-        </form>
-      </div>
+var myHeaders = new Headers();
 
-    </div>
-  </div>
-</div>
+var myInit = {
+method: "GET",
+headers: myHeaders,
+mode: "cors",
+cache: "default",
+};
+
+fetch("flowers.jpg", myInit)
+.then(function (response) {
+return response.blob();
+})
+.then(function (myBlob) {
+var objectURL = URL.createObjectURL(myBlob);
+myImage.src = objectURL;
+});
