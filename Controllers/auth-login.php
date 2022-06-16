@@ -2,7 +2,6 @@
 require '../config.php';
 $authDB = require '../Models/User.php';
 
-
 $errors = [
   'email' => '',
   'password' => '',
@@ -39,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!password_verify($password, $userByemail['password'])) {
     $errors['password'] = ERROR_PASSWORD_MISMATCH;
   }
-
 
   // verification du tableu d'erreur
   if (empty(array_filter($errors, fn ($e) => $e !== ''))) {

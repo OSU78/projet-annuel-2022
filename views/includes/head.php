@@ -4,10 +4,11 @@
 
 <!-- CSS -->
 <link href="/public/css/style.css" rel="stylesheet">
-
+<script src="/node_modules/javascript-form-validation/dist/EmailField.min.js" defer></script>
+<script src="/node_modules/javascript-form-validation/dist/PasswordField.min.js" defer></script>
 <!-- JS -->
-<script defer src="/Public/Js/forms.js"></script>
-<script defer src="/Api/etsy/getEtsy.js"></script>
+<!-- <script defer src="/Public/Js/forms.js"></script> -->
+<!-- <script defer src="/Public//Js/api/google/adress.js"></script> -->
 <!--<script defer src="/public/js/menu.js"></script>
 <script defer src="/public/js/search.js"></script>
 <script defer src="/public/js/chat.js"></script>

@@ -1,40 +1,31 @@
-<?php require_once '../controllers/auth-register.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <?php require "includes/head.php" ?>
+  <script defer src="/Public/Js/check-form/register.js"></script>
   <title>Inscription</title>
 </head>
 
 <body>
   <?php require "includes/header.php" ?>
   <div class="wrapper">
-    <form action="" , method="POST" id="form">
+    <form id="form" enctype='multipart/form-data'>
       <div class="form-control">
         <label for="" class="">Mail:</label>
-        <input type="email" value="<?= $email ?? '' ?>" name="email" id="">
+        <input type="email" value="" name="email" id="email">
       </div>
-      <?php if ($errors['email']) : ?>
-      <p class="text-danger"><?= $errors['email'] ?></p>
-      <?php endif; ?>
+
       <div class="form-control">
         <label for="" class="">Password:</label>
-        <input type="password" value="<?= $password ?? '' ?>" class="" name="password" id="password">
-
+        <input type="password" value="" class="" name="password" id="password">
       </div>
-      <?php if ($errors['password']) : ?>
-      <p class="text-danger"><?= $errors['password'] ?></p>
-      <?php endif; ?>
 
       <div class="form-control">
         <label for="" class="">Confirmer Password:</label>
-        <input type="password" value="<?= $confirmpassword ?? '' ?>" class="" name="confirmpassword" id="">
+        <input type="password" value="" class="" name="confirmpassword" id="confirmpassword">
 
       </div>
-      <?php if ($errors['confirmpassword']) : ?>
-      <p class="text-danger"><?= $errors['confirmpassword'] ?></p>
-      <?php endif; ?>
 
       <div class="">
         <input class="" type="checkbox" role="" id="">
