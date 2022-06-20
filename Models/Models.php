@@ -2,16 +2,19 @@
 class Models
 {
   private PDOStatement $statementRegister;
-  private PDOStatement $statementReadUserFromEmails;
+  public PDOStatement $statementReadUserFromEmails;
   private PDOStatement $statementReadById;
   private PDOStatement $statementUpdateUser;
+  private PDOStatement $statementUpdateAddress;
   private PDOStatement $statementRegisterAddress;
-  private PDO $pdo;
+  private PDOStatement $statementIslogged;
+
+  public PDO $pdo;
 
   public function __construct(PDO $pdo)
   {
     $this->pdo = $pdo;
-    $this->statementRegister = $pdo->prepare('INSERT INTO user(
+    $this->statementRegister = $this->pdo->prepare('INSERT INTO user(
             idUser,
             email,
             password
@@ -21,7 +24,7 @@ class Models
             :password
             )');
 
-    $this->statementUpdateUser = $pdo->prepare(
+    $this->statementUpdateUser = $this->pdo->prepare(
       'UPDATE user SET 
             `email`=:email,
             `password`=:password,
@@ -32,24 +35,22 @@ class Models
             `idAddress`=:idAddress,
       WHERE idUser =:idUser'
     );
-    $this->statementRegisterAddress = $pdo->prepare('INSERT INTO adress (
-            `idAdress`, 
-            `postalCode`, 
-            `numVoice`, 
-            `twon`, 
-            `country`, 
-            `voice`
-            )VALUES(
-            DEFAULT,
-            :postalCode, 
-            :numVoice, 
-            :twon, 
-            :country, 
-            :voice
-            )');
-    $this->statementReadUserFromEmails = $pdo->prepare('SELECT * FROM user WHERE email=:email');
-    $this->statementReadById = $pdo->prepare('SELECT * FROM `user` INNER JOIN adress ON adress.idUser = user.idUser WHERE user.idUser =:idUser;');
+    $this->statementUpdateAddress = $this->pdo->prepare(
+      'UPDATE adress SET 
+            `postalCode`=:postalCode,
+            `numVoice`=:numVoice,
+            `twon`=:twon,
+            `country`=:country,
+            `voice`=:voice,
+      WHERE idUser =:idUser'
+    );
+    $this->statementRegisterAddress = $this->pdo->prepare('INSERT INTO adress ( `idAdress`,  `idUser` )VALUES( DEFAULT, :idUser);');
+    $this->statementReadUserFromEmails = $this->pdo->prepare('SELECT * FROM user WHERE email=:email LIMIT 1');
+    $this->statementReadById = $this->pdo->prepare('SELECT * FROM `user` INNER JOIN adress ON adress.idUser = user.idUser WHERE user.idUser =:idUser;');
+    $this->statementIslogged = $this->pdo->prepare('SELECT email, password FROM user WHERE email=:email AND password=:password');
   }
+
+
 
   //enregistrement d'un utilisateur a la connexion
   public function register(array $user): int
@@ -59,6 +60,7 @@ class Models
     $this->statementRegister->bindValue(':password', $hashedPassword);
     $this->statementRegister->execute();
     return $this->pdo->lastInsertId();
+    $this->statementRegister->closeCursor();
   }
 
   //mise a jours d'un utilisateur
@@ -75,19 +77,29 @@ class Models
     $this->statementUpdateUser->bindValue(':idUser', (int)$user['idUser']);
     $this->statementUpdateUser->execute();
     return;
+    $this->statementUpdateUser->closeCursor();
+  }
+
+  //mise a jours d'une adresse 
+  public function updateAddress(array $address)
+  {
+    $this->statementUpdateAddress->bindValue(':postalCode', $address['postalCode']);
+    $this->statementUpdateAddress->bindValue(':numVoice', $address['numVoice']);
+    $this->statementUpdateAddress->bindValue(':twon', $address['twon']);
+    $this->statementUpdateAddress->bindValue(':country', $address['country']);
+    $this->statementUpdateAddress->bindValue(':voice', $address['voice']);
+    $this->statementUpdateAddress->bindValue(':idUser', $address['idUser']);
+    $this->statementUpdateAddress->execute();
+    $this->statementUpdateAddress->closeCursor();
   }
 
   //enregistrement d'une adresse
-  public function registerAddress(array $address): void
+  public function registerAddress(int $idUser): int
   {
-    $this->statementRegisterAddress->bindValue(':numVoice', $address['numVoice']);
-    $this->statementRegisterAddress->bindValue(':postalCode', $address['postalCode']);
-    $this->statementRegisterAddress->bindValue(':twon', $address['twon']);
-    $this->statementRegisterAddress->bindValue(':country', $address['country']);
-    $this->statementRegisterAddress->bindValue(':voice', $address['voice']);
-    $this->statementUpdateUser->bindValue(':idUser', (int)$address['idUser']);
+    $this->statementRegisterAddress->bindValue(':idUser', $idUser);
     $this->statementRegisterAddress->execute();
-    return;
+    return $this->pdo->lastInsertId();
+    $this->statementRegisterAddress->closeCursor();
   }
 
   // recuperation des informations par l'ID
@@ -96,14 +108,47 @@ class Models
     $this->statementReadById->bindValue(':idUser', $idUser);
     $this->statementReadById->execute();
     return $this->statementReadById->fetch();
+    $this->statementReadById->closeCursor();
   }
 
-  // recuperation des informations a partir del'adresse mail
-  public function checkMail(string $email): array | false
+  public function checkUserLogged($email, $password)
+  {
+    $hashedPassword = password_hash($password, PASSWORD_ARGON2I);
+    $this->statementIslogged->bindValue(':email', $email);
+    $this->statementIslogged->bindValue(':password', $hashedPassword);
+    $this->statementIslogged->execute();
+    $this->statementIslogged->fetch();
+    $count = $this->statementIslogged->rowCount();
+    return $count;
+    $this->statementIslogged->closeCursor();
+  }
+
+
+  // recuperation des informations de lutilisateur avec le mail
+  public function getUserByMail(string $email): array | false
   {
     $this->statementReadUserFromEmails->bindValue(':email', $email);
     $this->statementReadUserFromEmails->execute();
     return $this->statementReadUserFromEmails->fetch();
+    $this->statementReadUserFromEmails->closeCursor();
+  }
+
+  // recuperation des informations a partir del'adresse mail
+  public function checkMail(string $email): int | false
+  {
+    $this->statementReadUserFromEmails->bindValue(':email', $email);
+    $this->statementReadUserFromEmails->execute();
+    $this->statementReadUserFromEmails->fetch();
+    $count = $this->statementReadUserFromEmails->rowCount();
+    return $count;
+    $this->statementReadUserFromEmails->closeCursor();
+  }
+  // encodage du header
+  public function sendJSON($infos)
+  {
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json");
+    echo json_encode([$infos], JSON_UNESCAPED_UNICODE);
   }
 }
 return new Models($pdo);

@@ -13,18 +13,24 @@ define('MAX_SIZE', 1500000000);    // Taille max en octets du fichier
 define('WIDTH_MAX', 10000);    // Largeur max de l'image en pixels
 define('HEIGHT_MAX', 10000);    // Hauteur max de l'image en pixels
 /*======================================ERROR==================================== */
-const ERROR_REQUIRED        = 'Veuillez renseigner ce champ';
-const ERROR_TEL_INVALID     = 'Ce champ doit contenir minimum 6 chiffres';
-const ERROR_REQUIERED_IMAGE = 'Aucune image choisie';
-const ERROR_TOO_SHORT       = 'Ce champ est trop court';
-const ERROR_REQUIRED_ETAT   = 'Aucune etat choisie';
-const ERROR_REQUIRED_ALL    = 'Veillez remplir tous les champs';
-const ERROR_EMAIL_UNKOWN    = 'L\'email n\'est pas enregistrée';
-const ERROR_SPEUDO_UNKOWN   = 'Le speudo \'est pas enregistrée';
-const ERROR_EMAIL_EXIST     = 'L\'email existe deja';
-const ERROR_EMAIL_INVALID   = 'L\'email n\'est pas valide';
-const ERROR_PASSWORD_MISMATCH = 'Le mot de passe n\'est pas valide';
-const ERROR_CONTENT_TOO_SHORT = 'L\'article est trop court';
+// Inconsistent password
+const ERROR_INCONSISTENT_PASSWORD  = 'Mot de passe non conforme';
+const CONFORM_PASSWORD             = 'Mot de passe conforme';
+const ERROR_REQUIRED               = 'Veuillez renseigner ce champ';
+const ERROR_TEL_INVALID            = 'Ce champ doit contenir minimum 6 chiffres';
+const ERROR_REQUIERED_IMAGE        = 'Aucune image choisie';
+const ERROR_TOO_SHORT              = 'Ce champ est trop court';
+const ERROR_REQUIRED_ETAT          = 'Aucune etat choisie';
+const ERROR_REQUIRED_ALL           = 'Veillez remplir tous les champs';
+const ERROR_EMAIL_UNKOWN           = 'L\'email n\'est pas enregistrée';
+const ERROR_EMAIL_EXIST            = 'L\'email existe deja';
+const ERROR_EMAIL_INVALID          = 'L\'email n\'est pas valide';
+const ERROR_PASSWORD_MISMATCH      = 'Les mots de passe ne corespondent pas';
+const ERROR_PASSWORD_INFORMATION   = 'Les mots de passe ne corespondent pas';
+const ERROR_PHONE_INVALID          = 'Le téléphone est invalide';
+const ERROR_EMAIL_NOTfOUND         = 'Le mail est introuvable';
+const ERROR_POSTAL_CODE_INVALID    = 'Le code postal est invalide';
+const ERROR_STRING_INVALID         = 'La chaine de caractère est invalide';
 
 /**********************************produits************************************************/
 

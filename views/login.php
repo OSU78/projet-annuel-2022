@@ -35,3 +35,5 @@
     </form>
   </div>
   <?php require "includes/footer.php" ?>
+
+  <a href="/">home</a>

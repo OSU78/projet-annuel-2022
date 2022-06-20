@@ -24,7 +24,6 @@
       <div class="form-control">
         <label for="" class="">Confirmer Password:</label>
         <input type="password" value="" class="" name="confirmpassword" id="confirmpassword">
-
       </div>
 
       <div class="">
