@@ -2,18 +2,15 @@
 ici redefinir les variable oubine cree un fichier 
 dns le quel on definis nos variable ensuite l'importer en 1er
 */
-$white: #fff;
-$primary: #e51c25;
-$bg-body: #e5e5e5;
-$border-radius: 10px;
-$danger: rgb(167, 59, 59);
-$warning: red;
-$secondary: rgb(10, 70, 10);
 
+
+@import "reset";
+@import "font";
+@import "typo";
+@import "variable";
 @import "header";
-@import "menu";
 @import "utilities";
-
+@import "menu";
 @import "profil";
 @import "register";
 @import "search";
