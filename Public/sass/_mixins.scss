@@ -1,0 +1,104 @@
+@mixin btn-principal{
+    position: absolute;
+    background: $secondary;
+    border-bottom: 1px solid $primary;
+    border-radius: 10px;
+}
+@mixin btn-text{
+    position: absolute;
+    left: 4.79%;
+    right: 0%;
+    top: 27.63%;
+    bottom: 28.95%;
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    color: $primary;
+}
+
+
+@mixin btn-secondaire{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FFFFFF;
+    border: 4px solid $secondary;
+    border-radius: 5px;
+
+}
+@mixin header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 41px 0px 41px 16px;
+    gap: 10px;
+
+    position: absolute;
+    width: 1512px;
+    height: 196px;
+    left: 0px;
+    top: 0px;
+
+    background: $primary;
+}
+
+@mixin footer{
+    position: absolute;
+    width: 1512px;
+    height: 400px;
+    left: 0px;
+    top: 3942px;
+           
+}
+
+@mixin bloc-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 213px 0px 0px;
+    gap: 297px;
+
+    position: absolute;
+    width: 1560px;
+    height: 128px;
+    left: 92px;
+    top: 86px;
+}
+@mixin bas-de-page{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 100%;
+    bottom: -100%;
+
+    background: $primary;
+    box-shadow: 0px -13px 133px rgba(0, 0, 0, 0.34);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+@mixin infobarre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 120px;
+    gap: 25px;
+
+    position: absolute;
+    width: 1512px;
+    height: 256px;
+    left: 2px;
+    top: 2512px;
+
+    background: rgba(241, 188, 30, 0.09);
+}

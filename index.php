@@ -15,7 +15,7 @@
 
 
 <body>
-  <header>
+  <header role="header">
     <div>
       logo
     </div>
