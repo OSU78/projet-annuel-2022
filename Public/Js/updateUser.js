@@ -1,12 +1,17 @@
-// fonction d'envoie des données en POST
 async function callerFun() {
   console.log("Caller");
+  // 1ere fonction a appelé
   getUser();
 
-  // window.addEventListener("load", initialize);
-
+  // il attend l'execution de la la 1er fonction pour s"executé
   await testAsync();
   console.log("After waiting");
+  let camille = document.getElementById("btn-adresse");
+  camille.addEventListener("click", (e) => {
+    e.preventDefault();
+    initialize();
+  });
+
   const url = "/Api/updateUserInfo.php";
   const form = document.getElementById("form");
   console.log(form);

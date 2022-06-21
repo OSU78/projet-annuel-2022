@@ -6,17 +6,13 @@ class User extends Models
 {
   private string $email = "";
   private string $password = "";
-  private string $contentString = "";
   private string $message = "";
-  private  string $tel = "";
-  private  string $postalcode = "";
-  // private  string $content = "";
 
   // verification de contenu vide
   public function requireContent($content)
   {
     if ($content === "") {
-      $content = ERROR_REQUIRED;
+      return ERROR_REQUIRED;
     }
     return $content;
   }
