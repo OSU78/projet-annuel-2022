@@ -1,6 +1,5 @@
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
-
   if (element) {
     var autocomplete = new google.maps.places.Autocomplete(element, {
       types: ["geocode"],
@@ -16,7 +15,6 @@ function initializeAutocomplete(id) {
 function onPlaceChanged() {
   var place = this.getPlace();
   // console.log(place);  // Uncomment this line to view the full object returned by Google API.
-
   for (var i in place.address_components) {
     var component = place.address_components[i];
 
@@ -31,19 +29,6 @@ function onPlaceChanged() {
   }
 }
 
-// google.maps.event.addDomListener(window, "load", function () {
-//   initializeAutocomplete("user_input_autocomplete_address");
-// });
-
 function initialize() {
   initializeAutocomplete("user_input_autocomplete_address");
 }
-
-// previous code:
-// google.maps.event.addDomListener(window, "load", initialize);
-
-// now change to this:
-window.addEventListener("load", initialize);
-
-console.log("diallo");
-console.log(document.querySelector("#user_input_autocomplete_address"));

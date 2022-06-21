@@ -35,13 +35,14 @@ class Models
             `idAddress`=:idAddress,
       WHERE idUser =:idUser'
     );
+
     $this->statementUpdateAddress = $this->pdo->prepare(
       'UPDATE adress SET 
             `postalCode`=:postalCode,
-            `numVoice`=:numVoice,
-            `twon`=:twon,
+            `street_number`=:street_number,
+            `locality`=:locality,
             `country`=:country,
-            `voice`=:voice,
+            `route`=:route,
       WHERE idUser =:idUser'
     );
     $this->statementRegisterAddress = $this->pdo->prepare('INSERT INTO adress ( `idAdress`,  `idUser` )VALUES( DEFAULT, :idUser);');
@@ -80,14 +81,15 @@ class Models
     $this->statementUpdateUser->closeCursor();
   }
 
+
   //mise a jours d'une adresse 
   public function updateAddress(array $address)
   {
     $this->statementUpdateAddress->bindValue(':postalCode', $address['postalCode']);
-    $this->statementUpdateAddress->bindValue(':numVoice', $address['numVoice']);
-    $this->statementUpdateAddress->bindValue(':twon', $address['twon']);
+    $this->statementUpdateAddress->bindValue(':street_number', $address['street_number']);
+    $this->statementUpdateAddress->bindValue(':locality', $address['locality']);
     $this->statementUpdateAddress->bindValue(':country', $address['country']);
-    $this->statementUpdateAddress->bindValue(':voice', $address['voice']);
+    $this->statementUpdateAddress->bindValue(':route', $address['route']);
     $this->statementUpdateAddress->bindValue(':idUser', $address['idUser']);
     $this->statementUpdateAddress->execute();
     $this->statementUpdateAddress->closeCursor();
