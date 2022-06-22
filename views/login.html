@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Public/css/style.css">
+  <script defer src="/Public/Js/check-form/login.js"></script>
+
+  <title>login</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header" role="header">
+      <nav class="header__nav">
+        <a href="#">Nos Oeuvres</a>
+        <a href="#">Personnaliser une creation</a>
+        <img src="/Public/assets/forms/logo-header.svg" alt="Logo" width="320" height="104">
+        <a href="#">A propos</a>
+        <a href="#">
+          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
+        </a>
+        <a href="#">
+          <img src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
+        </a>
+      </nav>
+    </header>
+    <section class="form--container">
+      <form id="form" enctype='multipart/form-data' class="form">
+
+        <div class="form__control">
+          <label for="email" class="">Mail:</label>
+          <input type="email" class="input-form" value="" name="email" id="email">
+        </div>
+
+        <div class="form__control">
+          <label for="" class="">Password:</label>
+          <input type="password" value="" class="input-form" name="password" id="password">
+        </div>
+
+        <div class="form__remember">
+          <input class="" type="checkbox" role="" id="">
+          <label class="" for="">Se souvenir de moi </label>
+        </div>
+
+        <div class="form__link--register">
+          <span>Pas encore membre?</span> <a href="/views/register.php">Inscription</a>
+        </div>
+
+        <div class="form__submit">
+          <button type="submit" class="btn btn-primary small">Envoyer</button>
+        </div>
+        <div class="form__submit input-form-white">
+          S’inscrire avec Google
+          <img src="/Public/assets/icons/icon-google.svg" alt="">
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,60 +1,19 @@
-/*
-ici redefinir les variable oubine cree un fichier 
-dns le quel on definis nos variable ensuite l'importer en 1er
-*/
-$white: #fff;
-$primary: #e51c25;
-$bg-body: #e5e5e5;
-$border-radius: 10px;
-$danger: rgb(167, 59, 59);
-$warning: red;
-$secondary: rgb(10, 70, 10);
-
-@import "header";
-@import "menu";
+@import "reset";
+@import "typo";
+@import "variables";
 @import "utilities";
-
-@import "profil";
+@import "media-queries";
+@import "animation";
+@import "button";
+@import "header";
+@import "banner";
+@import "menu";
+@import "card";
+@import "footer";
 @import "register";
+@import "profil";
 @import "search";
 @import "theme";
 
 // scss-docs-start import-stack
 // Configuration
-
-html {
-  font-family: "Lucida Sans", sans-serif;
-}
-
-body {
-  background-color: #e5e5e5;
-  width: 100%;
-  margin: 0 auto;
-}
-
-button {
-  width: 150px;
-  height: 40px;
-  // padding: 20px;
-  border-radius: 10px;
-}
-
-input {
-  width: 300px;
-  height: 20px;
-  padding: 20px;
-  border-radius: 10px;
-}
-.form-control {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-.submit {
-  display: flex;
-  justify-content: center;
-  // background-color: red;
-  padding: 20px;
-}

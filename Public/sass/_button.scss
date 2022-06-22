@@ -1,0 +1,10 @@
+@import "mixin";
+.btn {
+  @include btn;
+}
+.input-form {
+  @include input;
+}
+.input-form-white {
+  @include input($bg: white, $border: 1px solid $bg-primary);
+}

@@ -1,0 +1,112 @@
+// les boutons
+
+@mixin btn(
+  // $background: none,
+  // $border: 4px solid var(--btn-primary),
+  // $shadow: none,
+  // $color: white
+) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 21px 70px;
+  gap: 10px;
+  width: auto;
+  background: #f1bc1e;
+  box-shadow: 0px 0px 12px rgba(186, 153, 105, 0.23),
+    0px 0px 64px rgba(186, 153, 105, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: none;
+  font-size: 24px;
+  font-family: $WorkSans-Bold;
+}
+
+// les inpuuts
+@mixin input($width: 400px, $bg: $bg-primary, $border: none) {
+  width: $width;
+  height: 45px;
+  background: $bg;
+  box-shadow: inset 4px -4px 8px rgba(0, 0, 0, 0.25),
+    inset -4px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: $border;
+}
+
+// les breakpoint
+/* voici un mixin 
+```scss */
+@mixin mq($breakpoint, $mode: mf) {
+  @if $mode == mf {
+    @if $breakpoint == mobile {
+      @media only screen and (min-width: 25em) {
+        //400px
+        @content;
+      }
+    }
+    @if $breakpoint == tablet {
+      @media only screen and (min-width: 37.5em) {
+        //600px
+        @content;
+      }
+    }
+    @if $breakpoint == tablet-medium {
+      @media only screen and (min-width: 56.25em) {
+        //900px
+        @content;
+      }
+    }
+    @if $breakpoint == desktop {
+      @media only screen and (min-width: 75em) {
+        //1200px
+        @content;
+      }
+    }
+    @if $breakpoint == desktop-lg {
+      @media only screen and (min-width: 100em) {
+        //1600
+        @content;
+      }
+    }
+    @if $breakpoint == desktop-xlg {
+      @media only screen and (min-width: 112.5em) {
+        //1800
+        @content;
+      }
+    }
+  } @else {
+    @if $breakpoint == mobile {
+      @media only screen and (max-width: 25em) {
+        @content;
+      } //400px
+    }
+    @if $breakpoint == tablet {
+      @media only screen and (max-width: 37.5em) {
+        @content;
+      } //600px
+    }
+    @if $breakpoint == tablet-medium {
+      @media only screen and (max-width: 56.25em) {
+        @content;
+      } //900px
+    }
+    @if $breakpoint == desktop {
+      @media only screen and (max-width: 75em) {
+        @content;
+      } //1200px
+    }
+    @if $breakpoint == desktop-lg {
+      @media only screen and (max-width: 100em) {
+        //1600
+        @content;
+      }
+    }
+    @if $breakpoint == desktop-xlg {
+      @media only screen and (max-width: 112.5em) {
+        //1800
+        @content;
+      }
+    }
+  }
+}
