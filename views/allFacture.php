@@ -36,9 +36,7 @@ var_dump($_SESSION["user"]["idUser"]);
     <div class="wrapper" id="wrapper">
 
         <!-- Liste facture d'un user -->
-        <script src="https://fast.wistia.com/embed/medias/bat8z021w7.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:100.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_bat8z021w7 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/bat8z021w7/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
-
-        <div style="display: flex;flex-direction: column;">
+        <div style="display: flex;flex-direction: column; ">
 
             <h1 class="h1">Mes Factures</h1>
             <div id="listFacture">
@@ -56,13 +54,15 @@ var_dump($_SESSION["user"]["idUser"]);
                 flex-direction: column;
                 justify-content: space-between;
                 gap: 25px;
+                width: -webkit-fill-available;
+                font-family: sans-serif;
 
             }
 
             .listFacture_item {
                 -webkit-user-select: none;
                 user-select: none;
-                min-width: 250px;
+                max-width: 750px;
                 border: 1px solid #2980b9;
                 display: flex;
                 justify-content: space-between;
