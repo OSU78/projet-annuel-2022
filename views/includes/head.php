@@ -8,12 +8,11 @@
 
 <!-- CSS -->
 <link href="/public/css/style.css" rel="stylesheet">
+
 <!-- JS -->
 <!-- <script defer src="/Public/Js/forms.js"></script> -->
 <script defer src="/Public//Js/api/google/adress.js"></script>
+
 <!-- <script defer src="/Public//Js/api/instagram/instagram.js"></script> -->
-<!--<script defer src="/public/js/menu.js"></script>
-<script defer src="/public/js/search.js"></script>
-<script defer src="/public/js/chat.js"></script>
-<script defer src="/public/js/theme.js"></script>
-<script defer src="/public/js/post.js"></script> -->
+<!--<script defer src="/public/js/menu.js"></script> -->
+<!--<script defer src="/public/js/search.js"></script> -->

@@ -51,8 +51,6 @@ class Models
     $this->statementIslogged = $this->pdo->prepare('SELECT email, password FROM user WHERE email=:email AND password=:password');
   }
 
-
-
   //enregistrement d'un utilisateur a la connexion
   public function register(array $user): int
   {

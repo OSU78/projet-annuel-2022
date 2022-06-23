@@ -3,6 +3,8 @@ const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let data = new FormData(form);
+  console.log("diallo");
+
   // 4. Elle doit configurer une requête ajax en POST et envoyer les données
   const requeteAjax = new XMLHttpRequest();
 

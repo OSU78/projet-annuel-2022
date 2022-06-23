@@ -1,42 +1,58 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <?php require "includes/head.php" ?>
   <script defer src="/Public/Js/check-form/register.js"></script>
+
   <title>Inscription</title>
 </head>
 
 <body>
-  <?php require "includes/header.php" ?>
   <div class="wrapper">
-    <form id="form" enctype='multipart/form-data'>
-      <div class="form-control">
-        <label for="" class="">Mail:</label>
-        <input type="email" value="" name="email" id="email">
-      </div>
+    <?php require "includes/header.php" ?>
 
-      <div class="form-control">
-        <label for="" class="">Password:</label>
-        <input type="password" value="" class="" name="password" id="password">
-      </div>
+    <main class="form--container">
+      <form id="form" enctype='multipart/form-data' class="form">
+        <h2>Connection</h2>
+        <div class="form__control">
+          <label for="email" class="">Mail:</label>
+          <input type="email" class="input-form" placeholder="Adresse mail" name="email" id="email">
+        </div>
 
-      <div class="form-control">
-        <label for="" class="">Confirmer Password:</label>
-        <input type="password" value="" class="" name="confirmpassword" id="confirmpassword">
-      </div>
+        <div class="form__control">
+          <label for="" class="">Password:</label>
+          <input type="password" value="" class="input-form" placeholder="Mot de passe" name="password" id="password">
+        </div>
 
-      <div class="">
-        <input class="" type="checkbox" role="" id="">
-        <label class="" for="">Se souvenir de moi </label>
-      </div>
-      <div class="">
-        Deja membre? <a href="/views/login.php">Connexion</a>
-      </div>
-      <div class="submit">
-        <button type="reset" class="btn btn-secondary">Fermer</button>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-      </div>
-    </form>
-  </div>
-  <?php require "includes/footer.php" ?>
+        <div class="form__control">
+          <label for="" class="">Confirmer Password:</label>
+          <input type="password" value="" class="input-form" placeholder="Mot de passe" name="confirmpassword"
+            id="confirmpassword">
+        </div>
+
+        <div class="form__control">
+          <div class="form__remember">
+            <input class="" type="checkbox" role="" id="">
+            <label class="" for="">Se souvenir de moi </label>
+          </div>
+
+          <div class="form__link--register">
+            <span>Deja membre?</span> <a href="/views/login.html">Connection</a>
+          </div>
+        </div>
+        <button class="form__btn--google">
+          <img src="/Public/assets/icons/icon-google.svg" alt="">
+          S’inscrire avec Google
+        </button>
+
+        <div class="form__submit">
+          <button type="submit" class="btn small">Envoyer</button>
+        </div>
+        <p class="form__text">En vous inscrivant sur Math the printer, vous acceptez
+          <a href="#">nos conditions d’utilisations</a>, notre <a href="#">Politique de confidentialié</a>
+          et notre <a href="#">Politique concernant les cokkies</a>
+        </p>
+      </form>
+    </main>
+    <?php require "includes/footer.php" ?>

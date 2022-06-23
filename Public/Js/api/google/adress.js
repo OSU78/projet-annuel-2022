@@ -32,3 +32,29 @@ function onPlaceChanged() {
 function initialize() {
   initializeAutocomplete("user_input_autocomplete_address");
 }
+
+var coll = document.querySelector(".collapsible");
+// var i;
+
+// for (i = 0; i < coll.length; i++) {
+coll.addEventListener("click", function () {
+  this.classList.toggle("active");
+  var content = this.nextElementSibling;
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+});
+
+// var coll = document.querySelector(".collapsible");
+// coll.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   this.classList.toggle("active");
+//   var content = this.nextElementSibling;
+//   if (content.style.maxHeight) {
+//     content.style.maxHeight = null;
+//   } else {
+//     content.style.maxHeight = content.scrollHeight + "px";
+//   }
+// });

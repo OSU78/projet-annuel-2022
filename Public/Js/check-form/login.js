@@ -1,5 +1,4 @@
 var form = document.getElementById("form");
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let data = new FormData(form);

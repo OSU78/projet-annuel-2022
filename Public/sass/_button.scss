@@ -3,7 +3,7 @@
   @include btn;
 }
 .input-form {
-  @include input;
+  @include input($width: 350px, $border: 2px solid $btn-primary);
 }
 .input-form-white {
   @include input($bg: white, $border: 1px solid $bg-primary);

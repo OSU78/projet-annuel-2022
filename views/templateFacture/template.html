@@ -7,16 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facture generate</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
     <style>
-        /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
         html,
         body,
         div,
@@ -243,6 +239,7 @@
         .gap50 {
             gap: 50px
         }
+
         .gap10 {
             gap: 10px
         }
@@ -266,7 +263,7 @@
         }
 
         .thFlex {
-            color : black;
+            color: black;
             display: flex;
             justify-content: flex-start;
             text-transform: uppercase;
@@ -275,15 +272,17 @@
             font-weight: 600;
             padding-top: 25px;
             padding-bottom: 18px;
-            
+
         }
+
         /* .thead{
             background-color: black;
         } */
-        .width-content{
+        .width-content {
             width: 36em;
         }
-        .remerciement{
+
+        .remerciement {
             margin-top: 100px;
         }
     </style>
@@ -309,10 +308,18 @@
             <div class="flex left width100">
                 <div class="flex left">
                     <h2 class="h2">CLIENTS</h2>
-                    <li>Nom : <?= $nom ?></li>
-                    <li>Prenom : <?= $nom ?></li>
-                    <li>Adresse : <?= $adress ?></li>
-                    <li>Email : <?= $email ?></li>
+                    <li>Nom :
+                        <?= $nom ?>
+                    </li>
+                    <li>Prenom :
+                        <?= $nom ?>
+                    </li>
+                    <li>Adresse :
+                        <?= $adress ?>
+                    </li>
+                    <li>Email :
+                        <?= $email ?>
+                    </li>
                 </div>
 
 
@@ -320,8 +327,12 @@
             <div class="flex  right width100">
                 <div class="flex left mgTop-20" style="min-width: 197px;">
                     <h2 class="h2">FACTURE</h2>
-                    <li>Date : <?= $dateCommande ?></li>
-                    <li>Reference : <?= $numFacture ?></li>
+                    <li>Date :
+                        <?= $dateCommande ?>
+                    </li>
+                    <li>Reference :
+                        <?= $numFacture ?>
+                    </li>
                 </div>
 
 
@@ -336,25 +347,32 @@
                     <table class="width100">
                         <thead class="thead">
                             <tr>
-                                <th> <p class="thFlex">Produit</p> </th>
-                                <th> <p class="thFlex">Quantité</p></th>
-                                <th> <p class="thFlex">Prix</p></th>
+                                <th>
+                                    <p class="thFlex">Produit</p>
+                                </th>
+                                <th>
+                                    <p class="thFlex">Quantité</p>
+                                </th>
+                                <th>
+                                    <p class="thFlex">Prix</p>
+                                </th>
 
                             </tr>
                         </thead>
                         <tbody id="factureList">
 
-                           
+
 
 
                         </tbody>
                     </table>
-                
+
                 </div>
                 <div>
                     <div class="flex center width100 gap10 remerciement ">
                         <hr style="border-top: solid 1px rgba(0,0,0,0.3);" class="width100">
-                        <p class="pCustom " style="font-size: 35px; color : rgba(0,0,0,0.3)">Merci pour votre commande !</p>
+                        <p class="pCustom " style="font-size: 35px; color : rgba(0,0,0,0.3)">Merci pour votre commande !
+                        </p>
                     </div>
                 </div>
 
@@ -368,20 +386,20 @@
     </section>
     <script src="../../Public/js/customFunction.js"></script>
     <script>
-        let factureList= document.querySelector("#factureList");
+        let factureList = document.querySelector("#factureList");
         let params = new URLSearchParams(document.location.search);
         let idCmd = params.get("idCmd")
-        let arrayCmd='facture_n_'+idCmd
-        let dataFacture=getLocalStorage(arrayCmd);
-        let total=0;
-        for(var i=0;i<dataFacture.length;i++){
-            total+=parseInt(dataFacture[i]["quantityProd"])*parseInt(dataFacture[i]["priceProd"])
-            factureList.innerHTML+=`<tr><td>${dataFacture[i]["nomProd"]}</td><td>${dataFacture[i]["quantityProd"]}</td><td>${dataFacture[i]["priceProd"]}€</td></tr>`
+        let arrayCmd = 'facture_n_' + idCmd
+        let dataFacture = getLocalStorage(arrayCmd);
+        let total = 0;
+        for (var i = 0; i < dataFacture.length; i++) {
+            total += parseInt(dataFacture[i]["quantityProd"]) * parseInt(dataFacture[i]["priceProd"])
+            factureList.innerHTML += `<tr><td>${dataFacture[i]["nomProd"]}</td><td>${dataFacture[i]["quantityProd"]}</td><td>${dataFacture[i]["priceProd"]}€</td></tr>`
         }
 
-        factureList.innerHTML+=`<tr><td style="background:white;border : none"> &nbsp; </td><td><p class="thFlex">Prix total</p></td><td id="prix-total"style="font-size: 22px; color: green;">${total}€</td></tr>`
-     
-        
+        factureList.innerHTML += `<tr><td style="background:white;border : none"> &nbsp; </td><td><p class="thFlex">Prix total</p></td><td id="prix-total"style="font-size: 22px; color: green;">${total}€</td></tr>`
+
+
 
     </script>
 
