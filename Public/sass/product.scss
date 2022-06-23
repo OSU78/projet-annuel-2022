@@ -1,5 +1,6 @@
 
 @import "card";
+
 * {
     font-family: sans-serif;
     padding: 0px;
@@ -10,17 +11,17 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
-    padding: 10px;
+    padding: 45px;
     padding-top: 25px;
     padding-bottom: 25px;
     width: -webkit-fill-available;
-    max-height: 30em;
+    max-height: 40em;
     justify-content: center;
     background: #0f0f0f;
   
   }
   .product_s1_card {
-    max-width: 400px;
+    max-width: 600px;
     max-height: fit-content;
     padding: 15px;
     background-color: #0f0f0f;
@@ -41,8 +42,8 @@
 
   .product_s1_card_img {
     object-fit: cover;
-    width: 100%;
-    height: 450px;
+    max-width: 100%;
+    height: -webkit-fill-available;
     border-radius: 8px;
   }
   .product_s1_card_btn {
@@ -77,8 +78,10 @@
     color: white;
   }
   .mini_card img {
-    height: -webkit-fill-available;
+    height: 75%;
   }
+  
+  
   .mini_card {
     height: 38%;
   }
@@ -106,6 +109,37 @@
   }
   .gap10 {
     gap: 10px;
+  }
+  .gap20{
+    gap: 20px;
+  }
+
+  .spaceBt{
+    justify-content: space-around;
+  }
+  .padding20{
+    padding: 20px 45px;
+    flex-wrap: wrap;
+    
+  }
+  .linear_gradian{
+    border: none;
+    background: linear-gradient(101.84deg, #000000 0%, rgba(0, 0, 0, 0.442708) 53.65%, rgba(0, 0, 0, 0.5) 100%);
+  }
+  .transparent{
+    background: transparent !important;
+  }
+  .btn_card2{
+    font-size: 12px;
+    background: #f1bc1e;
+    box-shadow: 0px 0px 12px rgba(186, 153, 105, 0.23),
+      0px 0px 64px rgba(186, 153, 105, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    padding-inline: 5px;
+    align-self: flex-end;
   }
 
   @media (max-width: 600px) {
@@ -139,8 +173,38 @@
   @media (max-width: 525px) {
     .m2 {
       max-height: 200px;
+      width: -webkit-fill-available;
     }
     .mini_card {
       min-width: -webkit-fill-available;
     }
+    .card{
+      width: -webkit-fill-available !important;
+    }
+    .card img {
+      width: -webkit-fill-available !important;}
   }
+
+  @media (max-width: 1007px) {
+  .card img {
+    width: 280px;
+    object-fit: cover;
+    height: auto;
+}
+.card__description{
+  flex-direction: column;
+}
+.card{
+  width: auto;
+}
+  }
+
+  @media (max-width: 987px) {
+    .card img {
+      width: 200px;
+  }
+  .card {
+    width: min-content;
+}
+ 
+    }
