@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/Public/css/style.css">
+  <link rel="stylesheet" href="/Public/css/styles.css">
   <script defer src="/Public/Js/index.js"></script>
 
   <title>home</title>
@@ -16,9 +16,9 @@
     <header class="header" role="header">
       <nav class="header__nav">
         <a href="#">Nos Oeuvres</a>
-        <a href="#">Personnaliser une creation</a>
+        <a href="#">Personnaliser une création</a>
         <img src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
-        <a href="#">A propos</a>
+        <a href="#">À propos</a>
         <a href="#">
           <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
         </a>
@@ -28,7 +28,7 @@
       </nav>
     </header>
 
-    <div class="banner">
+    <section class="banner">
       <!-- <video controls autoplay loop>
         <source src="/Public/assets/video/petal_20220620_113747.mp4" type="video/mp4">
       </video> -->
@@ -42,7 +42,8 @@
         <button class="btn">Découvrez notre travail</button>
       </div>
       <img class="banner__play" src="/Public/assets/icons/icon-play.svg" alt="play-video">
-    </div>
+    </section>
+
     <section class="artwork">
       <img class="artwork__arrow" src="/Public/assets/img/arrow-bg.svg" alt="arrow">
       <div class="artwork__text">
@@ -52,13 +53,93 @@
           Réalisé à la main par nos soins.
         </p>
       </div>
-      <div class="artwork__scroll--img">
-        <img src="/Public/assets/icons/icon-left-arrow.svg" alt="left-arrow">
-        <img src="/Public/assets/img/artwort.svg" alt="Artwork">
-        <img src="/Public/assets/icons/icon-right-arrow.svg" alt="right-arrow">
+      <div class="artwork__scroll">
+        <img class="artwork__scroll--arrow" src="/Public/assets/icons/icon-left-arrow.svg" alt="left-arrow">
+        <!-- <img src="/Public/assets/img/artwork.sv" alt="Artwork"> -->
+        <img class="artwork__scroll--img" src="https://i.ibb.co/hM8fjQ8/thrn-7.jpg" alt="Artwork">
+        <img class="artwork__scroll--arrow" src="/Public/assets/icons/icon-right-arrow.svg" alt="right-arrow">
       </div>
-      <img class="artwork__form--top" src="/Public/assets/forms/background-top.svg" alt="arrow">
     </section>
+    <!-- <img class="artwork__form--top" src="/Public/assets/img/background-top.svg" alt="arrow"> -->
+
+    <section class="best-seller">
+      <h2>Best Sellers</h2>
+      <div class="best-seller__cards">
+        <div class="card">
+          <img src="Public/assets/img/product.svg" alt="">
+          <div class="card__description">
+            <div class="card__description--text">
+              <p>Dimensions et description</p>
+              <p>125 €</p>
+            </div>
+            <button class="btn__card">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Public/assets/img/product.svg" alt="">
+          <div class="card__description">
+            <div class="card__description--text">
+              <p>Dimensions et description</p>
+              <p>125 €</p>
+            </div>
+            <button class="btn__card">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Public/assets/img/product.svg" alt="">
+          <div class="card__description">
+            <div class="card__description--text">
+              <p>Dimensions et description</p>
+              <p>125 €</p>
+            </div>
+            <button class="btn__card">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn__best-seller">Voir notre catalogue de gravures ></button>
+    </section>
+
+    <section class="confiance">
+      <div class="confiance__card">
+        <img src="/Public/assets/icons/icon-confiance-france.svg" alt="">
+        <p class="confiance__card--title">100% FRANÇAIS</p>
+        <p class="confiance__card--text">Expédition sous 24h (laposte, UPS livraison)</p>
+      </div>
+      <div class="confiance__card">
+        <img src="/Public/assets/icons/icon-confiance-main.svg" alt="">
+        <p class="confiance__card--title">FAIT À LA MAIN</p>
+        <p class="confiance__card--text">Toutes nos gravures sont réalisées à la main</p>
+      </div>
+      <div class="confiance__card">
+        <img src="/Public/assets/icons/icon-confiance-camion.svg" alt="">
+        <p class="confiance__card--title">PAIEMENT SÉCURISÉ</p>
+        <p class="confiance__card--text">Paypal, Visa, Mastercard</p>
+      </div>
+      <div class="confiance__card">
+        <img src="/Public/assets/icons/icon-confiance-contact.svg" alt="">
+        <p class="confiance__card--title">BESOIN D'AIDE</p>
+        <p class="confiance__card--text">Contactez-nous du lundi au samedi de 9h à 19h</p>
+      </div>
+    </section>
+
+    <section class="custom">
+      <div class="custom__text">
+        <h2>Envie de customisation</h2>
+        <p>Nous réalisons des gravures d'univers médiéval & fantaisiste. Réalisé à la main, par nos soins.</p>
+        <button class="btn">Contactez nous maintenant</button>
+      </div>
+      <img src="/Public/assets/img/custom-img.svg" alt="">
+    </section>
+
+    <section class="math-description">
+      <h3>Description Math, son travail et photo</h3>
+      <p></p>
+    </section>
+
+
+
+
+
 
   </div>
 </body>

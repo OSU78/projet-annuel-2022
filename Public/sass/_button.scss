@@ -8,3 +8,18 @@
 .input-form-white {
   @include input($bg: white, $border: 1px solid $bg-primary);
 }
+
+// Bouton card
+.btn__card {
+  font-size: 12px;
+  background: #f1bc1e;
+  box-shadow: 0px 0px 12px rgba(186, 153, 105, 0.23),
+    0px 0px 64px rgba(186, 153, 105, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: none;
+  font-family: $WorkSans-Bold;
+  height: 30px;
+  padding-inline: 5px;
+  align-self: flex-end;
+}
