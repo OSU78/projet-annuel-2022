@@ -16,7 +16,34 @@ form.addEventListener("submit", (e) => {
       if (requeteAjax.status === 200) {
         const resultats = JSON.parse(requeteAjax.response);
         console.log(resultats);
+        let contentError = [];
 
+        if (
+          "email" in resultats ||
+          "password" in resultats ||
+          "confirmpassword" in resultats
+        ) {
+          // console.log(resultats.password);
+          if (resultats.email !== undefined) {
+            console.log(resultats.email);
+            contentError.push(resultats.email);
+          }
+          if (resultats.password !== undefined) {
+            console.log(resultats.password);
+            contentError.push(resultats.password);
+          }
+          if (resultats.confirmpassword !== undefined) {
+            console.log(resultats.confirmpassword);
+            contentError.push(resultats.confirmpassword);
+          }
+          console.log(contentError);
+        }
+        let message = document.querySelector(".message");
+        message.innerHTML = `<div class="alert warning">
+          <span class="closebtn">&times;</span>  
+          <strong>warning!</strong> ${contentError}.
+          </div>
+        `;
         // form.reset();
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");

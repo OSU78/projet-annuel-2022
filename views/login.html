@@ -2,21 +2,37 @@
 <html lang="en">
 
 <head>
-  <?php require "includes/head.php" ?>
-  <title>Connexion</title>
-  <script defer src="/Public/Js/check-form/login.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Public/css/style.css">
+  <script defer src="/Public/Js/check-form/validateForm.js"></script>
 
+
+  <title>home</title>
 </head>
 
 <body>
   <div class="wrapper">
-    <?php require "includes/header.php" ?>
+    <header class="header" role="header">
+      <nav class="header__nav">
+        <a href="#">Nos Oeuvres</a>
+        <a href="#">Personnaliser une création</a>
+        <img src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
+        <a href="#">À propos</a>
+        <a href="#">
+          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
+        </a>
+        <a href="views/login.html">
+          <img src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
+        </a>
+      </nav>
+    </header>
 
     <main class="form--container">
       <form id="form" enctype='multipart/form-data' class="form">
         <h2>Connection</h2>
-        <div class="row message">
-        </div>
+
         <div class="row">
           <div class="col-25">
             <label for="email">Mail:</label>
@@ -59,4 +75,9 @@
         </p>
       </form>
     </main>
-    <?php require "includes/footer.php" ?>
+
+  </div>
+</body>
+
+</html>
+<a href="/">home</a>

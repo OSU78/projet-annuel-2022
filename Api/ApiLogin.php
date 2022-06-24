@@ -12,9 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = [
       'email' => '',
       'password' => '',
-      'message' => '',
-      'confirmpassword' => '',
-      'tel' => '',
     ];
 
     // verification du contenue des inputs
@@ -26,38 +23,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       'email' => FILTER_SANITIZE_SPECIAL_CHARS,
     ]);
 
-    $email     = trim(strtolower($input['email']));
-    $password  = trim($_POST['password']) ?? '';
+    $email     = trim(strtolower($input['email'])) ?? "";
+    $password  = trim($_POST['password']) ?? "";
 
-    // verification du email
-    $errors['email'] = $user->validateEmailLogin($email);
+    if (!$email) {
+      $errors['email'] = ERROR_REQUIRED;
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors['email'] = ERROR_EMAIL_INVALID;
+    }
+    $getUserIdBymail = $user->getUserBymail($email);
+    if (!$user) {
+      $errors['email'] = ERROR_EMAIL_UNKOWN;
+    } else {
+      if (!password_verify($password, $getUserIdBymail['password'])) {
+        $errors['password'] = ERROR_PASSWORD_MISMATCH;
+      }
 
-    // verification du mdp
-    $errors['password'] = $authDB->validatePasswordLogin($password, $email);
-
-    if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-
-      // recuperation des informations de l'utilisateur
-      $getUserIdBymail = $user->getUserBymail($email);
-      if ($getUserIdBymail) {
+      if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
+        // recuperation des informations de l'utilisateur
         $contentUserInfo = $user->getUser($getUserIdBymail['idUser']);
+        // var_dump($contentUserInfo);
+        // die();
         // creation de de la session et stockage des informations du user
         session_start();
         $_SESSION['user'] = [
           'idUser' => $contentUserInfo['idUser'],
           'email' => $contentUserInfo['email'],
-          'password' => $contentUserInfo['password'],
           'idAdress' => $contentUserInfo['idAdress'],
           'postalCode' => $contentUserInfo['postalCode'],
-          'numVoice' => $contentUserInfo['numVoice'],
-          'twon' => $contentUserInfo['twon'],
+          'street_number' => $contentUserInfo['street_number'],
+          'locality' => $contentUserInfo['locality'],
           'country' => $contentUserInfo['country'],
-          'voice' => $contentUserInfo['voice']
+          'route' => $contentUserInfo['route']
         ];
+        echo json_encode($_SESSION['user']);
+      } else {
+        echo json_encode([
+          'status' => 'Le mot de passe ou l\'email est incorrect'
+        ]);
       }
-      // var_dump($_SESSION['user']);
-    } else {
-      echo json_encode($errors);
     }
+  } else {
+    echo json_encode('error reception');
   }
 }
