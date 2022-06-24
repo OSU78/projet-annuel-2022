@@ -4,15 +4,10 @@
 <head>
   <?php require "includes/head.php" ?>
 
-  <!-- <script async defer src="/Public/Js/api/google/adress.js"></script> -->
-  <!-- google aoi address -->
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCywaY5J6pQy-QjxVyM0tQu7Rn6KYCmvSY"></script>
-
   <!-- les scripts -->
-  <script defer src="/Public/Js/getUser.js"></script>
-  <script defer src="/Public/Js/updateUser.js"></script>
-  <script defer src="/Public//Js/api/google/adress.js"></script>
+  <script defer src="/Public/Js/profil.js"></script>
+  <script defer src="/Public/Js/basket.js"></script>
+
 
   <title>profile</title>
 </head>
@@ -20,6 +15,22 @@
 <body>
   <?php require "includes/header.php" ?>
   <div class="wrapper" id="wrapper">
-
+    <div class="alert"></div>
+    <main class="main">
+      <div class="profil">
+        <div class="profil__container">
+          <h2>Mes commandes</h2>
+        </div>
+        <div class="profil__container">
+          <h2>Adresse et paiements</h2>
+        </div>
+        <div class="profil__container">
+          <h2>Connexion & sécurité</h2>
+        </div>
+      </div>
+    </main>
   </div>
   <?php require "includes/footer.php" ?>
+
+  <!-- <label for="psw">Password</label>
+  <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required> -->

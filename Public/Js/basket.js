@@ -15,7 +15,6 @@ function getBasket() {
 // ajouter un produit dans le panier
 function addBasket(product) {
   let basket = getBasket();
-
   let foundProduct = basket.find((p) => p.id == product.id);
   if (foundProduct != undefined) {
     foundProduct.quantity++;
@@ -42,4 +41,22 @@ function changeQuantity(product, quantity) {
     foundProduct.quantity += quantity;
   }
   saveBasket(basket);
+}
+
+function getNumberProduct() {
+  let basket = getBasket();
+  let number = 0;
+  for (let product of basket) {
+    number += product.quantity;
+  }
+  return number;
+}
+
+function getTotalPrice() {
+  let basket = getBasket();
+  let total = 0;
+  for (let product of basket) {
+    total += product.quantity * product.price;
+  }
+  return total;
 }
