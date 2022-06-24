@@ -1,0 +1,117 @@
+
+@import "variables";
+main{
+    height: 74vh;
+}
+.width67{
+    width: 67%;
+}
+.enchanted{
+    font-family: $enchanted;
+}
+.black{
+    color: $bg-primary;
+}
+.white{
+    color: $bg-secondary;
+}
+.bg-white{
+    background-color: white;
+}
+.bg-black{
+    background-color: $bg-primary;
+}
+.borderRadius7{
+    border-radius: 7px;
+}
+.ft45{
+    font-size: 45px;
+}
+.panier_header {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  justify-content: SPACE-BETWEEN;
+  border: 1px solid;
+  border-radius: 12px;
+}
+.text_center {
+  text-align: center;
+}
+.panier_item_width20 {
+  min-width: 20px;
+  max-width: 20px;
+}
+.panier_item_width60 {
+  min-width: 60px;
+  max-width: 60px;
+}
+.panier_item_width80 {
+  min-width: 80px;
+  max-width: 80px;
+}
+.panier_item_width90 {
+  min-width: 90px;
+  max-width: 90px;
+}
+.panier_item_width200 {
+  min-width: 200px;
+  max-width: 200px;
+}
+.panier_item_width110 {
+  min-width: 110px;
+  max-width: 110px;
+}
+.panier_btn_add {
+  background-color: $bg-primary;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  height: 2px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  border: solid 1px transparent;
+}
+
+.panier_item_number {
+  background-color: $bg-primary;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gap8 {
+  gap: 8px;
+}
+.align_left{
+    justify-content: flex-start;
+}
+#add_item:hover {
+    cursor: pointer;
+  background-color: white;
+  color: $bg-primary;
+  transition: 0.3s;
+  border: solid 1px $bg-primary;
+  transform: scale(1.06);
+}
+#remove_item:hover {
+  cursor: pointer;
+  background-color: white;
+  color: $bg-primary;
+  transition: 0.3s;
+  border: solid 1px $bg-primary;
+  transform: scale(1.06);
+}
+.gap15 {
+  gap: 15px;
+}
+.pd25 {
+  padding: 25px;
+}

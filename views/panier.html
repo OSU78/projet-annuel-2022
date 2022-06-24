@@ -7,6 +7,7 @@
     <title>Panier</title>
     <link rel="stylesheet" href="/Public/css/product.css" />
     <link rel="stylesheet" href="/Public/css/panier.css" />
+	<script defer src="/Public/Js/basket.js"></script>
   </head>
   <body>
     <header class="header" role="header">
@@ -37,120 +38,104 @@
         </a>
       </nav>
     </header>
-    <main style="height: 100%">
+    <main class="bg-black">
+		<div class="flex center">
+			<div class="align_left width67"><h1 class="enchanted white ft45">Panier</h1></div>
+			
+		</div>
       <section class="flex center padding20">
-        <div class="width100">
-			<section style="display:flex;gap: 15px;padding: 25px;justify-content: SPACE-BETWEEN;border: 1px solid;border-radius: 12px;">
-				<div>N°</div>
-				<div>Article</div>
-				<div>Description</div>
-				<div>Montant</div>
-				<div>Etat</div>
-				<div>Qté</div>
-				</section>
+        <div class="width100 bg-white pd25 borderRadius7">
+		
+          
+          <section class="panier_header">
+            <div class="text_center panier_item_width20">N°</div>
+            <div class="text_center panier_item_width90">Article</div>
+            <div class="text_center panier_item_width200">Description</div>
+            <div class="text_center panier_item_width60">Montant</div>
+            <div class="text_center panier_item_width80">Etat</div>
+            <div class="text_center panier_item_width110">Qté</div>
+          </section>
 
-          <!-- <thead class="thead" style="position: relative;">
-			<div style="position: absolute;border : 1px solid black;height: 50px; width: 100%;"></div>
-            <tr>
-              <th>
-                <p class="thFlex">N°</p>
-              </th>
-              <th>
-                <p class="thFlex">Article</p>
-              </th>
-              <th>
-                <p class="thFlex">Description article</p>
-              </th>
-              <th>
-                <p class="thFlex">Montant</p>
-              </th>
-              <th>
-                <p class="thFlex">Etat</p>
-              </th>
-              <th>
-                <p class="thFlex">Qté</p>
-              </th>
-            </tr>
-          </thead> -->
           <div id="panierList">
-            <section style="display:flex;gap: 15px;justify-content: SPACE-BETWEEN;padding: 25px 25px;align-items: center;">
-				<div>1</div>
-				<div>Gravure</div>
-				<div>Gravure dessiner à la main</div>
-				<div>50€</div>
-				<div>Disponible</div>
-				<div>
-				  <div
-					style="
-					  display: flex;
-					  flex-direction: row;
-					  gap: 10px;
-					  align-items: center;
-					  justify-content: center;
-					"
-				  >
-					<div
-					  style="
-						background-color: #0f0f0f;
-						color: white;
-						padding: 10px;
-						border-radius: 5px;
-						height: 30px;
-						width: 30px;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-					  "
-					>
+            <section class="flex spaceBetween center pd25 gap15">
+              <div class="text_center panier_item_width20">1</div>
+              <div class="text_center panier_item_width90">Gravure</div>
+              <div class="text_center panier_item_width200">
+                Gravure dessiner à la main
+              </div>
+              <div class="text_center panier_item_width60">50€</div>
+              <div class="text_center panier_item_width80">Disponible</div>
+              <div class="text_center panier_item_width110">
+                <div class="flex center gap10">
+                  <div class="panier_item_number">
+                    <p>1</p>
+                  </div>
+                  <div class="flex center gap8 column">
+                    <div id="add_item" class="panier_btn_add">
+                      <p>+</p>
+                    </div>
+                    <div id="remove_item" class="panier_btn_add">
+                      <p>-</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+			<section class="flex spaceBetween center pd25 gap15">
+				<div class="text_center panier_item_width20">1</div>
+				<div class="text_center panier_item_width90">Gravure</div>
+				<div class="text_center panier_item_width200">
+				  Gravure dessiner à la main
+				</div>
+				<div class="text_center panier_item_width60">50€</div>
+				<div class="text_center panier_item_width80">Disponible</div>
+				<div class="text_center panier_item_width110">
+				  <div class="flex center gap10">
+					<div class="panier_item_number">
 					  <p>1</p>
 					</div>
-					<div
-					  style="
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						flex-direction: column;
-						gap: 8px;
-					  "
-					>
-					  <div
-						style="
-						  background-color: #0f0f0f;
-						  color: white;
-						  padding: 10px;
-						  border-radius: 5px;
-						  height: 2px;
-						  width: 30px;
-						  display: flex;
-						  justify-content: center;
-						  align-items: center;
-						"
-					  >
+					<div class="flex center gap8 column">
+					  <div id="add_item" class="panier_btn_add">
 						<p>+</p>
 					  </div>
-					  <div
-						style="
-						  background-color: #0f0f0f;
-						  color: white;
-						  padding: 10px;
-						  border-radius: 5px;
-						  height: 2px;
-						  width: 30px;
-						  display: flex;
-						  justify-content: center;
-						  align-items: center;
-						"
-					  >
+					  <div id="remove_item" class="panier_btn_add">
 						<p>-</p>
 					  </div>
 					</div>
 				  </div>
 				</div>
-				</section>
-            
+			  </section>
+
+			  <section class="flex spaceBetween center pd25 gap15">
+				<div class="text_center panier_item_width20">1</div>
+				<div class="text_center panier_item_width90">Gravure</div>
+				<div class="text_center panier_item_width200">
+				  Gravure dessiner à la main
+				</div>
+				<div class="text_center panier_item_width60">50€</div>
+				<div class="text_center panier_item_width80">Disponible</div>
+				<div class="text_center panier_item_width110">
+				  <div class="flex center gap10">
+					<div class="panier_item_number">
+					  <p>1</p>
+					</div>
+					<div class="flex center gap8 column">
+					  <div id="add_item" class="panier_btn_add">
+						<p>+</p>
+					  </div>
+					  <div id="remove_item" class="panier_btn_add">
+						<p>-</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
           </div>
         </div>
       </section>
+
+	
     </main>
   </body>
 </html>
