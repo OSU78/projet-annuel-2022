@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panier</title>
+    <link rel="stylesheet" href="/Public/css/product.css" />
+    <link rel="stylesheet" href="/Public/css/panier.css" />
+  </head>
+  <body>
+    <header class="header" role="header">
+      <nav class="header__nav">
+        <a href="#">Nos Oeuvres</a>
+        <a href="#">Personnaliser une création</a>
+        <img
+          loading="lazy"
+          src="/Public/assets/img/logo-header.svg"
+          alt="Logo"
+          width="320"
+          height="104"
+        />
+        <a href="#">À propos</a>
+        <a href="#">
+          <img
+            loading="lazy"
+            src="/Public/assets/icons/icon-backet.svg"
+            alt="Panier"
+          />
+        </a>
+        <a href="views/login.html">
+          <img
+            loading="lazy"
+            src="/Public/assets/icons/icon-profil.svg"
+            alt="Utilisateur"
+          />
+        </a>
+      </nav>
+    </header>
+    <main style="height: 100%">
+      <section class="flex center padding20">
+        <div class="width100">
+			<section style="display:flex;gap: 15px;padding: 25px;justify-content: SPACE-BETWEEN;border: 1px solid;border-radius: 12px;">
+				<div>N°</div>
+				<div>Article</div>
+				<div>Description</div>
+				<div>Montant</div>
+				<div>Etat</div>
+				<div>Qté</div>
+				</section>
+
+          <!-- <thead class="thead" style="position: relative;">
+			<div style="position: absolute;border : 1px solid black;height: 50px; width: 100%;"></div>
+            <tr>
+              <th>
+                <p class="thFlex">N°</p>
+              </th>
+              <th>
+                <p class="thFlex">Article</p>
+              </th>
+              <th>
+                <p class="thFlex">Description article</p>
+              </th>
+              <th>
+                <p class="thFlex">Montant</p>
+              </th>
+              <th>
+                <p class="thFlex">Etat</p>
+              </th>
+              <th>
+                <p class="thFlex">Qté</p>
+              </th>
+            </tr>
+          </thead> -->
+          <div id="panierList">
+            <section style="display:flex;gap: 15px;justify-content: SPACE-BETWEEN;padding: 25px 25px;align-items: center;">
+				<div>1</div>
+				<div>Gravure</div>
+				<div>Gravure dessiner à la main</div>
+				<div>50€</div>
+				<div>Disponible</div>
+				<div>
+				  <div
+					style="
+					  display: flex;
+					  flex-direction: row;
+					  gap: 10px;
+					  align-items: center;
+					  justify-content: center;
+					"
+				  >
+					<div
+					  style="
+						background-color: #0f0f0f;
+						color: white;
+						padding: 10px;
+						border-radius: 5px;
+						height: 30px;
+						width: 30px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					  "
+					>
+					  <p>1</p>
+					</div>
+					<div
+					  style="
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						gap: 8px;
+					  "
+					>
+					  <div
+						style="
+						  background-color: #0f0f0f;
+						  color: white;
+						  padding: 10px;
+						  border-radius: 5px;
+						  height: 2px;
+						  width: 30px;
+						  display: flex;
+						  justify-content: center;
+						  align-items: center;
+						"
+					  >
+						<p>+</p>
+					  </div>
+					  <div
+						style="
+						  background-color: #0f0f0f;
+						  color: white;
+						  padding: 10px;
+						  border-radius: 5px;
+						  height: 2px;
+						  width: 30px;
+						  display: flex;
+						  justify-content: center;
+						  align-items: center;
+						"
+					  >
+						<p>-</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				</section>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
