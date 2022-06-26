@@ -1,0 +1,20 @@
+.main {
+  background: green;
+
+  .profil {
+    width: 100%;
+    background-color: rgb(80, 80, 94);
+    padding: 30px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    &__container {
+      width: 500px;
+      padding: 20px;
+      background-color: $bg-secondary;
+      border: 1px solid red;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@import "forms/validateForm";
 .main {
   width: 80%;
   background: white;
@@ -5,6 +6,7 @@
 }
 input[type="text"],
 input[type="email"],
+input[type="password"],
 select,
 textarea {
   width: 100%;
