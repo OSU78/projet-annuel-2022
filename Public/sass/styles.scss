@@ -36,13 +36,16 @@
     text-decoration: none;
     color: white;
   }
+
+  .wrapper {
+    background: white;
+  }
   
   .banner {
     display: flex;
     justify-content: space-between;
     background: black;
     padding: 50px 35px;
-    /* background-image: url(Public/assets/img/bg-header-top.svg); */
   }
   
   .banner__text {
@@ -62,18 +65,24 @@
   .banner__play {
     align-self: flex-end;
   }
-  
+
   .artwork {
-    display: flex;
-    justify-content: space-between;
-    background-image: url(/Public/assets/img/bg-header-top.svg);
-    color: white;
-    // padding: 50px 35px;
-    // height: 600px;
     position: relative;
-    width: 100%;
-    background-size: contain;
+    background: url('/Public/assets/img/bg-top.svg');
+    width: 100vw;
+    // height: 1776px;
+    background-position : bottom, 0px;
+    padding-bottom: 250px;
+    // background-repeat: no-repeat;
+  }
+  
+  .artwork__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
     margin-bottom: 100px;
+    padding: 50px 35px;
   }
 
   .artwork__scroll {
@@ -84,13 +93,23 @@
   }
 
   .artwork__scroll--img {
-    width: 300px;
-    height: 300px;
+    display: none;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     margin: 20px;
     border-radius: 5px;
-    filter: drop-shadow(20px 10px 4px grey);
-    
+    filter: drop-shadow(10px 10px 4px rgb(55, 55, 55));
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
   }
   
   .artwork__text {
@@ -106,18 +125,14 @@
     font-size: 18px;
   }
   
-  .artwork__scroll--img {
-    display: flex;
-  }
-  
   .artwork__scroll--arrow {
     width: 59px;
   }
   
-  .artwork__arrow {
+  .artwork__leaf {
     position: absolute;
-    bottom: -110px;
-    left: -50px;
+    bottom: 250px;
+    left: 20px;
   }
   
   .artwork__form--top {
@@ -127,6 +142,8 @@
   }
   
   .best-seller {
+    position: relative;
+    top: -150px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -136,6 +153,7 @@
     display: flex;
     justify-content: center;
     margin-top: 0;
+    margin-bottom: 40px;
   }
   
   .best-seller__cards {
@@ -150,7 +168,8 @@
   .btn__best-seller {
     width: 550px;
     margin: auto;
-    margin-block: 50px;
+    margin-top: 80px;
+    margin-bottom: 20px;
     padding: 15px;
   }
 
@@ -169,9 +188,14 @@
     width: 200px;
   }
 
+  .confiance__card img {
+    width: 100px;
+    height: 100px;
+  }
+
   .confiance__card p {
     display: flex;
-    justify-content: center;
+    text-align: center;
     margin-block: 0;
   }
 
@@ -230,15 +254,53 @@
 
   .math-description {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: black;
     color: white;
     height: 400px;
     margin: 50px 35px;
+    padding: 50px 35px;
   }
 
   .math-description h3 {
     margin: 0;
     font-size: 40px;
   }
+
+.math-description p {
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+// @media (max-width: 1170px) {
+//     .artwork__scroll--img {
+//         width: 300px;
+//         height: 300px;
+//     }
+// }
+
+@media (max-width: 1165px) {
+    .artwork__content {
+        justify-content: center;
+        gap: 50px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .artwork__leaf {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .artwork__scroll--img {
+        width: 300px;
+        height: 300px;
+    }
+}
