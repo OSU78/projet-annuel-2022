@@ -19,25 +19,25 @@
 
 // scss-docs-start import-stack
 // Configuration
-.header {
-<<<<<<< HEAD
-    background-color: $bg-primary;
-    height: 196px;
-    padding-block: calc(92px /2);
-  }
+// .header {
+//     background-color: $bg-primary;
+//     height: 196px;
+//     padding-block: calc(92px /2);
+//     width: 100vw;
+//   }
   
-  .header__nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: enchanted-land;
-    font-size: 32px;
-  }
+//   .header__nav {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     font-family: enchanted-land;
+//     font-size: 32px;
+//   }
   
-  .header__nav a {
-    text-decoration: none;
-    color: white;
-  }
+//   .header__nav a {
+//     text-decoration: none;
+//     color: white;
+//   }
 
   .wrapper {
     background: white;
@@ -47,13 +47,25 @@
     display: flex;
     justify-content: space-between;
     background: black;
-    padding: 50px 35px;
+    padding: 0;
+    // padding: 50px 35px;
+  }
+
+  #myVideo {
+    // position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
   }
   
-  .banner__text {
-    width: 540px;
-    color: white;
-  }
+//   .banner__text {
+//     position: fixed;
+//     width: 540px;
+//     color: white;
+//     z-index: 2;
+//   }
   
   .banner__text h1 {
     margin: 0;
@@ -210,12 +222,6 @@
     align-content: center;
   }
 
-=======
-  background-color: $bg-primary;
-  height: 196px;
-  padding-block: calc(92px / 2);
-}
-
 .header__nav {
   display: flex;
   justify-content: space-around;
@@ -229,17 +235,24 @@
   color: white;
 }
 
+#myVideo {
+    position: relative;
+    height: calc(100vh - 196px);
+    opacity: 0.5;
+}
+
 .banner {
   display: flex;
   justify-content: space-between;
   background: black;
-  padding: 50px 35px;
-  /* background-image: url(Public/assets/img/bg-header-top.svg); */
 }
 
+
 .banner__text {
+  position: absolute;
   width: 540px;
   color: white;
+  margin: 50px 35px;
 }
 
 .banner__text h1 {
@@ -257,15 +270,19 @@
 
 .artwork {
   display: flex;
-  justify-content: space-between;
-  background-image: url(/Public/assets/img/bg-header-top.svg);
+  background-image: url(/Public/assets/img/bg-top.svg);
   color: white;
-  // padding: 50px 35px;
-  // height: 600px;
   position: relative;
-  width: 100%;
-  background-size: contain;
-  margin-bottom: 100px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: bottom, 0px;
+  margin-bottom: 20px;
+}
+
+.artwork__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
 }
 
 .artwork__scroll {
@@ -281,7 +298,7 @@
   object-fit: cover;
   margin: 20px;
   border-radius: 5px;
-  filter: drop-shadow(20px 10px 4px grey);
+  filter: drop-shadow(10px 10px 4px rgb(74, 74, 74));
 }
 
 .artwork__text {
@@ -407,23 +424,22 @@
 }
 
 @media (max-width: 1025px) {
->>>>>>> 1acc0e0789f5fa3845035d6e4bb7bbc8f053a98e
   .custom {
     justify-content: center;
   }
   .custom__text {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     justify-content: center;
     align-items: center;
-    background: black;
-    color: white;
     height: 400px;
-    margin: 50px 35px;
-    padding: 50px 35px;
+    // margin: 50px 35px;
+    // padding: 0px 35px 50px;
   }
-
+  .custom .btn {
+    margin-top: 50px
+  }
+}
   .math-description h3 {
     margin: 0;
     font-size: 40px;
@@ -436,13 +452,6 @@
 .flex{
     display: flex;
 }
-
-// @media (max-width: 1170px) {
-//     .artwork__scroll--img {
-//         width: 300px;
-//         height: 300px;
-//     }
-// }
 
 @media (max-width: 1165px) {
     .artwork__content {
@@ -464,13 +473,11 @@
         height: 300px;
     }
 }
-=======
-//     align-items: center;
-//   }
-// }
+
 
 .math-description {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: black;
@@ -478,9 +485,3 @@
   height: 400px;
   margin: 50px 35px;
 }
-
-.math-description h3 {
-  margin: 0;
-  font-size: 40px;
-}
->>>>>>> 1acc0e0789f5fa3845035d6e4bb7bbc8f053a98e

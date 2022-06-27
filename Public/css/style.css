@@ -627,7 +627,7 @@ input:focus {
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-inline: 30px;
+  /* padding-inline: 30px; */
 }
 .footer__element {
   width: 100%;
