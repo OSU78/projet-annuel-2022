@@ -2,7 +2,7 @@
   padding-top: 20px;
   color: $bg-secondary;
   background-color: $bg-primary;
-  height: 400px;
+  // height: 400px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -10,12 +10,14 @@
   flex-flow: column wrap;
   gap: 50px;
   padding-inline: 30px;
+  padding-bottom: 50px;
 
   &__element {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 50px;
     &__payment {
       width: calc(100% / 3.5);
       display: flex;
@@ -54,4 +56,16 @@
     display: flex;
     flex-direction: column;
   }
+  section {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  
 }
+
+
