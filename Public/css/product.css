@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "UTF-8";
 .card {
   width: 320px;
@@ -374,7 +373,6 @@ input:focus {
 
 .gap10 {
   gap: 10px;
->>>>>>> 1acc0e0789f5fa3845035d6e4bb7bbc8f053a98e
 }
 
 .gap20 {
@@ -470,7 +468,7 @@ input:focus {
   border-radius: 100%;
   font-size: 18px;
   top: -30px;
-  left: 0px;
+  left: 4px;
 }
 
 /***************/
@@ -481,19 +479,10 @@ input:focus {
 }
 @media (max-width: 600px) {
   #product_s1 {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     gap: 25px;
-    max-height: -webkit-fit-content;
-    max-height: -moz-fit-content;
     max-height: fit-content;
   }
 
@@ -506,18 +495,12 @@ input:focus {
   }
 
   .product_s1_card {
-    max-width: -webkit-max-content;
-    max-width: -moz-max-content;
     max-width: max-content;
   }
 
   .product_s2_mini {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: row;
     width: -webkit-fill-available;
   }
 
@@ -534,9 +517,6 @@ input:focus {
   .mini_card {
     min-width: -webkit-fill-available;
   }
-<<<<<<< HEAD
-}
-=======
 
   .card {
     width: -webkit-fill-available !important;
@@ -572,4 +552,3 @@ input:focus {
 }
 
 /*# sourceMappingURL=product.css.map */
->>>>>>> 1acc0e0789f5fa3845035d6e4bb7bbc8f053a98e

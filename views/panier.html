@@ -20,13 +20,32 @@
     <nav class="header__nav">
       <a href="#">Nos Oeuvres</a>
       <a href="#">Personnaliser une création</a>
-      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104" />
+      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
       <a href="#">À propos</a>
-      <a href="product.html">
-        <img loading="lazy" src="/Public/assets/icons/icon-backet.svg" alt="Panier" />
+      <a href="product.html" class="header__nav--badge">
+        <span class="badge">0</span>
+        <div class="tooltip">
+          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
+          <div class="bottom">
+            <div class="bottom__img">
+              <img src="/Public/assets/icons/icon-profil.svg" />
+            </div>
+            <div class="bottom__text">
+              <h3>le panier</h3>
+              <p>
+                The CSS tooltip appears when user moves the mouse over an element, or when user tap the element with a
+                mobile
+                device.
+              </p>
+              <span>Quantité:</span>
+            </div>
+            <i></i>
+            <button class="product_s1_card_btn" type="button">Editer</button>
+          </div>
+        </div>
       </a>
       <a href="views/login.html">
-        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur" />
+        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
       </a>
     </nav>
   </header>
