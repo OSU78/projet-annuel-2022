@@ -1,31 +1,30 @@
-
 @import "variables";
-main{
-    height: 74vh;
+main {
+  height: auto;
 }
-.width67{
-    width: 67%;
+.width67 {
+  width: 67%;
 }
-.enchanted{
-    font-family: $enchanted;
+.enchanted {
+  font-family: $enchanted;
 }
-.black{
-    color: $bg-primary;
+.black {
+  color: $bg-primary;
 }
-.white{
-    color: $bg-secondary;
+.white {
+  color: $bg-secondary;
 }
-.bg-white{
-    background-color: white;
+.bg-white {
+  background-color: white;
 }
-.bg-black{
-    background-color: $bg-primary;
+.bg-black {
+  background-color: $bg-primary;
 }
-.borderRadius7{
-    border-radius: 7px;
+.borderRadius7 {
+  border-radius: 7px;
 }
-.ft45{
-    font-size: 45px;
+.ft45 {
+  font-size: 45px;
 }
 .panier_header {
   display: flex;
@@ -90,11 +89,11 @@ main{
 .gap8 {
   gap: 8px;
 }
-.align_left{
-    justify-content: flex-start;
+.align_left {
+  justify-content: flex-start;
 }
 #add_item:hover {
-    cursor: pointer;
+  cursor: pointer;
   background-color: white;
   color: $bg-primary;
   transition: 0.3s;

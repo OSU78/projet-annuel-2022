@@ -1,141 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panier</title>
-    <link rel="stylesheet" href="/Public/css/product.css" />
-    <link rel="stylesheet" href="/Public/css/panier.css" />
-	<script defer src="/Public/Js/basket.js"></script>
-  </head>
-  <body>
-    <header class="header" role="header">
-      <nav class="header__nav">
-        <a href="#">Nos Oeuvres</a>
-        <a href="#">Personnaliser une création</a>
-        <img
-          loading="lazy"
-          src="/Public/assets/img/logo-header.svg"
-          alt="Logo"
-          width="320"
-          height="104"
-        />
-        <a href="#">À propos</a>
-        <a href="#">
-          <img
-            loading="lazy"
-            src="/Public/assets/icons/icon-backet.svg"
-            alt="Panier"
-          />
-        </a>
-        <a href="views/login.html">
-          <img
-            loading="lazy"
-            src="/Public/assets/icons/icon-profil.svg"
-            alt="Utilisateur"
-          />
-        </a>
-      </nav>
-    </header>
-    <main class="bg-black">
-		<div class="flex center">
-			<div class="align_left width67"><h1 class="enchanted white ft45">Panier</h1></div>
-			
-		</div>
-      <section class="flex center padding20">
-        <div class="width100 bg-white pd25 borderRadius7">
-		
-          
-          <section class="panier_header">
-            <div class="text_center panier_item_width20">N°</div>
-            <div class="text_center panier_item_width90">Article</div>
-            <div class="text_center panier_item_width200">Description</div>
-            <div class="text_center panier_item_width60">Montant</div>
-            <div class="text_center panier_item_width80">Etat</div>
-            <div class="text_center panier_item_width110">Qté</div>
-          </section>
 
-          <div id="panierList">
-            <section class="flex spaceBetween center pd25 gap15">
-              <div class="text_center panier_item_width20">1</div>
-              <div class="text_center panier_item_width90">Gravure</div>
-              <div class="text_center panier_item_width200">
-                Gravure dessiner à la main
-              </div>
-              <div class="text_center panier_item_width60">50€</div>
-              <div class="text_center panier_item_width80">Disponible</div>
-              <div class="text_center panier_item_width110">
-                <div class="flex center gap10">
-                  <div class="panier_item_number">
-                    <p>1</p>
-                  </div>
-                  <div class="flex center gap8 column">
-                    <div id="add_item" class="panier_btn_add">
-                      <p>+</p>
-                    </div>
-                    <div id="remove_item" class="panier_btn_add">
-                      <p>-</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier</title>
+  <link rel="stylesheet" href="/Public/css/product.css" />
+  <link rel="stylesheet" href="/Public/css/panier.css" />
+  <!-- <script defer src="/Public/Js/function.js"></script> -->
+  <script defer src="/Public/Js/function.js"></script>
+  <script defer src="/Public/Js/addBasket.js"></script>
+  <!-- <script defer src="/Public/Js/AddBasket.js"></script> -->
 
-			<section class="flex spaceBetween center pd25 gap15">
-				<div class="text_center panier_item_width20">1</div>
-				<div class="text_center panier_item_width90">Gravure</div>
-				<div class="text_center panier_item_width200">
-				  Gravure dessiner à la main
-				</div>
-				<div class="text_center panier_item_width60">50€</div>
-				<div class="text_center panier_item_width80">Disponible</div>
-				<div class="text_center panier_item_width110">
-				  <div class="flex center gap10">
-					<div class="panier_item_number">
-					  <p>1</p>
-					</div>
-					<div class="flex center gap8 column">
-					  <div id="add_item" class="panier_btn_add">
-						<p>+</p>
-					  </div>
-					  <div id="remove_item" class="panier_btn_add">
-						<p>-</p>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </section>
+</head>
 
-			  <section class="flex spaceBetween center pd25 gap15">
-				<div class="text_center panier_item_width20">1</div>
-				<div class="text_center panier_item_width90">Gravure</div>
-				<div class="text_center panier_item_width200">
-				  Gravure dessiner à la main
-				</div>
-				<div class="text_center panier_item_width60">50€</div>
-				<div class="text_center panier_item_width80">Disponible</div>
-				<div class="text_center panier_item_width110">
-				  <div class="flex center gap10">
-					<div class="panier_item_number">
-					  <p>1</p>
-					</div>
-					<div class="flex center gap8 column">
-					  <div id="add_item" class="panier_btn_add">
-						<p>+</p>
-					  </div>
-					  <div id="remove_item" class="panier_btn_add">
-						<p>-</p>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </section>
-          </div>
+<body>
+  <header class="header" role="header">
+    <nav class="header__nav">
+      <a href="#">Nos Oeuvres</a>
+      <a href="#">Personnaliser une création</a>
+      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104" />
+      <a href="#">À propos</a>
+      <a href="product.html">
+        <img loading="lazy" src="/Public/assets/icons/icon-backet.svg" alt="Panier" />
+      </a>
+      <a href="views/login.html">
+        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur" />
+      </a>
+    </nav>
+  </header>
+  <main class="bg-black">
+    <div class="flex center">
+      <div class="align_left width67">
+        <h1 class="enchanted white ft45">Panier</h1>
+      </div>
+
+    </div>
+    <section class="flex center padding20">
+      <div class="width100 bg-white pd25 borderRadius7">
+
+
+        <section class="panier_header">
+          <div class="text_center panier_item_width20">N°</div>
+          <div class="text_center panier_item_width90">Article</div>
+          <div class="text_center panier_item_width200">Description</div>
+          <div class="text_center panier_item_width60">Montant</div>
+          <div class="text_center panier_item_width80">Etat</div>
+          <div class="text_center panier_item_width110">Qté</div>
+        </section>
+
+        <div id="panierList" class="contentBaskets">
+
+
         </div>
-      </section>
 
-	
-    </main>
-  </body>
+        <button class="product_s1_card_btn" id="total-basket">Total</button>
+      </div>
+    </section>
+
+
+  </main>
+</body>
+
 </html>

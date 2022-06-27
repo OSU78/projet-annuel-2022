@@ -1,112 +1,19 @@
-@charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Error: expected "{".
+ *    ,
+ * 24 |     background-color: $bg-primary;
+ *    |                                  ^
+ *    '
+ *   public\sass\styles.scss 24:34  root stylesheet */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected "{".\a    \2577 \a 24 \2502      background-color: $bg-primary;\d\a    \2502                                   ^\a    \2575 \a   public\\sass\\styles.scss 24:34  root stylesheet';
 }
 
 body {
@@ -305,16 +212,12 @@ table {
 }
 
 @font-face {
-  font-family: "enchanted-land";
-  src: url(/Public/font/enchanted-land.woff);
-}
-@font-face {
   font-family: "WorkSans-Bold";
-  src: url(/Public/font/WorkSans-Bold.woff);
+  src: url(/Public/font/WorkSans-Bold.woff2);
 }
 @font-face {
   font-family: "WorkSans-LightItalic";
-  src: url(/Public/font/WorkSans-LightItalic.woff);
+  src: url(/Public/font/WorkSans-LightItalic.woff2);
 }
 @font-face {
   font-family: "WorkSans-Regular";
@@ -324,7 +227,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
 }
 
 img {
@@ -379,10 +282,10 @@ input:focus {
 }
 
 .tooltip .bottom {
-  min-width: 400px;
+  min-width: 250px;
   top: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 80%;
+  transform: translate(-80%, 0);
   padding: 20px;
   color: #0a0808;
   background-color: #eeeeee;
@@ -409,8 +312,8 @@ input:focus {
 .tooltip .bottom i {
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  margin-left: -12px;
+  right: 20%;
+  margin-left: -px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -427,9 +330,73 @@ input:focus {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: 0px;
+  padding-right: 10px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  padding-right: 10px;
+  position: relative;
+  left: 0px;
+  content: "✖";
+}
+
 /* Landscape phones and down */
 /* Landscape phone to portrait tablet */
 /* Portrait tablet to landscape and desktop */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
 /* voici un mixin 
 ```scss */
 .btn {
@@ -493,7 +460,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
   font-size: 32px;
 }
 .header__nav--logo {

@@ -8,6 +8,7 @@ class Models
   private PDOStatement $statementUpdateAddress;
   private PDOStatement $statementRegisterAddress;
   private PDOStatement $statementIslogged;
+  private PDOStatement $statementReadProduct;
 
   public PDO $pdo;
 
@@ -49,7 +50,9 @@ class Models
     $this->statementReadUserFromEmails = $this->pdo->prepare('SELECT * FROM user WHERE email=:email LIMIT 1');
     $this->statementReadById = $this->pdo->prepare('SELECT * FROM `user` INNER JOIN adress ON adress.idUser = user.idUser WHERE user.idUser =:idUser;');
     $this->statementIslogged = $this->pdo->prepare('SELECT email, password FROM user WHERE email=:email AND password=:password');
+    $this->statementReadProduct = $this->pdo->prepare('SELECT * FROM products');
   }
+
 
   //enregistrement d'un utilisateur a la connexion
   public function register(array $user): int
@@ -133,6 +136,7 @@ class Models
     $this->statementReadUserFromEmails->closeCursor();
   }
 
+
   // recuperation des informations a partir del'adresse mail
   public function checkMail(string $email): int | false
   {
@@ -149,6 +153,14 @@ class Models
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json");
     echo json_encode([$infos], JSON_UNESCAPED_UNICODE);
+  }
+
+  // recuperation des informations de lutilisateur avec le mail
+  public function getProduct(): array | false
+  {
+    $this->statementReadProduct->execute();
+    return $this->statementReadProduct->fetchAll();
+    $this->statementReadProduct->closeCursor();
   }
 }
 return new Models($pdo);
