@@ -424,10 +424,12 @@ input:focus {
   z-index: -1;
   position: absolute;
   width: -webkit-fill-available;
+>>>>>>> main
 }
 
 .svg > svg g {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   position: absolute;
 }
 
@@ -529,12 +531,16 @@ input:focus {
 @media (max-width: 1007px) {
   .card img {
     width: 280px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: auto;
   }
 
   .card__description {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .card {
@@ -547,6 +553,8 @@ input:focus {
   }
 
   .card {
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
   }
 }

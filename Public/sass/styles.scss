@@ -49,9 +49,12 @@
   padding: 50px 35px;
 }
 
+
 .banner__text {
+  position: absolute;
   width: 540px;
   color: white;
+  margin: 50px 35px;
 }
 
 .banner__text h1 {
@@ -84,6 +87,12 @@
   color: white;
   margin-bottom: 100px;
   padding: 50px 35px;
+}
+
+.artwork__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
 }
 
 .artwork__scroll {
@@ -238,13 +247,6 @@
 .flex {
   display: flex;
 }
-
-// @media (max-width: 1170px) {
-//     .artwork__scroll--img {
-//         width: 300px;
-//         height: 300px;
-//     }
-// }
 
 @media (max-width: 1165px) {
   .artwork__content {

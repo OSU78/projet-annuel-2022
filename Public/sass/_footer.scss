@@ -2,14 +2,12 @@
   padding-top: 20px;
   color: $bg-secondary;
   background-color: $bg-primary;
-  // height: 400px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-inline: 30px;
   padding-bottom: 50px;
 
   &__element {

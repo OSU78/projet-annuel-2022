@@ -665,7 +665,7 @@ input:focus {
 .card__description {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 .card__description--text {
@@ -680,13 +680,12 @@ input:focus {
   padding-top: 20px;
   color: #ededed;
   background-color: #0a0808;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-inline: 30px;
   padding-bottom: 50px;
 }
 .footer__element {
@@ -1061,8 +1060,10 @@ input[type=submit] {
 }
 
 .banner__text {
+  position: absolute;
   width: 540px;
   color: white;
+  margin: 50px 35px;
 }
 
 .banner__text h1 {
@@ -1093,6 +1094,12 @@ input[type=submit] {
   color: white;
   margin-bottom: 100px;
   padding: 50px 35px;
+}
+
+.artwork__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
 }
 
 .artwork__scroll {
