@@ -1,5 +1,7 @@
 @import "card";
 @import "variables";
+@import "animation";
+@import "utilities";
 
 * {
   font-family: sans-serif;
@@ -7,44 +9,43 @@
   margin: 0px;
 }
 
-
 /*Scrollbar*/
 /* ===== Scrollbar CSS ===== */
- /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #c7c7c7 #575757;
-  }
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #c7c7c7 #575757;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 9px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #575757;
-  }
+*::-webkit-scrollbar-track {
+  background: #575757;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #c7c7c7;
-    border-radius: 0px;
-    border: 0px none #f22121;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #c7c7c7;
+  border-radius: 0px;
+  border: 0px none #f22121;
+}
 /*********/
 /*Header*/
 
 .header {
   background-color: $bg-primary;
   padding-bottom: 25px;
-  padding-block: calc(92px /2);
+  padding-block: calc(92px / 2);
 }
 
 .header__nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
- 
+
   font-size: 32px;
 }
 
@@ -66,7 +67,6 @@
   max-height: 40em;
   justify-content: center;
   background: #0f0f0f;
-
 }
 
 .product_s1_card {
@@ -118,7 +118,6 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
-  
 }
 
 .product_s1_card_detail {
@@ -127,9 +126,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  
 }
-
 
 .product_s1_card_name {
   font-size: 20px;
@@ -139,7 +136,6 @@
 .mini_card img {
   height: 75%;
 }
-
 
 .mini_card {
   height: 38%;
@@ -182,19 +178,23 @@
 .spaceBt {
   justify-content: space-around;
 }
-.spaceBetween{
+.spaceBetween {
   justify-content: space-between;
 }
 
 .padding20 {
   padding: 20px 45px;
   flex-wrap: wrap;
-
 }
 
 .linear_gradian {
   border: none;
-  background: linear-gradient(101.84deg, #000000 0%, rgba(0, 0, 0, 0.442708) 53.65%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    101.84deg,
+    #000000 0%,
+    rgba(0, 0, 0, 0.442708) 53.65%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .transparent {
@@ -214,13 +214,11 @@
   align-self: flex-end;
 }
 
-
 /*SVG VAGUE*/
 .svg {
   position: relative;
 }
 .svg svg {
-
   top: -208px;
   left: -20%;
   z-index: -1;
@@ -228,10 +226,49 @@
   width: -webkit-fill-available;
 }
 
-.svg>svg g{
+.svg > svg g {
   transform: scale(1.2);
   position: absolute;
 }
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: $bg-primary;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+// badge
+.header__nav--badge {
+  position: relative;
+}
+.badge {
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  font-size: 18px;
+  top: -30px;
+  left: 0px;
+}
+
 /***************/
 
 @media (max-width: 635px) {
@@ -247,9 +284,7 @@
     flex-direction: column;
     gap: 25px;
     max-height: fit-content;
-
   }
-
 
   .product_s1_card_img {
     height: auto;
@@ -317,5 +352,4 @@
   .card {
     width: min-content;
   }
-
 }

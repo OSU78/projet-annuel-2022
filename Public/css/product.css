@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .card {
   width: 320px;
   background-color: grey;
@@ -25,21 +26,188 @@
 }
 
 @font-face {
-  font-family: "enchanted-land";
-  src: url(/Public/font/enchanted-land.woff);
-}
-@font-face {
   font-family: "WorkSans-Bold";
-  src: url(/Public/font/WorkSans-Bold.woff);
+  src: url(/Public/font/WorkSans-Bold.woff2);
 }
 @font-face {
   font-family: "WorkSans-LightItalic";
-  src: url(/Public/font/WorkSans-LightItalic.woff);
+  src: url(/Public/font/WorkSans-LightItalic.woff2);
 }
 @font-face {
   font-family: "WorkSans-Regular";
   src: url(/Public/font/WorkSans-Regular.woff);
 }
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "WorkSans-Bold";
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #ededed;
+}
+
+input:focus {
+  border: 2px solid yellow;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 10%;
+  margin: 0 auto;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dotted #666;
+  text-align: left;
+}
+
+.tooltip h3 {
+  margin: 12px 0;
+}
+
+.tooltip .bottom {
+  min-width: 250px;
+  top: 40px;
+  left: 80%;
+  transform: translate(-80%, 0);
+  padding: 20px;
+  color: #0a0808;
+  background-color: #eeeeee;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.tooltip:hover .bottom {
+  display: block;
+}
+
+.tooltip .bottom img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.tooltip .bottom i {
+  position: absolute;
+  bottom: 100%;
+  right: 20%;
+  margin-left: -px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.tooltip .bottom i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: #eeeeee;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: 0px;
+  padding-right: 10px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  padding-right: 10px;
+  position: relative;
+  left: 0px;
+  content: "✖";
+}
+
 * {
   font-family: sans-serif;
   padding: 0px;
@@ -86,7 +254,7 @@
 }
 
 .header__nav a {
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
   text-decoration: none;
   color: white;
   font-size: 30px;
@@ -261,6 +429,46 @@
 .svg > svg g {
   transform: scale(1.2);
   position: absolute;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #0a0808;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.header__nav--badge {
+  position: relative;
+}
+
+.badge {
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  font-size: 18px;
+  top: -30px;
+  left: 0px;
 }
 
 /***************/

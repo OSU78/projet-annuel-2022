@@ -1,21 +1,17 @@
 @font-face {
-  font-family: "enchanted-land";
-  src: url(/Public/font/enchanted-land.woff);
-}
-@font-face {
   font-family: "WorkSans-Bold";
-  src: url(/Public/font/WorkSans-Bold.woff);
+  src: url(/Public/font/WorkSans-Bold.woff2);
 }
 @font-face {
   font-family: "WorkSans-LightItalic";
-  src: url(/Public/font/WorkSans-LightItalic.woff);
+  src: url(/Public/font/WorkSans-LightItalic.woff2);
 }
 @font-face {
   font-family: "WorkSans-Regular";
   src: url(/Public/font/WorkSans-Regular.woff);
 }
 main {
-  height: 74vh;
+  height: auto;
 }
 
 .width67 {
@@ -23,7 +19,7 @@ main {
 }
 
 .enchanted {
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
 }
 
 .black {

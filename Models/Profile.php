@@ -5,3 +5,4 @@ require 'User.php';
 class Profile extends User
 {
 }
+return new Models($pdo);

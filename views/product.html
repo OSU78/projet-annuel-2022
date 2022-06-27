@@ -1,386 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nos gravures</title>
-    <link rel="stylesheet" href="/Public/css/product.css" />
-  </head>
-  <body>
-    <header class="header" role="header">
-      <nav class="header__nav">
-        <a href="#">Nos Oeuvres</a>
-        <a href="#">Personnaliser une création</a>
-        <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
-        <a href="#">À propos</a>
-        <a href="#">
-          <img loading="lazy" src="/Public/assets/icons/icon-backet.svg" alt="Panier">
-        </a>
-        <a href="views/login.html">
-          <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
-        </a>
-      </nav>
-    </header>
-    <main style="height: 100%">
-      <section class="flex center">
-        <!-- <style>
-          * {
-            font-family: sans-serif;
-            padding: 0px;
-            margin: 0px;
-          }
 
-          #product_s1 {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-            padding: 10px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            width: -webkit-fill-available;
-            max-height: 30em;
-            justify-content: center;
-            background: #0f0f0f;
-          
-          }
-          .product_s1_card {
-            max-width: 400px;
-            max-height: fit-content;
-            padding: 15px;
-            background-color: #0f0f0f;
-            border-radius: 8px;
-            padding-bottom: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            border : solid 1px rgb(42, 42, 42);
-            transition: 0.4s;
-          }
-          .product_s1_card:hover{
-            background-color: #1d1d1d;
-            border : solid 1px rgb(74, 73, 73);
-            transform: scale(1.02);
-            transition: 0.4s;
-          }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos gravures</title>
+  <script defer src="/Public/Js/function.js"></script>
+  <link rel="stylesheet" href="/Public/css/product.css" />
+  <script defer src="/Public/Js/getProduct.js"></script>
 
-          .product_s1_card_img {
-            object-fit: cover;
-            width: 100%;
-            height: 450px;
-            border-radius: 8px;
-          }
-          .product_s1_card_btn {
-            background-color: #f1bc1e;
-            padding: 20px 20px;
-            border-radius: 10px;
-            color: black;
-            font-weight: bold;
-            text-decoration-line: none;
-            transition: 0.3s;
-          }
-          .product_s1_card_btn:hover {
-            background-color: #ffffff;
+  <!-- <script defer src="/Public/Js/function.js"></script> -->
+  <!-- <script defer src="/Public/Js/basket.js"></script> -->
 
-            transition: 0.3s;
-          }
-          .product_s1_card_price {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-          }
+</head>
 
-          .product_s1_card_detail {
-            display: flex;
-            gap: 18px;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-          }
-          .product_s1_card_name {
-            font-size: 20px;
-            color: white;
-          }
-          .mini_card img {
-            height: -webkit-fill-available;
-          }
-          .mini_card {
-            height: 38%;
-          }
-          .mini_btn {
-            padding: 5px 5px;
-            border-radius: 5px;
-            width: max-content;
-          }
-          .product_s2_mini {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 20px;
-          }
-
-          .flex {
-            display: flex;
-          }
-          .column {
-            flex-direction: column;
-          }
-          .center {
-            justify-content: center;
-            align-items: center;
-          }
-          .gap10 {
-            gap: 10px;
-          }
-
-          @media (max-width: 600px) {
-            #product_s1 {
-              justify-content: flex-start;
-              align-items: center;
-              flex-direction: column;
-              gap: 25px;
-              max-height: fit-content;
-             
-            }
-            .product_s1_card_img {
-              height: auto;
-            }
-            .mini_card {
-              min-width: 40%;
-            }
-            .product_s1_card {
-              max-width: max-content;
-            }
-            .product_s2_mini {
-              flex-wrap: wrap;
-              flex-direction: row;
-              width: -webkit-fill-available;
-            }
-            .m2 {
-              max-height: 120px;
-            }
-          }
-
-          @media (max-width: 525px) {
-            .m2 {
-              max-height: 200px;
-            }
-            .mini_card {
-              min-width: -webkit-fill-available;
-            }
-          }
-        </style> -->
-
-        <!-- Section 1 des produits -->
-        <section id="product_s1">
-          <!-- Galerie GAUGHE des produits -->
-          <div class="product_s1_card">
-            <img
-              class="product_s1_card_img"
-              src="https://i.ibb.co/N9dBWdc/IMG-20220223-152446.jpg"
-              alt="gravure 1"
-              srcset=""
-            />
+<body>
+  <header class="header" role="header">
+    <nav class="header__nav">
+      <a href="#">Nos Oeuvres</a>
+      <a href="#">Personnaliser une création</a>
+      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
+      <a href="#">À propos</a>
+      <a href="panier.html" class="header__nav--badge">
+        <span class="badge">6</span>
+        <div class="tooltip">
+          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
+          <div class="bottom">
+            <div class="bottom__img">
+              <img src="/Public/assets/icons/icon-profil.svg" />
+            </div>
+            <div class="bottom__text">
+              <h3>le panier</h3>
+              <p>
+                The CSS tooltip appears when user moves the mouse over an element, or when user tap the element with a
+                mobile
+                device.
+              </p>
+              <span>Quantité:</span>
+            </div>
+            <i></i>
+            <button class="product_s1_card_btn" type="button">Editer</button>
+          </div>
+        </div>
+      </a>
+      <a href="views/login.html">
+        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
+      </a>
+    </nav>
+  </header>
+  <main style="height: 100%">
+    <div id="snackbar">Produit ajouté au panier</div>
+    <section class="flex center">
+      <div id="snackbar">Produit Ajouté avec succes..</div>
+      <!-- Section 1 des produits -->
+      <section id="product_s1">
+        <!-- Galerie GAUGHE des produits -->
+        <div class="product_s1_card">
+          <!-- <img class="product_s1_card_img" src="/Public/assets/product.svg" alt="gravure 1" srcset="" />
+          <div class="flex gap10 column">
+            <p class="product_s1_card_name">Gravure médievale</p>
+            <div class="product_s1_card_detail">
+              <p class="product_s1_card_price">125€</p>
+              <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
+            </div>
+          </div> -->
+        </div>
+        <!-- Galerie droite des produits -->
+        <div class="product_s2_mini">
+          <!-- <div class="product_s1_card mini_card">
+            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 2"
+              srcset="" />
             <div class="flex gap10 column">
               <p class="product_s1_card_name">Gravure médievale</p>
               <div class="product_s1_card_detail">
                 <p class="product_s1_card_price">125€</p>
-                <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
+                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
               </div>
             </div>
           </div>
-          <!-- Galerie droite des produits -->
-          <div class="product_s2_mini">
-            <div class="product_s1_card mini_card">
-              <img
-                class="product_s1_card_img m2"
-                style="height: 75%"
-                src="https://i.ibb.co/0j5JQ4p/thrn-1-2.jpg"
-                alt="gravure 2"
-                srcset=""
-              />
-              <div class="flex gap10 column">
-                <p class="product_s1_card_name">Gravure médievale</p>
-                <div class="product_s1_card_detail">
-                  <p class="product_s1_card_price">125€</p>
-                  <a href="#" class="product_s1_card_btn mini_btn"
-                    >Ajouter au panier</a
-                  >
-                </div>
+          <div class="product_s1_card mini_card">
+            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 3"
+              srcset="" />
+            <div class="flex gap10 column">
+              <p class="product_s1_card_name">Gravure médievale</p>
+              <div class="product_s1_card_detail">
+                <p class="product_s1_card_price">125€</p>
+                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
               </div>
             </div>
-            <div class="product_s1_card mini_card">
-              <img
-                class="product_s1_card_img m2"
-                style="height: 75%"
-                src="https://i.ibb.co/d7BsqCx/thrn-3-2.jpg"
-                alt="gravure 3"
-                srcset=""
-              />
-              <div class="flex gap10 column">
-                <p class="product_s1_card_name">Gravure médievale</p>
-                <div class="product_s1_card_detail">
-                  <p class="product_s1_card_price">125€</p>
-                  <a href="#" class="product_s1_card_btn mini_btn"
-                    >Ajouter au panier</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </div> -->
+        </div>
       </section>
+    </section>
 
-      <div class="svg">
-        <svg
-          width="1780"
-          height="492"
-          viewBox="0 0 1780 492"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_d_832_1136)">
-            <path
-              d="M133 129H1647V355C1647 355 1365.32 169.411 967.978 250.731C570.641 332.051 133 209.821 133 209.821V129Z"
-              fill="#0f0f0f"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_d_832_1136"
-              x="0"
-              y="0"
-              width="1780"
-              height="492"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="4" />
-              <feGaussianBlur stdDeviation="66.5" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_832_1136"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow_832_1136"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
+    <div class="svg">
+      <svg width="1780" height="492" viewBox="0 0 1780 492" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_832_1136)">
+          <path
+            d="M133 129H1647V355C1647 355 1365.32 169.411 967.978 250.731C570.641 332.051 133 209.821 133 209.821V129Z"
+            fill="#0f0f0f" />
+        </g>
+        <defs>
+          <filter id="filter0_d_832_1136" x="0" y="0" width="1780" height="492" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="66.5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_832_1136" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_832_1136" result="shape" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Section 2 des produits -->
+    <section class="flex center spaceBt padding20 gap20" id="card--container">
+      <!-- <div class="card linear_gradian">
+        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
+        <div class="card__description">
+          <div class="card__description--text">
+            <p>Dimensions et description</p>
+            <p>125 €</p>
+          </div>
+          <button class="btn_card2">Ajouter au panier</button>
+        </div>
       </div>
 
-      <!-- Section 2 des produits -->
-      <section class="flex center spaceBt padding20 gap20">
-        <div class="card linear_gradian">
-          <img loading="lazy" src="../Public/assets/img/product.svg" alt="" />
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
-            </div>
-            <button class="btn_card2">Ajouter au panier</button>
+      <div class="card linear_gradian">
+        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
+        <div class="card__description">
+          <div class="card__description--text">
+            <p>Dimensions et description</p>
+            <p>125 €</p>
           </div>
+          <button class="btn_card2">Ajouter au panier</button>
         </div>
+      </div>
 
-        <div class="card linear_gradian">
-          <img loading="lazy" src="../Public/assets/img/product.svg" alt="" />
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
-            </div>
-            <button class="btn_card2">Ajouter au panier</button>
+      <div class="card linear_gradian">
+        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
+        <div class="card__description">
+          <div class="card__description--text">
+            <p>Dimensions et description</p>
+            <p>125 €</p>
           </div>
+          <button class="btn_card2">Ajouter au panier</button>
         </div>
+      </div> -->
+    </section>
 
-        <div class="card linear_gradian">
-          <img loading="lazy" src="../Public/assets/img/product.svg" alt="" />
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
+    <!-- Section 3 des produits -->
+    <section>
+      <section id="product_s1" class="transparent">
+        <!-- Galerie GAUGHE des produits -->
+        <div class="product_s1_card linear_gradian" id="product_s1_cardSix">
+          <!-- <img class="product_s1_card_img" src="/Public/assets/product.svg" alt="gravure 1" srcset="" />
+          <div class="flex gap10 column">
+            <p class="product_s1_card_name">Gravure médievale</p>
+            <div class="product_s1_card_detail">
+              <p class="product_s1_card_price">125€</p>
+              <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
             </div>
-            <button class="btn_card2">Ajouter au panier</button>
-          </div>
+          </div> -->
         </div>
-      </section>
-
-      <!-- Section 3 des produits -->
-      <section>
-        <section id="product_s1" class="transparent">
-          <!-- Galerie GAUGHE des produits -->
-          <div class="product_s1_card linear_gradian">
-            <img
-              class="product_s1_card_img"
-              src="https://i.ibb.co/N9dBWdc/IMG-20220223-152446.jpg"
-              alt="gravure 1"
-              srcset=""
-            />
+        <!-- Galerie droite des produits -->
+        <div class="product_s2_mini" id="product_s2_mini">
+          <!-- <div class="product_s1_card mini_card linear_gradian">
+            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 2"
+              srcset="" />
+            <div class="flex gap10 column">
+              <p class="product_s1_card_name"></p>
+              <div class="product_s1_card_detail">
+                <p class="product_s1_card_price">€</p>
+                <button class="product_s1_card_btn mini_btn">Ajouter au panier</button>
+              </div>
+            </div>
+          </div>
+          <div class="product_s1_card mini_card linear_gradian">
+            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 3"
+              srcset="" />
             <div class="flex gap10 column">
               <p class="product_s1_card_name">Gravure médievale</p>
               <div class="product_s1_card_detail">
                 <p class="product_s1_card_price">125€</p>
-                <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
+                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
               </div>
             </div>
-          </div>
-          <!-- Galerie droite des produits -->
-          <div class="product_s2_mini">
-            <div class="product_s1_card mini_card linear_gradian">
-              <img
-                class="product_s1_card_img m2"
-                style="height: 75%"
-                src="https://i.ibb.co/0j5JQ4p/thrn-1-2.jpg"
-                alt="gravure 2"
-                srcset=""
-              />
-              <div class="flex gap10 column">
-                <p class="product_s1_card_name">Gravure médievale</p>
-                <div class="product_s1_card_detail">
-                  <p class="product_s1_card_price">125€</p>
-                  <a href="#" class="product_s1_card_btn mini_btn"
-                    >Ajouter au panier</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="product_s1_card mini_card linear_gradian">
-              <img
-                class="product_s1_card_img m2"
-                style="height: 75%"
-                src="https://i.ibb.co/d7BsqCx/thrn-3-2.jpg"
-                alt="gravure 3"
-                srcset=""
-              />
-              <div class="flex gap10 column">
-                <p class="product_s1_card_name">Gravure médievale</p>
-                <div class="product_s1_card_detail">
-                  <p class="product_s1_card_price">125€</p>
-                  <a href="#" class="product_s1_card_btn mini_btn"
-                    >Ajouter au panier</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </div> -->
+        </div>
       </section>
-    </main>
-  </body>
+    </section>
+  </main>
+</body>
+
 </html>

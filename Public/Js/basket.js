@@ -1,62 +1,35 @@
-function saveBasket(basket) {
-  localStorage.setItem("basket", JSON.stringify(basket));
-}
-
-// function de recuperation des baskets
 function getBasket() {
-  let basket = localStorage.getItem("basket");
-  if (basket == null) {
-    return [];
-  } else {
-    return JSON.parse(basket);
-  }
-}
+  let url = "/Api/ApiBasket.php";
+  var data = [];
 
-// ajouter un produit dans le panier
-function addBasket(product) {
-  let basket = getBasket();
-  let foundProduct = basket.find((p) => p.id == product.id);
-  if (foundProduct != undefined) {
-    foundProduct.quantity++;
-    basket;
-  } else {
-    product.quantity = 1;
-    basket.push(product);
-  }
-  saveBasket(basket);
-}
+  let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
+  requete.open("GET", url, true); // Nous récupérons juste des données
+  // requete.responseType = "json"; // Nous attendons du JSON
+  requete.send(); // Nous envoyons notre requête
 
-// retirer un produit du panier
-function removeFromBasket(product) {
-  let basket = getBasket();
-  basket = basket.filter((p) => p.id != product.id);
-  saveBasket(basket);
-}
+  // Dès qu'on reçoit une réponse, cette fonction est executée
+  requete.onload = function () {
+    if (requete.readyState === XMLHttpRequest.DONE) {
+      if (requete.status === 200) {
+        let reponse = JSON.parse(requete.response);
 
-// retirer de la quantité
-function changeQuantity(product, quantity) {
-  let basket = getBasket();
-  let foundProduct = basket.find((p) => p.id == product.id);
-  if (foundProduct != undefined) {
-    foundProduct.quantity += quantity;
-  }
-  saveBasket(basket);
+        data = reponse;
+      } else {
+        alert("Un problème est intervenu, merci de revenir plus tard.");
+      }
+    }
+  };
 }
-
-function getNumberProduct() {
-  let basket = getBasket();
-  let number = 0;
-  for (let product of basket) {
-    number += product.quantity;
+var id = 442;
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      let results = JSON.parse(xhr.responseText);
+      console.log(results);
+    } else {
+      alert("impossible datteindre le server");
+    }
   }
-  return number;
-}
-
-function getTotalPrice() {
-  let basket = getBasket();
-  let total = 0;
-  for (let product of basket) {
-    total += product.quantity * product.price;
-  }
-  return total;
-}
+};
+xhr.open("GET", "/Api/ApiBasket.php?id=" + id, true);
+xhr.send();

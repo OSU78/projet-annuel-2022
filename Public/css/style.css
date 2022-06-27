@@ -305,16 +305,12 @@ table {
 }
 
 @font-face {
-  font-family: "enchanted-land";
-  src: url(/Public/font/enchanted-land.woff);
-}
-@font-face {
   font-family: "WorkSans-Bold";
-  src: url(/Public/font/WorkSans-Bold.woff);
+  src: url(/Public/font/WorkSans-Bold.woff2);
 }
 @font-face {
   font-family: "WorkSans-LightItalic";
-  src: url(/Public/font/WorkSans-LightItalic.woff);
+  src: url(/Public/font/WorkSans-LightItalic.woff2);
 }
 @font-face {
   font-family: "WorkSans-Regular";
@@ -324,7 +320,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
 }
 
 img {
@@ -379,10 +375,10 @@ input:focus {
 }
 
 .tooltip .bottom {
-  min-width: 400px;
+  min-width: 250px;
   top: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 80%;
+  transform: translate(-80%, 0);
   padding: 20px;
   color: #0a0808;
   background-color: #eeeeee;
@@ -409,8 +405,8 @@ input:focus {
 .tooltip .bottom i {
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  margin-left: -12px;
+  right: 20%;
+  margin-left: -px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -427,9 +423,73 @@ input:focus {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: 0px;
+  padding-right: 10px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  padding-right: 10px;
+  position: relative;
+  left: 0px;
+  content: "✖";
+}
+
 /* Landscape phones and down */
 /* Landscape phone to portrait tablet */
 /* Portrait tablet to landscape and desktop */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
 /* voici un mixin 
 ```scss */
 .btn {
@@ -493,7 +553,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "enchanted-land";
+  font-family: "WorkSans-Bold";
   font-size: 32px;
 }
 .header__nav--logo {

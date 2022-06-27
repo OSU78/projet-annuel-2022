@@ -64,11 +64,11 @@ input:focus {
 //   object-fit: cover;
 // }
 .tooltip .bottom {
-  min-width: 400px;
+  min-width: 250px;
   // max-width: 400px;
   top: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 80%;
+  transform: translate(-80%, 0);
   padding: 20px;
   color: $bg-primary;
   background-color: #eeeeee;
@@ -94,8 +94,9 @@ input:focus {
 .tooltip .bottom i {
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  margin-left: -12px;
+  // left: 0%;
+  right: 20%;
+  margin-left: -px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -110,4 +111,30 @@ input:focus {
   transform: translate(-50%, 50%) rotate(45deg);
   background-color: #eeeeee;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.bottom {
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: 0px;
+  padding-right: 10px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  padding-right: 10px;
+  position: relative;
+  left: 0px;
+  content: "✖";
 }
