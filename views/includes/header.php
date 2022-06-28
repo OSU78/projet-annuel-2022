@@ -5,8 +5,42 @@
         <img src="/Public/assets/img/logo-header.svg" alt="Logo">
       </a>
       <a href="#">
-        <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
         <!-- TOOLTIP -->
+
+        <div class="tooltip">
+          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
+          <div class="bottom"
+            style="background-color:#0f0f0f;color:white;padding : 25px;border: 1px solid rgba(253, 253, 253, 0.355)">
+            <h3 style="margin: 0px;font-size:30px;font-weight: 100;">Mon panier</h3>
+            <div class="panier_item"
+              style="display: flex;justify-content:center;align-item:center;flex-direction:row;gap: 15px ;padding:25px;font-size: 12px;">
+
+              <img class="panier_item_product_img" src="https://picsum.photos/60/60" alt=""
+                style="border: 1px solid white">
+              <div class="" style="display: flex;flex-direction:column">
+                <div class="flex row gap10">
+                  <p style="width: max-content;font-size: 22px; margin-bottom: 5px;">Gravure fait à la main art</p>
+                </div>
+                <div class="flex row gap10 colorGray" style="width: max-content">
+                  <p>Quantité :</p>
+                  <p>25</p>
+                </div>
+                <div class="flex row gap10 colorGray" style="width: max-content">
+                  <p>Montant :</p>
+                  <p>259€</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex center column gap10">
+              <a href="panier.html" class="panier_btn_headerSecondary scaleHover">Editer</a>
+              <a href="panier.html" class="panier_btn_header scaleHover">Passer à la commande</a>
+            </div>
+          </div>
+          <div class="badge flex center">
+            <p>6</p>
+          </div>
+        </div>
+
 
       </a>
       <a href="views/login.php">

@@ -89,6 +89,50 @@
     }
   }
 }
+
+/*****TOOLTIP*******/
+.badge {
+  border-radius: 0px;
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  height: 10px;
+  font-size: 13px;
+  top: 18px;
+  left: -1.8px;
+  transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
+}
+.tooltip::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  height: 10px;
+  background-color: transparent;
+  width: 102%;
+  transition: 0.3s;
+  left: -5px;
+  top: 18px;
+}
+
+.tooltip:hover::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  width: 102%;
+  height: 10px;
+  top: 18px;
+  left: -5px;
+  transition: 0.3s;
+  background-color: #f1bc1e;
+}
+/********/
+
 @media (min-width: 500px) {
   .header-menu__mobile {
     display: none;

@@ -6,20 +6,19 @@
   <!-- les scripts -->
   <script defer src="/Public/Js/profil.js"></script>
   <script defer src="/Public/Js/basket.js"></script>
-
-
   <title>profile</title>
 </head>
 
 <body>
-  <?php require "includes/header.php" ?>
   <div class="wrapper" id="wrapper">
+    <?php require "includes/header.php" ?>
     <div class="alert"></div>
     <main class="main">
+      <h1>Mon compte</h1>
       <div class="profil">
-        <div class="profil__container">
+        <a href="/views/completUserDelivery.html" class="profil__container">
           <h2>Mes commandes</h2>
-        </div>
+        </a>
         <div class="profil__container">
           <h2>Adresse et paiements</h2>
         </div>

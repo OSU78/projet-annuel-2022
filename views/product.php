@@ -2,53 +2,65 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nos gravures</title>
-  <script defer src="/Public/Js/function.js"></script>
+  <?php require "includes/head.php" ?>
   <link rel="stylesheet" href="/Public/css/product.css" />
+  <script defer src="/Public/Js/function.js"></script>
   <script defer src="/Public/Js/getProduct.js"></script>
-
-  <!-- <script defer src="/Public/Js/function.js"></script> -->
-  <!-- <script defer src="/Public/Js/basket.js"></script> -->
+  <title>Nos gravures</title>
 
 </head>
 
 <body>
-  <header class="header" role="header">
+  <?php require "includes/header.php" ?>
+
+  <!-- <header class="header" role="header">
     <nav class="header__nav">
       <a href="#">Nos Oeuvres</a>
       <a href="#">Personnaliser une création</a>
       <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
       <a href="#">À propos</a>
       <a href="panier.html" class="header__nav--badge">
-        <span class="badge">0</span>
+
         <div class="tooltip">
           <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
-          <div class="bottom">
-            <div class="bottom__img">
-              <img src="/Public/assets/icons/icon-profil.svg" />
+          <div class="bottom"
+            style="background-color:#0f0f0f;color:white;padding : 25px;border: 1px solid rgba(253, 253, 253, 0.355)">
+            <h3 style="margin: 0px;font-size:30px;font-weight: 100;">Mon panier</h3>
+            <div class="panier_item"
+              style="display: flex;justify-content:center;align-item:center;flex-direction:row;gap: 15px ;padding:25px;font-size: 12px;">
+
+              <img class="panier_item_product_img" src="https://picsum.photos/60/60" alt=""
+                style="border: 1px solid white">
+              <div class="" style="display: flex;flex-direction:column">
+                <div class="flex row gap10">
+                  <p style="width: max-content;font-size: 22px; margin-bottom: 5px;">Gravure fait à la main art</p>
+                </div>
+                <div class="flex row gap10 colorGray" style="width: max-content">
+                  <p>Quantité :</p>
+                  <p>25</p>
+                </div>
+                <div class="flex row gap10 colorGray" style="width: max-content">
+                  <p>Montant :</p>
+                  <p>259€</p>
+                </div>
+              </div>
             </div>
-            <div class="bottom__text">
-              <h3>le panier</h3>
-              <p>
-                The CSS tooltip appears when user moves the mouse over an element, or when user tap the element with a
-                mobile
-                device.
-              </p>
-              <span>Quantité:</span>
+            <div class="flex center column gap10">
+              <a href="panier.html" class="panier_btn_headerSecondary scaleHover">Editer</a>
+              <a href="panier.html" class="panier_btn_header scaleHover">Passer à la commande</a>
             </div>
-            <i></i>
-            <button class="product_s1_card_btn" type="button">Editer</button>
+          </div>
+          <div class="badge flex center">
+            <p>6</p>
           </div>
         </div>
+
       </a>
       <a href="views/login.html">
         <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
       </a>
     </nav>
-  </header>
+  </header> -->
   <main style="height: 100%">
     <div id="snackbar">Produit ajouté au panier</div>
     <section class="flex center">
@@ -119,7 +131,10 @@
     </div>
 
     <!-- Section 2 des produits -->
-    <section class="flex center spaceBt padding20 gap20" id="card--container">
+    <section class="flex center spaceBt padding20 gap20">
+      <div class="flex center spaceBt padding20 gap20 width1180" id="card--container">
+
+      </div>
       <!-- <div class="card linear_gradian">
         <img loading="lazy" src="/Public/assets/product.svg" alt="" />
         <div class="card__description">
@@ -196,6 +211,4 @@
       </section>
     </section>
   </main>
-</body>
-
-</html>
+  <?php require "includes/footer.php" ?>

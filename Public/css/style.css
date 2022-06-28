@@ -647,6 +647,50 @@ input:focus {
   font-size: 18px;
 }
 
+/*****TOOLTIP*******/
+.badge {
+  border-radius: 0px;
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  height: 10px;
+  font-size: 13px;
+  top: 18px;
+  left: -1.8px;
+  transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tooltip::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  height: 10px;
+  background-color: transparent;
+  width: 102%;
+  transition: 0.3s;
+  left: -5px;
+  top: 18px;
+}
+
+.tooltip:hover::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  width: 102%;
+  height: 10px;
+  top: 18px;
+  left: -5px;
+  transition: 0.3s;
+  background-color: #f1bc1e;
+}
+
+/********/
 @media (min-width: 500px) {
   .header-menu__mobile {
     display: none;
@@ -933,7 +977,6 @@ input[type=submit] {
   }
 }
 .wrapper {
-  background: #0f0f0f;
   width: 100%;
 }
 
@@ -991,6 +1034,40 @@ input[type=submit] {
 .form--container ::placeholder {
   padding-left: 10px;
   font-style: italic;
+}
+
+.main {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding-bottom: 50px;
+}
+.main h1 {
+  color: white;
+  font-size: 78px;
+  margin-bottom: 100px;
+}
+.main .profil {
+  color: #0f0f0f;
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.main .profil__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 300px;
+  padding: 10px;
+  height: 200px;
+  background-color: #ededed;
 }
 
 .artwork {
