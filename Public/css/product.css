@@ -1,30 +1,8 @@
 @charset "UTF-8";
-.card {
-  width: 320px;
-  background-color: grey;
-  border-radius: 5px;
-  font-family: WorkSans-Regular;
-  color: white;
+@font-face {
+  font-family: "enchanted-land";
+  src: url(/Public/font/enchanted-land.woff);
 }
-
-.card img {
-  width: inherit;
-}
-
-.card__description {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 10px 10px 10px;
-}
-
-.card__description--text {
-  height: 60px;
-}
-
-.card__description--text p {
-  margin: 0;
-}
-
 @font-face {
   font-family: "enchanted-land";
   src: url(/Public/font/enchanted-land.woff);
@@ -41,6 +19,9 @@
   font-family: "WorkSans-Regular";
   src: url(/Public/font/WorkSans-Regular.woff);
 }
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
 @-webkit-keyframes fadein {
   from {
     bottom: 0;
@@ -81,11 +62,26 @@
     opacity: 0;
   }
 }
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: "enchanted-land";
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -145,7 +141,7 @@ input:focus {
   left: 80%;
   transform: translate(-80%, 0);
   padding: 20px;
-  color: #0a0808;
+  color: #0f0f0f;
   background-color: #eeeeee;
   font-weight: normal;
   font-size: 13px;
@@ -212,6 +208,241 @@ input:focus {
   content: "✖";
 }
 
+.header {
+  overflow: hidden;
+  background-color: #0f0f0f;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .header {
+    display: none;
+  }
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  width: 50%;
+}
+
+.header--mobile {
+  background: #0f0f0f;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-flow: column-reverse;
+  padding: 10px;
+  /* When the input field gets focus, change its width to 100% */
+}
+.header--mobile input.search-btn {
+  border: 1px solid #f1bc1e;
+  background-color: #424141;
+  width: 100%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.header--mobile .search-btn ::placeholder {
+  color: white;
+}
+.header--mobile input.search-btn:focus {
+  background-color: white;
+}
+.header--mobile .logo {
+  margin: 0 auto;
+}
+
+.header-menu__mobile {
+  z-index: 99999;
+  position: fixed;
+  bottom: 0px;
+  margin-top: 20px;
+  padding-top: 20px;
+  width: 100%;
+  border-radius: 15px 15px 0 0px;
+  background-color: #0f0f0f;
+  color: white;
+  border: 1px solid wheat;
+}
+.header-menu__mobile .nav--menu {
+  display: flex;
+  width: 100%;
+}
+.header-menu__mobile .nav--menu .item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.header-menu__mobile .nav--menu .item img {
+  order: 1;
+}
+.header-menu__mobile .nav--menu .item a {
+  color: white;
+  order: 2;
+  font-size: 18px;
+}
+
+/*****TOOLTIP*******/
+.badge {
+  border-radius: 0px;
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  height: 10px;
+  font-size: 13px;
+  top: 18px;
+  left: -1.8px;
+  transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tooltip::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  height: 10px;
+  background-color: transparent;
+  width: 102%;
+  transition: 0.3s;
+  left: -5px;
+  top: 18px;
+}
+
+.tooltip:hover::before {
+  content: " ";
+  position: absolute;
+  padding: 5px;
+  width: 102%;
+  height: 10px;
+  top: 18px;
+  left: -5px;
+  transition: 0.3s;
+  background-color: #f1bc1e;
+}
+
+/********/
+@media (min-width: 500px) {
+  .header-menu__mobile {
+    display: none;
+  }
+
+  .header--mobile {
+    display: none;
+  }
+}
+.card {
+  width: 320px;
+  background-color: grey;
+  border-radius: 5px;
+  font-family: WorkSans-Regular;
+  color: white;
+}
+
+.card img {
+  width: inherit;
+}
+
+.card__description {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px 10px 10px;
+}
+
+.card__description--text {
+  height: 60px;
+}
+
+.card__description--text p {
+  margin: 0;
+}
+
+.footer {
+  padding-top: 20px;
+  color: #ededed;
+  background-color: #0f0f0f;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 50px;
+  padding-bottom: 128px;
+}
+.footer__element {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+.footer__element__payment {
+  width: 28.5714285714%;
+  display: flex;
+  flex-direction: column;
+}
+.footer__element__payment--img {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__element__contact {
+  width: 28.5714285714%;
+  display: flex;
+  flex-direction: column;
+}
+.footer__element__contact address {
+  font-size: 22px;
+}
+.footer__element__find--us {
+  width: 28.5714285714%;
+  display: flex;
+  flex-direction: column;
+}
+.footer__element__find--us__img {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .copyright {
+  display: flex;
+  flex-direction: column;
+}
+.footer section {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer h2 {
+  font-size: 40px;
+}
+
 * {
   font-family: sans-serif;
   padding: 0px;
@@ -245,7 +476,7 @@ input:focus {
 /*********/
 /*Header*/
 .header {
-  background-color: #0a0808;
+  background-color: #0f0f0f;
   padding-bottom: 25px;
   padding-block: 46px;
 }
@@ -330,7 +561,8 @@ h5 {
   transition: 0.3s;
 }
 
-.panier_btn_header, .panier_btn_headerSecondary {
+.panier_btn_header,
+.panier_btn_headerSecondary {
   background-color: #f1bc1e;
   padding: 10px 10px;
   border-radius: 10px;
@@ -543,7 +775,7 @@ h5 {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
-  background-color: #0a0808;
+  background-color: #0f0f0f;
   color: #fff;
   text-align: center;
   border-radius: 2px;
@@ -565,21 +797,6 @@ h5 {
   position: relative;
 }
 
-.badge {
-  background-color: red;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  font-size: 18px;
-  top: -30px;
-  left: 0px;
-}
-
-/***************/
 @media (max-width: 635px) {
   .svg svg {
     top: -238px;

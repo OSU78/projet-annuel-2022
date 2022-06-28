@@ -188,9 +188,9 @@ function resolveAfter2Second() {
     // console.log(linkDatas);
     linkDatas.forEach((linkData) => {
       linkData.addEventListener("click", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         var id = e.target.getAttribute("data-id");
-        console.log(id);
+        // console.log(id);
         let url = "/Api/essai.php?idProd=" + id;
         let xhr = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
 
@@ -201,6 +201,10 @@ function resolveAfter2Second() {
               dataBasket = results;
               console.log(dataBasket);
               addBasket(dataBasket);
+              document.querySelector(".badge").innerText = JSON.parse(
+                localStorage.basket
+              ).length;
+
               toast();
             } else {
               alert("impossible datteindre le server");
@@ -211,7 +215,10 @@ function resolveAfter2Second() {
         xhr.send();
       });
     });
-  }, 5000);
+  }, 2000);
 }
+window.document.querySelector(".badge").innerText = JSON.parse(
+  localStorage.basket
+).length;
 resolveAfter2Second();
 asyncCall();

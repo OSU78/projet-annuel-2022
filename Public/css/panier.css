@@ -1,161 +1,19 @@
-<<<<<<< HEAD
-@font-face{font-family:"enchanted-land";src:url(/Public/font/enchanted-land.woff)}@font-face{font-family:"WorkSans-Bold";src:url(/Public/font/WorkSans-Bold.woff)}@font-face{font-family:"WorkSans-LightItalic";src:url(/Public/font/WorkSans-LightItalic.woff)}@font-face{font-family:"WorkSans-Regular";src:url(/Public/font/WorkSans-Regular.woff)}main{height:74vh}.width67{width:67%}.enchanted{font-family:"enchanted-land"}.black{color:#0a0808}.white{color:#ededed}.bg-white{background-color:#fff}.bg-black{background-color:#0a0808}.borderRadius7{border-radius:7px}.ft45{font-size:45px}.panier_header{display:-webkit-box;display:-ms-flexbox;display:flex;gap:15px;padding:25px;-webkit-box-pack:SPACE-BETWEEN;-ms-flex-pack:SPACE-BETWEEN;justify-content:SPACE-BETWEEN;border:1px solid;border-radius:12px}.text_center{text-align:center}.panier_item_width20{min-width:20px;max-width:20px}.panier_item_width60{min-width:60px;max-width:60px}.panier_item_width80{min-width:80px;max-width:80px}.panier_item_width90{min-width:90px;max-width:90px}.panier_item_width200{min-width:200px;max-width:200px}.panier_item_width110{min-width:110px;max-width:110px}.panier_btn_add{background-color:#0a0808;color:#fff;padding:10px;border-radius:5px;height:2px;width:30px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s;border:solid 1px rgba(0,0,0,0)}.panier_item_number{background-color:#0a0808;color:#fff;padding:10px;border-radius:5px;height:30px;width:30px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.gap8{gap:8px}.align_left{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}#add_item:hover{cursor:pointer;background-color:#fff;color:#0a0808;-webkit-transition:.3s;transition:.3s;border:solid 1px #0a0808;-webkit-transform:scale(1.06);transform:scale(1.06)}#remove_item:hover{cursor:pointer;background-color:#fff;color:#0a0808;-webkit-transition:.3s;transition:.3s;border:solid 1px #0a0808;-webkit-transform:scale(1.06);transform:scale(1.06)}.gap15{gap:15px}.pd25{padding:25px}ft {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-=======
-@font-face {
-  font-family: "WorkSans-Bold";
-  src: url(/Public/font/WorkSans-Bold.woff2);
-}
-@font-face {
-  font-family: "WorkSans-LightItalic";
-  src: url(/Public/font/WorkSans-LightItalic.woff2);
-}
-@font-face {
-  font-family: "WorkSans-Regular";
-  src: url(/Public/font/WorkSans-Regular.woff);
-}
-main {
-  height: auto;
-}
+/* Error: Undefined mixin.
+ *    ,
+ * 8  | /   @include xs {
+ * 9  | |     display: none;
+ * 10 | \   }
+ *    '
+ *   public\sass\_header.scss 8:3  @import
+ *   public\sass\panier.scss 2:9   root stylesheet */
 
-.width67 {
-  width: 67%;
-}
-
-.enchanted {
-  font-family: "WorkSans-Bold";
-}
-
-.black {
-  color: #0a0808;
-}
-
-.white {
-  color: #ededed;
-}
-
-.bg-white {
-  background-color: white;
-}
-
-.bg-black {
-  background-color: #0a0808;
-}
-
-.borderRadius7 {
-  border-radius: 7px;
-}
-
-.ft45 {
-  font-size: 45px;
-}
-
-.panier_header {
-  display: flex;
-  gap: 15px;
-  padding: 25px;
-  justify-content: SPACE-BETWEEN;
-  border: 1px solid;
-  border-radius: 12px;
-}
-
-.text_center {
-  text-align: center;
-}
-
-.panier_item_width20 {
-  min-width: 20px;
-  max-width: 20px;
-}
-
-.panier_item_width60 {
-  min-width: 60px;
-  max-width: 60px;
-}
-
-.panier_item_width80 {
-  min-width: 80px;
-  max-width: 80px;
-}
-
-.panier_item_width90 {
-  min-width: 90px;
-  max-width: 90px;
-}
-
-.panier_item_width200 {
-  min-width: 200px;
-  max-width: 200px;
-}
-
-.panier_item_width110 {
-  min-width: 110px;
-  max-width: 110px;
-}
-
-.panier_btn_add {
-  background-color: #0a0808;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  height: 2px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-  border: solid 1px transparent;
-}
-
-.panier_item_number {
-  background-color: #0a0808;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gap8 {
-  gap: 8px;
-}
-
-.align_left {
-  justify-content: flex-start;
->>>>>>> main
-}
-
-#add_item:hover {
-  cursor: pointer;
-  background-color: white;
-  color: #0a0808;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  border: solid 1px #0a0808;
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
-}
-
-#remove_item:hover {
-  cursor: pointer;
-  background-color: white;
-  color: #0a0808;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  border: solid 1px #0a0808;
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
-}
-
-.gap15 {
-  gap: 15px;
-}
-
-.pd25 {
-  padding: 25px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 8  \2502  \250c    @include xs {\a 9  \2502  \2502      display: none;\a 10 \2502  \2514    }\a    \2575 \a   public\\sass\\_header.scss 8:3  @import\a   public\\sass\\panier.scss 2:9   root stylesheet";
 }

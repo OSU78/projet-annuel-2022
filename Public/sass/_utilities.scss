@@ -3,6 +3,8 @@ h2,
 h3,
 h4 {
   font-family: $enchanted;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -111,8 +113,6 @@ input:focus {
   transform: translate(-50%, 50%) rotate(45deg);
   background-color: #eeeeee;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-.bottom {
 }
 
 /* Add a green text color and a checkmark when the requirements are right */

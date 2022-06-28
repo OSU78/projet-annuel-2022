@@ -2,13 +2,13 @@
   padding-top: 20px;
   color: $bg-secondary;
   background-color: $bg-primary;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 128px;
 
   &__element {
     width: 100%;
@@ -63,7 +63,4 @@
   h2 {
     font-size: 40px;
   }
-  
 }
-
-

@@ -1,20 +1,39 @@
 .main {
-  background: green;
-
+  // background: green;
+  height: calc(80vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding-bottom: 50px;
+  // background-color: $bg-primary;
+  h1 {
+    color: white;
+    font-size: 78px;
+    margin-bottom: 100px;
+  }
   .profil {
+    color: $bg-primary;
+    // margin: 50px auto;
+    border: 1px solid red;
     width: 100%;
-    background-color: rgb(80, 80, 94);
-    padding: 30px 10px;
+    // background-color: rgb(80, 80, 94);
+    // padding: 80px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     &__container {
-      width: 500px;
-      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 300px;
+      padding: 10px;
+      height: 200px;
       background-color: $bg-secondary;
-      border: 1px solid red;
+      // border: 1px solid red;
     }
   }
 }

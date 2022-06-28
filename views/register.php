@@ -5,17 +5,15 @@
   <?php require "includes/head.php" ?>
   <script defer src="/Public/Js/check-form/register.js"></script>
   <script defer src="/Public/Js/check-form/validateForm.js"></script>
-
   <title>Inscription</title>
 </head>
 
 <body>
   <div class="wrapper">
     <?php require "includes/header.php" ?>
-
     <main class="form--container">
       <form id="form" enctype='multipart/form-data' class="form">
-        <h2>Connection</h2>
+        <h2>Enregistrement</h2>
         <div class="row message">
         </div>
         <div class="row">
