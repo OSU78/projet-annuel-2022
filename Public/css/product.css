@@ -14,7 +14,7 @@
 .card__description {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 .card__description--text {
@@ -25,6 +25,10 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "enchanted-land";
+  src: url(/Public/font/enchanted-land.woff);
+}
 @font-face {
   font-family: "WorkSans-Bold";
   src: url(/Public/font/WorkSans-Bold.woff2);
@@ -77,11 +81,26 @@
     opacity: 0;
   }
 }
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 h1,
 h2,
 h3,
 h4 {
-  font-family: "WorkSans-Bold";
+  font-family: "enchanted-land";
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -141,7 +160,7 @@ input:focus {
   left: 80%;
   transform: translate(-80%, 0);
   padding: 20px;
-  color: #0a0808;
+  color: #0f0f0f;
   background-color: #eeeeee;
   font-weight: normal;
   font-size: 13px;
@@ -241,7 +260,7 @@ input:focus {
 /*********/
 /*Header*/
 .header {
-  background-color: #0a0808;
+  background-color: #0f0f0f;
   padding-bottom: 25px;
   padding-block: 46px;
 }
@@ -254,7 +273,7 @@ input:focus {
 }
 
 .header__nav a {
-  font-family: "WorkSans-Bold";
+  font-family: "enchanted-land";
   text-decoration: none;
   color: white;
   font-size: 30px;
@@ -424,12 +443,10 @@ input:focus {
   z-index: -1;
   position: absolute;
   width: -webkit-fill-available;
->>>>>>> main
 }
 
 .svg > svg g {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   position: absolute;
 }
 
@@ -437,7 +454,7 @@ input:focus {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
-  background-color: #0a0808;
+  background-color: #0f0f0f;
   color: #fff;
   text-align: center;
   border-radius: 2px;
@@ -531,16 +548,12 @@ input:focus {
 @media (max-width: 1007px) {
   .card img {
     width: 280px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     height: auto;
   }
 
   .card__description {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 
   .card {
@@ -553,8 +566,6 @@ input:focus {
   }
 
   .card {
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
   }
 }

@@ -7,157 +7,75 @@
 @import "button";
 @import "header";
 @import "banner";
-@import "menu";
-@import "card";
 @import "footer";
-@import "register";
-@import "search";
-@import "theme";
 @import "form";
-@import "alert";
-@import "profil";
-
-// scss-docs-start import-stack
-// Configuration
-.header {
-  background-color: $bg-primary;
-  height: 196px;
-  padding-block: calc(92px / 2);
-}
-
-.header__nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: enchanted-land;
-  font-size: 32px;
-}
-
-.header__nav a {
-  text-decoration: none;
-  color: white;
-}
-
-.wrapper {
-  background: white;
-}
-
-.banner {
-  display: flex;
-  justify-content: space-between;
-  background: black;
-  padding: 50px 35px;
-}
-
-
-.banner__text {
-  position: absolute;
-  width: 540px;
-  color: white;
-  margin: 50px 35px;
-}
-
-.banner__text h1 {
-  margin: 0;
-}
-
-.banner__text p {
-  font-family: WorkSans-Regular;
-  font-size: 18px;
-}
-
-.banner__play {
-  align-self: flex-end;
-}
+@import "register";
 
 .artwork {
-  position: relative;
-  background: url("/Public/assets/img/bg-top.svg");
-  width: 100vw;
-  // height: 1776px;
-  background-position: bottom, 0px;
-  padding-bottom: 250px;
-  // background-repeat: no-repeat;
-}
-
-.artwork__content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: white;
-  margin-bottom: 100px;
-  padding: 50px 35px;
-}
-
-.artwork__content {
+  flex-flow: row wrap;
+  width: 100%;
+  font-size: 28px;
+  padding: 20px;
+  background-color: $bg-primary;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &--img {
+      // width: 300px;
+      height: 300px;
+      &__leaf {
+        object-fit: cover;
+      }
+    }
+  }
+  &__scroll {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
-}
+    align-items: center;
+    padding: 10px;
 
-.artwork__scroll {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-}
-
-.artwork__scroll--img {
-  display: none;
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  margin: 20px;
-  border-radius: 5px;
-  filter: drop-shadow(10px 10px 4px rgb(55, 55, 55));
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
+    &--galerie {
+      &__img {
+        padding: 10px 10px;
+        margin-right: 10px;
+        object-fit: cover;
+        border-radius: 20px;
+        filter: drop-shadow(10px 10px 4px rgb(55, 55, 55));
+      }
+    }
   }
 }
 
-.artwork__text {
-  width: 540px;
+.flex-item-left,
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+  color: white;
 }
 
-.artwork__text h2 {
-  margin: 0;
-}
-
-.artwork__text p {
-  font-family: WorkSans-Regular;
-  font-size: 18px;
-}
-
-.artwork__scroll--arrow {
-  width: 59px;
-}
-
-.artwork__leaf {
-  position: absolute;
-  bottom: 250px;
-  left: 20px;
-}
-
-.artwork__form--top {
-  width: 100vw;
+/*SVG VAGUE*/
+.svg {
   position: relative;
-  top: -100px;
+  height: 150px;
 }
+
+.svg svg {
+  top: -208px;
+  left: -20%;
+  z-index: -1;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+.svg > svg g {
+  transform: scale(1.2);
+  position: absolute;
+}
+// BEST SELLER
 
 .best-seller {
-  position: relative;
-  top: -150px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -167,7 +85,6 @@
   display: flex;
   justify-content: center;
   margin-top: 0;
-  margin-bottom: 40px;
 }
 
 .best-seller__cards {
@@ -178,13 +95,40 @@
 }
 
 .btn__best-seller {
-  width: 550px;
+  // width: 550px;
   margin: auto;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  margin-block: 50px;
   padding: 15px;
 }
 
+.best-seller {
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.best-seller h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.best-seller__cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn__best-seller {
+  // width: 550px;
+  margin: auto;
+  margin-block: 50px;
+  padding: 15px;
+}
+
+// CONFIANCE
 .confiance {
   display: flex;
   flex-wrap: wrap;
@@ -220,10 +164,59 @@
   align-content: center;
 }
 
+// CUSTOM
 .custom {
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 50px 35px;
+  margin-block: 50px;
 }
+
 .custom__text {
+  width: 540px;
+  // min-width: 470px;
+}
+
+.custom h2 {
+  margin: 0;
+}
+
+.custom p {
+  font-family: WorkSans-regular;
+  font-size: 18px;
+  margin: 0;
+}
+
+.custom .btn {
+  margin-block: 30px;
+}
+
+.custom img {
+  width: 400px;
+}
+
+@media (max-width: 1025px) {
+  .custom {
+    justify-content: center;
+  }
+  .custom__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    // margin: 50px 35px;
+    // padding: 0px 35px 50px;
+  }
+  .custom .btn {
+    margin-top: 50px;
+  }
+}
+//math the printer
+.math-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,39 +225,54 @@
   color: white;
   height: 400px;
   margin: 50px 35px;
-  padding: 50px 35px;
 }
+@media (max-width: 1025px) {
+  .math-description h3 {
+    margin: 0;
+    font-size: 40px;
+  }
 
-.math-description h3 {
-  margin: 0;
-  font-size: 40px;
-}
-
-.math-description p {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-}
-
-@media (max-width: 1165px) {
-  .artwork__content {
-    justify-content: center;
-    gap: 50px;
+  .math-description p {
     text-align: center;
   }
 }
 
-@media (max-width: 800px) {
-  .artwork__leaf {
-    display: none;
+@media (max-width: 635px) {
+  .svg svg {
+    top: -238px;
   }
 }
+@media (min-width: 1785px) {
+  .svg {
+    transform: scale(1.5);
+    z-index: -1;
+    transition: 0.3s;
+  }
 
-@media (max-width: 620px) {
-  .artwork__scroll--img {
-    width: 300px;
-    height: 300px;
+  * {
+    overflow-x: clip;
+  }
+  P {
+    font-size: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .banner {
+    p {
+      font-size: 32px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .artwork {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .flex-item-right {
+    order: 1;
+  }
+  .flex-item-left {
+    order: 2;
+    text-align: center;
   }
 }

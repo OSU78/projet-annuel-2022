@@ -1,3 +1,4 @@
+<!-- </main> -->
 <footer class="footer">
   <article class="footer__element">
     <section class="footer__element__payment">

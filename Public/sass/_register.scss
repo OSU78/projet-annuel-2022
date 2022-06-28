@@ -1,19 +1,21 @@
 .wrapper {
   background: $bg-primary;
+  width: 100%;
 }
 .form--container {
-  // height: calc(100vh - 80vh);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px;
+  // padding: 100px;
+
   .form {
     background: $bg-secondary;
     display: flex;
     border: 1px solid $bg-primary;
     flex-flow: column nowrap;
-    padding: 20px;
-    gap: 30px;
+    padding: 50px;
+    gap: 10px;
     width: 550px;
     padding: 30px;
     border-radius: $border-radius;

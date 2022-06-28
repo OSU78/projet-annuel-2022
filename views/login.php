@@ -3,15 +3,13 @@
 
 <head>
   <?php require "includes/head.php" ?>
-  <title>Connexion</title>
   <script defer src="/Public/Js/check-form/login.js"></script>
-
+  <title>Connexion</title>
 </head>
 
 <body>
   <div class="wrapper">
     <?php require "includes/header.php" ?>
-
     <main class="form--container">
       <form id="form" enctype='multipart/form-data' class="form">
         <h2>Connection</h2>

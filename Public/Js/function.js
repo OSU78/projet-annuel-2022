@@ -1,17 +1,17 @@
 // Fonction pour sauvegarder un tableau dans le localStorageJS
-// function saveUser(user) {
-//   localStorage.setItem("user", JSON.stringify(user));
-// }
+function saveUser(user) {
+  localStorage.setItem("user", JSON.stringify(user));
+}
 
 // // function de recuperation des utilisateurs
-// function getUser() {
-//   let user = localStorage.getItem("user");
-//   if (user == null) {
-//     return [];
-//   } else {
-//     return JSON.parse(user);
-//   }
-// }
+function getUser() {
+  let user = localStorage.getItem("user");
+  if (user == null) {
+    return [];
+  } else {
+    return JSON.parse(user);
+  }
+}
 // function changeQuantityMoin(product) {
 //   let basket = getBasket();
 //   let indice = 1;

@@ -1,0 +1,83 @@
+.banner {
+  // margin-top: 20px;
+  // z-index: 999;
+  z-index: -1;
+
+  width: 100%;
+  position: relative;
+  display: flex;
+  // height: 300px;
+  #myVideo {
+    // height: 300px;
+    source {
+      background: linear-gradient(
+        2.46deg,
+        #000000 12.17%,
+        rgba(72, 72, 72, 0) 173.9%
+      );
+    }
+    width: 100%;
+  }
+  .banner__text {
+    z-index: 999999;
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    color: #f1f1f1;
+    width: 500px;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+    @include sm {
+      bottom: 60px;
+      width: 350px;
+    }
+    @include xs {
+      bottom: 30px;
+      width: 300px;
+    }
+    h2 {
+      @include sm {
+        font-size: 32px;
+      }
+      @include xs {
+        font-size: 30px;
+      }
+    }
+  }
+
+  #myBtn {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    @include sm {
+      bottom: 60px;
+    }
+    @include xs {
+      bottom: 30px;
+      padding: 0;
+    }
+  }
+
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+}
+.banner::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: linear-gradient(
+    2.46deg,
+    #161515 5%,
+    rgba(44, 40, 40, 0) 173.9%
+  );
+}

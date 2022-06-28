@@ -91,7 +91,7 @@ async function asyncCall() {
           <p class="product_s1_card_name">${content.nomProd}</p>
           <div class="product_s1_card_detail">
             <p class="product_s1_card_price">${content.priceProd}€</p>
-            <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+            <button data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</button>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ async function asyncCall() {
             <p>${content.nomProd}</p>
             <p>${content.priceProd}€</p>
           </div>
-        <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+        <button data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</button>
         </div>
       </div>
   `;
@@ -140,7 +140,7 @@ async function asyncCall() {
             <p class="product_s1_card_name" product="${data[6].idProd}">${data[6].nomProd}</p>
             <div class="product_s1_card_detail">
               <p class="product_s1_card_price">${data[6].priceProd}€</p>
-              <a href="panier.php?=id=${data[6].idProd}" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+              <button data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</button>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ async function asyncCall() {
               <p class="product_s1_card_name">${content.nomProd}</p>
               <div class="product_s1_card_detail">
                 <p class="product_s1_card_price">${content.priceProd}€</p>
-               <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+               <button data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</button>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ function resolveAfter2Second() {
     // console.log(linkDatas);
     linkDatas.forEach((linkData) => {
       linkData.addEventListener("click", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         var id = e.target.getAttribute("data-id");
         // console.log(id);
         let url = "/Api/essai.php?idProd=" + id;
@@ -198,7 +198,7 @@ function resolveAfter2Second() {
               dataBasket = results;
               console.log(dataBasket);
               addBasket(dataBasket);
-              window.document.querySelector(".badge").innerText = JSON.parse(
+              document.querySelector(".badge").innerText = JSON.parse(
                 localStorage.basket
               ).length;
 
@@ -212,7 +212,7 @@ function resolveAfter2Second() {
         xhr.send();
       });
     });
-  }, 5000);
+  }, 2000);
 }
 window.document.querySelector(".badge").innerText = JSON.parse(
   localStorage.basket
