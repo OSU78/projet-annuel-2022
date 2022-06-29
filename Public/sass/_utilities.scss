@@ -82,10 +82,20 @@ input:focus {
   box-sizing: border-box;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   display: none;
+
+
+  
 }
 
 .tooltip:hover .bottom {
-  display: block;
+  
+    display: flex;
+    background-color: #0f0f0f;
+    color: white;
+    padding: 25px;
+    border: 1px solid rgba(253, 253, 253, 0.355);
+    flex-direction: column-reverse;
+  
 }
 
 .tooltip .bottom img {

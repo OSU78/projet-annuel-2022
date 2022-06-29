@@ -39,7 +39,11 @@
 /*********/
 /*Header*/
 
-
+.header {
+  background-color: $bg-primary;
+  padding-bottom: 25px;
+  padding-block: calc(92px / 2);
+}
 
 h1,
 h2,
@@ -49,6 +53,20 @@ h5 {
   font-family: $enchanted;
 }
 
+.header__nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 32px;
+}
+
+.header__nav a {
+  font-family: $enchanted;
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
 
 /*************/
 #product_s1 {
@@ -110,7 +128,8 @@ h5 {
   transition: 0.3s;
 }
 
-.panier_btn_header,.panier_btn_headerSecondary {
+.panier_btn_header,
+.panier_btn_headerSecondary {
   background-color: #f1bc1e;
   padding: 10px 10px;
   border-radius: 10px;
@@ -122,30 +141,26 @@ h5 {
   font-size: 15px;
   text-align: center;
 }
-.panier_btn_headerSecondary{
+.panier_btn_headerSecondary {
   background-color: #ffffff22;
   color: rgba(255, 255, 255, 0.729) !important;
-
 }
-.panier_btn_headerSecondary:hover{
+.panier_btn_headerSecondary:hover {
   background-color: #ffffff54;
   color: rgb(255, 255, 255) !important;
   transition: 0.3s;
-
 }
-.borderBlackHover{
+.borderBlackHover {
   border: solid 1px transparent;
 }
-.borderBlackHover:hover{
+.borderBlackHover:hover {
   border: solid 1px #0f0f0f;
-  
 }
 
 .panier_btn_header:hover {
   background-color: #ffffff;
   color: #0f0f0f;
   transition: 0.3s;
-
 }
 
 .colorGray {
@@ -180,7 +195,6 @@ h5 {
 
 .card img {
   height: -webkit-fill-available;
-  ;
 }
 
 .widthMax {
@@ -198,7 +212,7 @@ h5 {
 .pd10 {
   padding: 15px;
 }
-.pd13{
+.pd13 {
   padding: 13px;
 }
 
@@ -350,9 +364,6 @@ h5 {
   position: relative;
 }
 
-
-/***************/
-
 @media (max-width: 635px) {
   .svg svg {
     top: -238px;
@@ -363,7 +374,7 @@ h5 {
   #product_s1 {
     justify-content: flex-start;
     align-items: center;
-    flex-direction: column;
+    flex-direction: clumn;
     gap: 25px;
     max-height: fit-content;
   }
@@ -381,7 +392,6 @@ h5 {
   }
 
   .product_s2_mini {
-
     flex-direction: row;
     width: -webkit-fill-available;
   }

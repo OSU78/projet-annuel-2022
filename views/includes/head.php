@@ -10,6 +10,7 @@
 <link href="/public/css/style.css" rel="stylesheet">
 
 <!-- JS -->
+<script defer src="/Public/Js/basketTooltip.js"></script>
 <script defer src="/Public/Js/function.js"></script>
 <script defer src="/Public/Js/alert.js"></script>
 <!-- <script defer src="/Public/Js/api/google/adress.js"></script> -->
