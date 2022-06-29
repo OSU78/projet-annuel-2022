@@ -94,16 +94,16 @@ input:focus {
 }
 
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: #f1bc1e;
+  color: #0f0f0f;
   cursor: pointer;
-  padding: 18px;
-  width: 10%;
+  padding: 20px;
+  width: 150px;
   margin: 0 auto;
   border: none;
-  text-align: left;
+  text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .active,
@@ -133,20 +133,21 @@ input:focus {
 
 .tooltip .bottom {
   min-width: 250px;
+  position: absolute;
   top: 40px;
   left: 80%;
   transform: translate(-80%, 0);
-  padding: 20px;
-  color: #0f0f0f;
-  background-color: #eeeeee;
   font-weight: normal;
   font-size: 13px;
   border-radius: 8px;
-  position: absolute;
-  z-index: 99999999;
+  z-index: 2003764205206896639;
   box-sizing: border-box;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   display: none;
+  background-color: #0f0f0f;
+  color: white;
+  padding: 25px;
+  border: 1px solid rgba(253, 253, 253, 0.355);
 }
 
 .tooltip:hover .bottom {
@@ -163,7 +164,7 @@ input:focus {
   position: absolute;
   bottom: 100%;
   right: 20%;
-  margin-left: -px;
+  margin-left: -10px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -205,7 +206,6 @@ input:focus {
 }
 
 .header {
-  overflow: hidden;
   background-color: #0f0f0f;
   padding: 20px 20px;
   display: flex;
@@ -337,6 +337,16 @@ input:focus {
   left: -5px;
   transition: 0.3s;
   background-color: #f1bc1e;
+}
+
+.panier_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  padding: 25px;
+  font-size: 12px;
 }
 
 /********/
@@ -471,32 +481,12 @@ input:focus {
 
 /*********/
 /*Header*/
-.header {
-  background-color: #0f0f0f;
-  padding-bottom: 25px;
-  padding-block: 46px;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: "enchanted-land";
-}
-
-.header__nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 32px;
-}
-
-.header__nav a {
-  font-family: "enchanted-land";
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
 }
 
 /*************/
@@ -793,6 +783,7 @@ h5 {
   position: relative;
 }
 
+/***************/
 @media (max-width: 635px) {
   .svg svg {
     top: -238px;

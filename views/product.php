@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-  <?php require "includes/head.php" ?>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/product.css" />
   <script defer src="/Public/Js/function.js"></script>
   <script defer src="/Public/Js/getProduct.js"></script>
@@ -13,54 +16,6 @@
 <body>
   <?php require "includes/header.php" ?>
 
-  <!-- <header class="header" role="header">
-    <nav class="header__nav">
-      <a href="#">Nos Oeuvres</a>
-      <a href="#">Personnaliser une création</a>
-      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104">
-      <a href="#">À propos</a>
-      <a href="panier.html" class="header__nav--badge">
-
-        <div class="tooltip">
-          <img src="/Public/assets/icons/icon-backet.svg" alt="Panier">
-          <div class="bottom"
-            style="background-color:#0f0f0f;color:white;padding : 25px;border: 1px solid rgba(253, 253, 253, 0.355)">
-            <h3 style="margin: 0px;font-size:30px;font-weight: 100;">Mon panier</h3>
-            <div class="panier_item"
-              style="display: flex;justify-content:center;align-item:center;flex-direction:row;gap: 15px ;padding:25px;font-size: 12px;">
-
-              <img class="panier_item_product_img" src="https://picsum.photos/60/60" alt=""
-                style="border: 1px solid white">
-              <div class="" style="display: flex;flex-direction:column">
-                <div class="flex row gap10">
-                  <p style="width: max-content;font-size: 22px; margin-bottom: 5px;">Gravure fait à la main art</p>
-                </div>
-                <div class="flex row gap10 colorGray" style="width: max-content">
-                  <p>Quantité :</p>
-                  <p>25</p>
-                </div>
-                <div class="flex row gap10 colorGray" style="width: max-content">
-                  <p>Montant :</p>
-                  <p>259€</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex center column gap10">
-              <a href="panier.html" class="panier_btn_headerSecondary scaleHover">Editer</a>
-              <a href="panier.html" class="panier_btn_header scaleHover">Passer à la commande</a>
-            </div>
-          </div>
-          <div class="badge flex center">
-            <p>6</p>
-          </div>
-        </div>
-
-      </a>
-      <a href="views/login.html">
-        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur">
-      </a>
-    </nav>
-  </header> -->
   <main style="height: 100%">
     <div id="snackbar">Produit ajouté au panier</div>
     <section class="flex center">
@@ -69,39 +24,11 @@
       <section id="product_s1">
         <!-- Galerie GAUGHE des produits -->
         <div class="product_s1_card">
-          <!-- <img class="product_s1_card_img" src="/Public/assets/product.svg" alt="gravure 1" srcset="" />
-          <div class="flex gap10 column">
-            <p class="product_s1_card_name">Gravure médievale</p>
-            <div class="product_s1_card_detail">
-              <p class="product_s1_card_price">125€</p>
-              <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
-            </div>
-          </div> -->
+
         </div>
         <!-- Galerie droite des produits -->
         <div class="product_s2_mini">
-          <!-- <div class="product_s1_card mini_card">
-            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 2"
-              srcset="" />
-            <div class="flex gap10 column">
-              <p class="product_s1_card_name">Gravure médievale</p>
-              <div class="product_s1_card_detail">
-                <p class="product_s1_card_price">125€</p>
-                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
-              </div>
-            </div>
-          </div>
-          <div class="product_s1_card mini_card">
-            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 3"
-              srcset="" />
-            <div class="flex gap10 column">
-              <p class="product_s1_card_name">Gravure médievale</p>
-              <div class="product_s1_card_detail">
-                <p class="product_s1_card_price">125€</p>
-                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
-              </div>
-            </div>
-          </div> -->
+
         </div>
       </section>
     </section>
@@ -135,38 +62,7 @@
       <div class="flex center spaceBt padding20 gap20 width1180" id="card--container">
 
       </div>
-      <!-- <div class="card linear_gradian">
-        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
-        <div class="card__description">
-          <div class="card__description--text">
-            <p>Dimensions et description</p>
-            <p>125 €</p>
-          </div>
-          <button class="btn_card2">Ajouter au panier</button>
-        </div>
-      </div>
 
-      <div class="card linear_gradian">
-        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
-        <div class="card__description">
-          <div class="card__description--text">
-            <p>Dimensions et description</p>
-            <p>125 €</p>
-          </div>
-          <button class="btn_card2">Ajouter au panier</button>
-        </div>
-      </div>
-
-      <div class="card linear_gradian">
-        <img loading="lazy" src="/Public/assets/product.svg" alt="" />
-        <div class="card__description">
-          <div class="card__description--text">
-            <p>Dimensions et description</p>
-            <p>125 €</p>
-          </div>
-          <button class="btn_card2">Ajouter au panier</button>
-        </div>
-      </div> -->
     </section>
 
     <!-- Section 3 des produits -->
@@ -174,39 +70,11 @@
       <section id="product_s1" class="transparent">
         <!-- Galerie GAUGHE des produits -->
         <div class="product_s1_card linear_gradian" id="product_s1_cardSix">
-          <!-- <img class="product_s1_card_img" src="/Public/assets/product.svg" alt="gravure 1" srcset="" />
-          <div class="flex gap10 column">
-            <p class="product_s1_card_name">Gravure médievale</p>
-            <div class="product_s1_card_detail">
-              <p class="product_s1_card_price">125€</p>
-              <a href="#" class="product_s1_card_btn">Ajouter au panier</a>
-            </div>
-          </div> -->
+
         </div>
         <!-- Galerie droite des produits -->
         <div class="product_s2_mini" id="product_s2_mini">
-          <!-- <div class="product_s1_card mini_card linear_gradian">
-            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 2"
-              srcset="" />
-            <div class="flex gap10 column">
-              <p class="product_s1_card_name"></p>
-              <div class="product_s1_card_detail">
-                <p class="product_s1_card_price">€</p>
-                <button class="product_s1_card_btn mini_btn">Ajouter au panier</button>
-              </div>
-            </div>
-          </div>
-          <div class="product_s1_card mini_card linear_gradian">
-            <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/product.svg" alt="gravure 3"
-              srcset="" />
-            <div class="flex gap10 column">
-              <p class="product_s1_card_name">Gravure médievale</p>
-              <div class="product_s1_card_detail">
-                <p class="product_s1_card_price">125€</p>
-                <a href="#" class="product_s1_card_btn mini_btn">Ajouter au panier</a>
-              </div>
-            </div>
-          </div> -->
+
         </div>
       </section>
     </section>

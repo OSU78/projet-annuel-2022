@@ -1,5 +1,9 @@
 @import "variables";
+@import "media-queries";
+@import "animation";
+@import "utilities";
 @import "header";
+@import "card";
 @import "footer";
 
 main {
@@ -116,4 +120,13 @@ main {
 }
 .pd25 {
   padding: 25px;
+}
+.panier_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  padding: 25px;
+  font-size: 12px;
 }

@@ -25,7 +25,7 @@
 }
 
 // les inpuuts
-@mixin input($width: 400px, $bg: $bg-primary, $border: none) {
+@mixin input($width: 80%, $bg: $bg-primary, $border: none) {
   width: $width;
   height: 45px;
   background: $bg;

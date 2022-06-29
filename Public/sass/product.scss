@@ -39,33 +39,12 @@
 /*********/
 /*Header*/
 
-.header {
-  background-color: $bg-primary;
-  padding-bottom: 25px;
-  padding-block: calc(92px / 2);
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: $enchanted;
-}
-
-.header__nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  font-size: 32px;
-}
-
-.header__nav a {
-  font-family: $enchanted;
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
 }
 
 /*************/
@@ -364,6 +343,8 @@ h5 {
 .header__nav--badge {
   position: relative;
 }
+
+/***************/
 
 @media (max-width: 635px) {
   .svg svg {

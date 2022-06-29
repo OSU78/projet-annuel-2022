@@ -43,11 +43,14 @@
             <span>Pas encore membre?</span> <a href="/views/register.php">Inscription</a>
           </div>
         </div>
-        <button class="form__btn--google">
-          <img src="/Public/assets/icons/icon-google.svg" alt="">
-          Se Connecter avec Google
-        </button>
 
+        <div class="row">
+          <button class="form__btn--google col-25">
+            <img src="/Public/assets/icons/icon-google.svg" alt="">
+            Se Connecter avec Google
+          </button>
+
+        </div>
         <div class="form__submit">
           <button type="submit" class="btn small">Envoyer</button>
         </div>

@@ -11,8 +11,9 @@
 <body>
   <div class="wrapper">
     <?php require "includes/header.php" ?>
-    <main class="form--container">
+    <main class="form--container row">
       <form id="form" enctype='multipart/form-data' class="form">
+        <!-- <div class="container"> -->
         <h2>Enregistrement</h2>
         <div class="row message">
         </div>
@@ -63,11 +64,13 @@
             <span>Deja membre?</span> <a href="/views/login.php">Connection</a>
           </div>
         </div>
-        <button class="form__btn--google">
-          <img src="/Public/assets/icons/icon-google.svg" alt="">
-          S’inscrire avec Google
-        </button>
+        <div class="row">
+          <button class="form__btn--google col-25">
+            <img src="/Public/assets/icons/icon-google.svg" alt="">
+            S’inscrire avec Google
+          </button>
 
+        </div>
         <div class="form__submit">
           <button type="submit" class="btn small">Envoyer</button>
         </div>
@@ -75,6 +78,7 @@
           <a href="#">nos conditions d’utilisations</a>, notre <a href="#">Politique de confidentialié</a>
           et notre <a href="#">Politique concernant les cokkies</a>
         </p>
+        <!-- </div> -->
       </form>
     </main>
     <?php require "includes/footer.php" ?>

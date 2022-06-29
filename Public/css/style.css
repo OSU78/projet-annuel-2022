@@ -343,16 +343,16 @@ input:focus {
 }
 
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: #f1bc1e;
+  color: #0f0f0f;
   cursor: pointer;
-  padding: 18px;
-  width: 10%;
+  padding: 20px;
+  width: 150px;
   margin: 0 auto;
   border: none;
-  text-align: left;
+  text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .active,
@@ -382,20 +382,21 @@ input:focus {
 
 .tooltip .bottom {
   min-width: 250px;
+  position: absolute;
   top: 40px;
   left: 80%;
   transform: translate(-80%, 0);
-  padding: 20px;
-  color: #0f0f0f;
-  background-color: #eeeeee;
   font-weight: normal;
   font-size: 13px;
   border-radius: 8px;
-  position: absolute;
-  z-index: 99999999;
+  z-index: 2003764205206896639;
   box-sizing: border-box;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   display: none;
+  background-color: #0f0f0f;
+  color: white;
+  padding: 25px;
+  border: 1px solid rgba(253, 253, 253, 0.355);
 }
 
 .tooltip:hover .bottom {
@@ -412,7 +413,7 @@ input:focus {
   position: absolute;
   bottom: 100%;
   right: 20%;
-  margin-left: -px;
+  margin-left: -10px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -534,7 +535,7 @@ input:focus {
 }
 
 .input-form-white {
-  width: 400px;
+  width: 80%;
   height: 45px;
   background: white;
   box-shadow: inset 4px -4px 8px rgba(0, 0, 0, 0.25), inset -4px 4px 8px rgba(0, 0, 0, 0.25);
@@ -556,7 +557,6 @@ input:focus {
 }
 
 .header {
-  overflow: hidden;
   background-color: #0f0f0f;
   padding: 20px 20px;
   display: flex;
@@ -688,6 +688,16 @@ input:focus {
   left: -5px;
   transition: 0.3s;
   background-color: #f1bc1e;
+}
+
+.panier_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  padding: 25px;
+  font-size: 12px;
 }
 
 /********/
@@ -980,40 +990,50 @@ input[type=submit] {
   width: 100%;
 }
 
-.form--container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.form--container .form {
+.form {
   background: #ededed;
   display: flex;
   border: 1px solid #0f0f0f;
   flex-flow: column nowrap;
   padding: 50px;
   gap: 10px;
-  width: 550px;
+  width: 60%;
   padding: 30px;
+  margin: 100px auto;
   border-radius: 10px;
 }
-.form--container .form__control {
+@media (min-width: 1200px) {
+  .form {
+    width: 50%;
+  }
+}
+@media (min-width: 501px) and (max-width: 780px) {
+  .form {
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .form {
+    width: 90%;
+  }
+}
+.form__control {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.form--container .form__control :first-child {
+.form__control :first-child {
   font-size: 18px;
 }
-.form--container .form__control a {
+.form__control a {
   color: #f1bc1e;
   text-decoration: double !important;
 }
-.form--container .form__submit {
+.form__submit {
   margin: 0 auto;
 }
-.form--container .form__btn--google {
-  width: 400px;
+.form__btn--google {
+  width: 80%;
   height: 45px;
   background: white;
   box-shadow: inset 4px -4px 8px rgba(0, 0, 0, 0.25), inset -4px 4px 8px rgba(0, 0, 0, 0.25);
@@ -1024,14 +1044,15 @@ input[type=submit] {
   align-items: center;
   margin: 0 auto;
 }
-.form--container .form__text {
+.form__text {
   text-align: center;
 }
-.form--container .form__text a {
+.form__text a {
   color: #0f0f0f;
   text-decoration: dashed !important;
 }
-.form--container ::placeholder {
+
+::placeholder {
   padding-left: 10px;
   font-style: italic;
 }
@@ -1112,6 +1133,7 @@ input[type=submit] {
 
 /*SVG VAGUE*/
 .svg {
+  z-index: -1;
   position: relative;
   height: 150px;
 }

@@ -39,17 +39,16 @@
           <img class="artwork__content--img__leaf" src="/Public/assets/img/leaf-bg-top.svg" alt="arrow">
         </div>
       </div>
-
       <div class="artwork__scroll flex-item-right">
         <img class="artwork__scroll--arrow prev" onclick="plusSlides(-1)" src="/Public/assets/icons/icon-left-arrow.svg"
           alt="left-arrow">
         <div class="artwork__scroll--galerie ">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/hM8fjQ8/thrn-7.jpg" alt="Artwork">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/0j5JQ4p/thrn-1-2.jpg" alt="Artwork">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/N9dBWdc/IMG-20220223-152446.jpg"
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/5vzDDqJ/insta-nov-35.webp"
             alt="Artwork">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/NFLB0wh/IMG-20220203-132805.jpg"
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/dG0jnX1/insta-nov-11.webp"
             alt="Artwork">
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/jvQD7Hz/insta-nov-1.webp" alt="Artwork">
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Artwork">
         </div>
         <img class="artwork__scroll--arrow next" onclick="plusSlides(1)" src="/Public/assets/icons/icon-right-arrow.svg"
           alt="right-arrow">
