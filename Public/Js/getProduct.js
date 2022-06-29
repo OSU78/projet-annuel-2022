@@ -5,7 +5,6 @@ function resolveAfter2Seconds() {
     }, 2000);
   });
 }
-
 // toast
 function toast() {
   var x = document.getElementById("snackbar");
@@ -15,76 +14,52 @@ function toast() {
   }, 3000);
 }
 
-async function asyncCall() {
-  let url = "/Api/getProduct.php";
-  var data = [];
+// window.addEventListener("load", function (event) {
+//   console.log("badge");
+//   window.document.querySelector(".badge").innerText = JSON.parse(
+//     localStorage.basket
+//   ).length;
+// });
+// async function asyncCall() {
+//   await resolveAfter2Seconds();
+console.log(data);
 
-  let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
-  requete.open("GET", url, true); // Nous récupérons juste des données
-  // requete.responseType = "json"; // Nous attendons du JSON
-  requete.send(); // Nous envoyons notre requête
+let firstSectionProd = document.querySelector(".product_s1_card");
+let secondSectionProd = document.querySelector(".product_s2_mini");
+let secondSectionTree = document.querySelector("#card--container");
+// console.log(data[0]);
 
-  // Dès qu'on reçoit une réponse, cette fonction est executée
-  requete.onload = function () {
-    if (requete.readyState === XMLHttpRequest.DONE) {
-      if (requete.status === 200) {
-        let reponse = JSON.parse(requete.response);
+let html1 = "";
+let getDataRamdom = data[0];
 
-        data = reponse;
-      } else {
-        alert("Un problème est intervenu, merci de revenir plus tard.");
-      }
-    }
-  };
-
-  await resolveAfter2Seconds();
-  // console.log(data);
-
-  // fonction Ramdom
-  function getRandomInt(dataSize) {
-    return Math.floor(Math.random() * dataSize);
-  }
-
-  let firstSectionProd = document.querySelector(".product_s1_card");
-  let secondSectionProd = document.querySelector(".product_s2_mini");
-  let secondSectionTree = document.querySelector("#card--container");
-  // console.log(data[0]);
-
-  let html1 = "";
-  let randomData = getRandomInt(data.length);
-  let getDataRamdom = data[0];
-
-  // console.log(getDataRamdom);
-  html1 = `
-   
+// console.log(getDataRamdom);
+html1 = `
           <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
           <div class="flex gap10 column pd10">
             <p class="product_s1_card_name" product="${getDataRamdom.idProd}">${getDataRamdom.nomProd}</p>
             <div class="product_s1_card_detail">
               <p class="product_s1_card_price">${getDataRamdom.priceProd}€</p>
-              <a href="panier.php?=id=${data[0].idProd}" data-id="${data[0].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
-      
+              <a data-id="${data[0].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
             </div>
           </div>
-        
       `;
-  firstSectionProd.innerHTML = html1;
+firstSectionProd.innerHTML = html1;
 
-  let dataElements = [];
-  let sectionTwo = "";
-  for (let i = 0; i < 3; i++) {
-    if (data[i] != data[0]) {
-      dataElements.push(data[i]);
-    }
+let dataElements = [];
+let sectionTwo = "";
+for (let i = 0; i < 3; i++) {
+  if (data[i] != data[0]) {
+    dataElements.push(data[i]);
   }
+}
 
-  console.log(dataElements);
-  console.log(data);
+console.log(dataElements);
+console.log(data);
 
-  let htmls = "";
-  dataElements
-    .map(function (content) {
-      htmls += `
+let htmls = "";
+dataElements
+  .map(function (content) {
+    htmls += `
      <div class="product_s1_card mini_card">
         <img class="product_s1_card_img m2" style="height: 62%" src="/Public/assets/img/product.svg" alt="gravure 2"
           srcset="" />
@@ -92,30 +67,30 @@ async function asyncCall() {
           <p class="product_s1_card_name">${content.nomProd}</p>
           <div class="product_s1_card_detail">
             <p class="product_s1_card_price">${content.priceProd}€</p>
-            <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
+            <a data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
           </div>
         </div>
       </div>
   `;
-      return htmls;
-    })
-    .join("");
+    return htmls;
+  })
+  .join("");
 
-  secondSectionProd.innerHTML = htmls;
+secondSectionProd.innerHTML = htmls;
 
-  let dataElementTree = [];
-  for (let i = 3; i <= 5; i++) {
-    console.log(data[i]);
-    dataElementTree.push(data[i]);
-  }
-  // console.log(dataElementTree);
+let dataElementTree = [];
+for (let i = 3; i <= 5; i++) {
+  console.log(data[i]);
+  dataElementTree.push(data[i]);
+}
+// console.log(dataElementTree);
 
-  // 3eme section
-  let sectionTree = "";
+// 3eme section
+let sectionTree = "";
 
-  dataElementTree
-    .map(function (content) {
-      sectionTree += `
+dataElementTree
+  .map(function (content) {
+    sectionTree += `
       
       <div class="card linear_gradian scaleHover">
         <img loading="lazy"src="/Public/assets/img/product.svg" alt="" />
@@ -128,42 +103,42 @@ async function asyncCall() {
         </div>
       </div>
   `;
-      return sectionTree;
-    })
-    .join("");
-  secondSectionTree.innerHTML = sectionTree;
+    return sectionTree;
+  })
+  .join("");
+secondSectionTree.innerHTML = sectionTree;
 
-  let contentSeven = data[6];
-  let eles4 = document.querySelector("#product_s1_cardSix");
-  let sectionFour = `
+let contentSeven = data[6];
+let eles4 = document.querySelector("#product_s1_cardSix");
+let sectionFour = `
   <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
   <div class="flex gap10 column pd10">
     <p class="product_s1_card_name" product="${data[6].idProd}">${data[6].nomProd}</p>
     <div class="product_s1_card_detail">
       <p class="product_s1_card_price">${data[6].priceProd}€</p>
-      <a href="panier.php?=id=${data[6].idProd}" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+      <a href="#" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
       
     
     </div>
   </div>
         
       `;
-  eles4.innerHTML = sectionFour;
+eles4.innerHTML = sectionFour;
 
-  //
-  let dataElementSeven = [];
-  for (let i = 7; i <= 8; i++) {
-    // console.log(data[i]);
-    dataElementSeven.push(data[i]);
-  }
-  console.log(dataElementSeven);
+//
+let dataElementSeven = [];
+for (let i = 7; i <= 8; i++) {
+  // console.log(data[i]);
+  dataElementSeven.push(data[i]);
+}
+console.log(dataElementSeven);
 
-  // 3eme section
-  let sectionSeven = "";
+// 3eme section
+let sectionSeven = "";
 
-  dataElementSeven
-    .map(function (content) {
-      sectionSeven += `
+dataElementSeven
+  .map(function (content) {
+    sectionSeven += `
      <div class="product_s1_card mini_card linear_gradian ">
           <img src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
         <div class="flex gap10 column pd10">
@@ -175,56 +150,49 @@ async function asyncCall() {
             </div>
           </div>
          `;
-      return sectionSeven;
-    })
-    .join("");
-  let seven = document.querySelector("#product_s2_mini");
-  seven.innerHTML = sectionSeven;
-}
+    return sectionSeven;
+  })
+  .join("");
+let seven = document.querySelector("#product_s2_mini");
+seven.innerHTML = sectionSeven;
 var dataBasket = [];
-function resolveAfter2Second() {
-  setTimeout(() => {
-    console.log("ready")
-    let linkDatas = document.querySelectorAll("#basket-link");
-    // console.log(linkDatas);
-    linkDatas.forEach((linkData) => {
-      linkData.addEventListener("click", (e) => {
-        e.preventDefault();
-        var id = e.target.getAttribute("data-id");
-        // console.log(id);
-        let url = "/Api/essai.php?idProd=" + id;
-        let xhr = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
 
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              let results = JSON.parse(xhr.response);
-              dataBasket = results;
-              console.log(dataBasket);
-              addBasket(dataBasket);
-              window.document.querySelector(".badge").innerText = JSON.parse(
-                localStorage.basket
-              ).length;
+// function resolveAfter2Second() {
+//   setTimeout(() => {
+console.log("ready");
+let linkDatas = document.querySelectorAll("#basket-link");
+// console.log(linkDatas);
+linkDatas.forEach((linkData) => {
+  linkData.addEventListener("click", (e) => {
+    e.preventDefault();
+    var id = e.target.getAttribute("data-id");
+    // console.log(id);
+    let url = "/Api/essai.php?idProd=" + id;
+    let xhr = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
 
-              toast();
-            } else {
-              alert("impossible datteindre le server");
-            }
-          }
-        };
-        xhr.open("GET", url, true);
-        xhr.send();
-      });
-    });
-  }, 4000);
-}
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          let results = JSON.parse(xhr.response);
+          dataBasket = results;
+          console.log(dataBasket);
+          addBasket(dataBasket);
+          window.document.querySelector(".badge").innerText = JSON.parse(
+            localStorage.basket
+          ).length;
 
-window.addEventListener("load", function(event) {
-  console.log("badge")
-  window.document.querySelector(".badge").innerText = JSON.parse(
-  localStorage.basket
-).length;
+          toast();
+        } else {
+          alert("impossible datteindre le server");
+        }
+      }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+  });
 });
+//   }, 2000);
+// }
 
-resolveAfter2Second();
-asyncCall();
+// resolveAfter2Second();
+// asyncCall();

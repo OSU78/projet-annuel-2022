@@ -12,3 +12,5 @@ console.log(user);
 //     &times;
 //   </span>
 //   Bienvenue`;
+var maVariable = `<?php echo $_SESSION["user"]; ?>;`;
+console.log(maVariable);

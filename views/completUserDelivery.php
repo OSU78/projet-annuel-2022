@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <?php require "includes/head.php" ?>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCywaY5J6pQy-QjxVyM0tQu7Rn6KYCmvSY"></script>
   <script defer src="/Public/Js/api/google/adress.js"></script>
+  <script defer src="/Public/Js/check.js"></script>
+  <?php require "includes/head.php" ?>
 
   <title>Mise à jour information</title>
 </head>
@@ -64,7 +65,7 @@
         </div>
 
         <br>
-        <div class="collapsible">Adresse</div>
+        <div class="collapsible ">Adresse</div>
 
         <div class="content">
           <div class="row">
