@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <?php require "includes/head.php" ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panier</title>
   <link rel="stylesheet" href="/Public/css/product.css" />
   <link rel="stylesheet" href="/Public/css/panier.css" />
@@ -38,7 +38,7 @@
 
         </div>
 
-        <div class="flex gap15 width100 center" style="justify-content: flex-end;">
+        <div class="flex gap15 width100 center pd1012" style="justify-content: flex-end;">
           <div class="flex center gap10 pd13"
             style="background-color: white;border:1px solid #0f0f0f;border-radius:10px">
             <p>Total : </p>

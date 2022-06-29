@@ -13,15 +13,37 @@
   .card__description {
     display: flex;
     justify-content: space-between;
-    padding: 0px 10px 10px 10px;
+    padding: 5px 10px 10px 10px;
   }
 
-  .card__description--text {
-    height: 60px;
-  }
+  // .card__description--text {
+  //   height: 60px;
+  // }
 
   .card__description--text p {
     margin: 0;
   }
-  
 
+  .btn__card--text {
+    font-family: $WorkSans-Regular
+  }
+  
+  .btn__card--logo {
+    display: none;
+  }
+
+  .btn__card--logo img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 650px) {
+    .btn__card--text {
+      display: none;
+    }
+    .btn__card--logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
