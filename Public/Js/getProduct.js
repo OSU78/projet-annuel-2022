@@ -184,11 +184,12 @@ async function asyncCall() {
 var dataBasket = [];
 function resolveAfter2Second() {
   setTimeout(() => {
+    console.log("ready")
     let linkDatas = document.querySelectorAll("#basket-link");
     // console.log(linkDatas);
     linkDatas.forEach((linkData) => {
       linkData.addEventListener("click", (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         var id = e.target.getAttribute("data-id");
         // console.log(id);
         let url = "/Api/essai.php?idProd=" + id;
@@ -201,7 +202,7 @@ function resolveAfter2Second() {
               dataBasket = results;
               console.log(dataBasket);
               addBasket(dataBasket);
-              document.querySelector(".badge").innerText = JSON.parse(
+              window.document.querySelector(".badge").innerText = JSON.parse(
                 localStorage.basket
               ).length;
 
@@ -215,10 +216,15 @@ function resolveAfter2Second() {
         xhr.send();
       });
     });
-  }, 2000);
+  }, 4000);
 }
-window.document.querySelector(".badge").innerText = JSON.parse(
+
+window.addEventListener("load", function(event) {
+  console.log("badge")
+  window.document.querySelector(".badge").innerText = JSON.parse(
   localStorage.basket
 ).length;
+});
+
 resolveAfter2Second();
 asyncCall();
