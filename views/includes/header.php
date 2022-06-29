@@ -47,11 +47,11 @@
           <img src="/Public/assets/icons/search.svg" alt="search" width="25px" height="25px">
         </li>
         <li class="item">
-          <a href="./views/profil.php">Compte</a>
+          <a href="/views/profil.php">Compte</a>
           <img src="/Public/assets/icons/userMobile.svg" alt="user" width="25px" height="25px">
         </li>
         <li class="item">
-          <a href="./views/panier.php">Panier</a>
+          <a href="/views/panier.php">Panier</a>
           <img src="/Public/assets/icons/icon-backet.svg" alt="panier" width="25px" height="25px">
         </li>
       </ul>
