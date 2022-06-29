@@ -201,6 +201,34 @@
   width: 400px;
 }
 
+.math-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: black;
+    color: white;
+    height: 400px;
+    margin: 50px 35px;
+    padding: 20px;
+}
+
+.math-description h3 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.flex{
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .btn__best-seller {
+        width: 300px;
+    }
+}
+
 @media (max-width: 1025px) {
   .custom {
     justify-content: center;
@@ -211,8 +239,6 @@
     justify-content: center;
     align-items: center;
     height: 400px;
-    // margin: 50px 35px;
-    // padding: 0px 35px 50px;
   }
   .custom .btn {
     margin-top: 50px;

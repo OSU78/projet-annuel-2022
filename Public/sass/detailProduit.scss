@@ -1,0 +1,302 @@
+@import "reset";
+@import "typo";
+@import "variables";
+@import "button";
+@import "card";
+
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-block: 40px 30px;
+}
+
+p {
+    margin: 0;
+}
+
+.wrapper__produit-single {
+    background: $bg-primary;
+    font-family: $WorkSans-Regular;
+    color: $bg-secondary;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.produit__nom {
+    margin-block: 10px;
+}
+
+.produit {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15px 30px 15px;
+    padding: 20px 20px;
+    box-shadow: rgba(211, 211, 211, 0.15) 0px 48px 100px 0px;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.produit__carroussel {
+    width: 75%;
+}
+
+.produit__carroussel--photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: grey;
+    border-radius: 5px;
+}
+
+.produit__scroll {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 100px);
+}
+
+.produit__scroll--img {
+    display: none;
+    object-fit: contain;
+    width: 100%;
+    max-height: 400px;
+    margin: 20px 5px;
+    border-radius: 5px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.produit__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 25%;
+}
+
+.produit__confiance--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $bg-secondary;
+    padding: 10px 20px;
+    flex-grow: 1;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+.produit__confiance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.produit__confiance p {
+    display: flex;
+    color: $bg-primary;
+    margin: 0;
+}
+
+.produit__confiance--icon {
+    width: 30px;
+    aspect-ratio: 1;
+}
+
+.produit__prix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.produit__prix p {
+    margin: 0;
+    font-size: 60px;
+    font-weight: 800;
+    color: $btn-primary;
+    text-align: center;
+}
+
+.produit__prix .btn {
+    font-size: 20px;
+    font-family: $WorkSans-Regular;
+    padding-inline: 20px;
+}
+
+.produit__description {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 35px 100px;
+    padding-block: 20px;
+    line-height: 20px;
+    gap: 10px;
+}
+
+.separation-jaune {
+    background-color: $btn-primary;
+    height: 5px;
+    margin-inline: 50px;
+    margin-block: 40px;
+    border-radius: 5px;
+}
+
+.avis {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 35px;
+}
+
+.avis__container {
+    display: flex;
+    flex-direction: column;
+    background: $bg-secondary;
+    color: $bg-primary;
+    padding: 30px 20px;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.avis__single {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avis__single--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.avis__single--titre {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.avis__prenom {
+    font-weight: 600;
+}
+
+.avis__date {
+    color: grey;
+}
+
+.interet {
+    margin-inline: 35px;
+    padding-bottom: 50px;
+}
+
+.interet__cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (max-width: 440px) {
+    .avis__single img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 470px) {
+    .produit__prix p {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 665px) {
+    .btn__card--text {
+        display: none;
+      }
+      .btn__card--logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn__card {
+        width: 90px;
+      }
+}
+
+@media (max-width: 820px) {
+    .produit {
+        flex-direction: column;
+    }
+    .produit__carroussel {
+        width: 100%;
+    }
+    .produit__detail {
+        width: 100%;
+    }
+    .produit__prix {
+        order: -1;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .produit__confiance--container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-block: 10px;
+        gap: 15px;
+    }
+    .produit__confiance {
+        flex-direction: column;
+        flex: 1 0 auto;
+        text-align: center;
+    }
+    .produit__description {
+        margin-inline: 35px;
+    }
+}
+
+@media (min-width: 1130px) {
+    .produit__carroussel--photo {
+        height: 600px;
+    }
+    .produit__scroll--img {
+        max-height: calc(600px - 50px);
+    }
+    .avis__container {
+        width: 1010px;
+        align-self: center;
+    }
+}
+
+@media (min-width: 1280px) {
+    .produit__confiance p {
+        font-size: 20px;
+    }
+    .produit__nom {
+        font-size: 20px;
+    }
+    .produit__description p {
+        font-size: 20px;
+    }
+    .avis__single p {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    .card {
+        width: 400px;
+    }
+    .card__description {
+        font-size: 16px;
+    }
+    .btn__card--text {
+        font-size: 16px;
+    }
+}
