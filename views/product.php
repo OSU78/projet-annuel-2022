@@ -4,21 +4,23 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/product.css" />
+  <script src="/Public/Js/data.js"></script>
   <script defer src="/Public/Js/function.js"></script>
-  <script defer src="/Public/Js/getProduct.js"></script>
-  <title>Nos gravures</title>
   <script defer src="/Public/Js/basketTooltip.js"></script>
+
+  <title>Nos gravures</title>
 
 </head>
 
 <body>
   <?php require "includes/header.php" ?>
-
   <main style="height: 100%">
     <div id="snackbar">Produit ajouté au panier</div>
     <section class="flex center">
       <div id="snackbar">Produit Ajouté avec succes..</div>
       <!-- Section 1 des produits -->
+      <!-- <div class="loader"></div> -->
+
       <section id="product_s1">
         <!-- Galerie GAUGHE des produits -->
         <div class="product_s1_card">
@@ -77,4 +79,6 @@
       </section>
     </section>
   </main>
+
   <?php require "includes/footer.php" ?>
+  <script defer src="/Public/Js/getProduct.js"></script>

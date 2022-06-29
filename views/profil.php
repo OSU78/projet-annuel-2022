@@ -4,8 +4,8 @@
 <head>
   <?php require "includes/head.php" ?>
   <!-- les scripts -->
+  <script defer src="/Public/Js/check.js"></script>
   <script defer src="/Public/Js/profil.js"></script>
-  <script defer src="/Public/Js/basket.js"></script>
   <title>profile</title>
 </head>
 

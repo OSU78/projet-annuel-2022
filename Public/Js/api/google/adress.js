@@ -32,8 +32,8 @@ function onPlaceChanged() {
 function initialize() {
   initializeAutocomplete("user_input_autocomplete_address");
 }
-
-var coll = document.querySelector(".collapsible");
+initialize();
+let coll = document.querySelector(".collapsible");
 // var i;
 
 // for (i = 0; i < coll.length; i++) {

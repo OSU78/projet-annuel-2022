@@ -30,10 +30,10 @@ form.addEventListener("submit", (e) => {
           </div>
         `;
         } else {
-          saveUser(resultats);
-          setTimeout(function () {
-            window.location.href = "/views/profil.php";
-          }, 2000);
+          // saveUser(resultats);
+          // setTimeout(function () {
+          //   window.location.href = "/views/profil.php";
+          // }, 2000);
         }
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");
