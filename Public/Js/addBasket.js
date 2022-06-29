@@ -41,7 +41,7 @@ results
   .map(function (content, index) {
     // console.log(content.idProd);
     htmlBasket += `
-            <section class="flex spaceBetween center pd25 gap15">
+            <section class="flex spaceBetween center pd25 gap15 pd25Custom">
               <div class="text_center panier_item_width20">1</div>
                 <div class="text_center panier_item_width90">${
                   content.nomProd
@@ -99,8 +99,13 @@ mores.forEach((more) => {
     let total = getTotalPrice();
     let targetParent = e.target.parentNode.parentNode.parentNode;
     console.log(targetParent.querySelector(".panier_item_number"));
+    if(parseInt(targetParent.querySelector(".panier_item_number").innerText)>=0){
     targetParent.querySelector(".panier_item_number").innerText =
       parseInt(targetParent.querySelector(".panier_item_number").innerText) + 1;
+    }
+    else{
+      console.log("positif")
+    }
     document.querySelector("#total-basket").innerHTML = total;
   });
 });
@@ -117,9 +122,14 @@ for (let i = 0; i < lesss.length; i++) {
     changeQuantity({ idProd: id.toString() }, -1);
     let total = getTotalPrice();
     let targetParent = e.target.parentNode.parentNode.parentNode;
-    console.log(targetParent.querySelector(".panier_item_number"));
-    targetParent.querySelector(".panier_item_number").innerText =
-      parseInt(targetParent.querySelector(".panier_item_number").innerText) - 1;
+    if(parseInt(targetParent.querySelector(".panier_item_number").innerText)>0){
+      targetParent.querySelector(".panier_item_number").innerText =
+        parseInt(targetParent.querySelector(".panier_item_number").innerText) -1;
+      }
+      else{
+        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.style.display="none"
+        console.log( "Suppression du panier : "+e.target.parentNode.parentNode.parentNode.parentNode.parentNode)
+      }
     document.querySelector("#total-basket").innerHTML = total;
 
     // var id = e.target.getAttribute("data-id");

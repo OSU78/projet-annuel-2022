@@ -326,6 +326,8 @@ input:focus {
 }
 .header-menu__mobile .nav--menu .item img {
   order: 1;
+  width: 25px;
+  height: 25px;
 }
 .header-menu__mobile .nav--menu .item a {
   color: white;
@@ -561,7 +563,13 @@ h5 {
   max-width: 100%;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+  max-height: 500px;
   border-radius: 8px;
+}
+
+.product_s1_card_name {
+  width: max-content;
+  margin-right: 15px;
 }
 
 .product_s1_card_btn {
@@ -569,6 +577,7 @@ h5 {
   padding: 13px 13px;
   border-radius: 10px;
   color: black;
+  user-select: none;
   font-weight: bold;
   text-decoration-line: none;
   transition: 0.3s;
@@ -576,7 +585,9 @@ h5 {
 }
 
 .product_s1_card_btn:hover {
+  cursor: pointer;
   background-color: #ffffff;
+  transform: scale(0.87);
   transition: 0.3s;
 }
 
@@ -650,7 +661,9 @@ h5 {
 }
 
 .card img {
-  height: -webkit-fill-available;
+  height: 200px;
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .widthMax {
@@ -744,6 +757,10 @@ h5 {
 
 .spaceBetween {
   justify-content: space-between;
+}
+
+.textCenter {
+  text-align: center;
 }
 
 .padding20 {
@@ -908,6 +925,7 @@ h5 {
     width: 280px;
     object-fit: cover;
     height: auto;
+    max-height: 200px;
   }
 
   .fontSize25 {
@@ -934,19 +952,22 @@ h5 {
 
   .card img {
     width: 200px;
+    max-height: 158px;
   }
 
-  .linear_gradian .product_s1_card_btn {
-    width: -webkit-fill-available;
+  #card--container .product_s1_card_btn {
+    width: auto;
     text-align: center;
   }
 
   .card {
-    width: min-content;
+    width: max-content;
   }
 }
 @media (max-width: 768px) {
   .card img {
+    max-height: 300px;
+    height: 300px;
     width: -webkit-fill-available !important;
   }
 
@@ -961,6 +982,19 @@ h5 {
 @media (max-width: 470px) {
   .padding20 {
     padding: 20px 20px;
+  }
+
+  .product_s1_card_detail {
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .product_s1_card_btn {
+    text-align: center;
+    width: -webkit-fill-available !important;
   }
 }
 

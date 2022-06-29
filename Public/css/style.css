@@ -693,6 +693,8 @@ input:focus {
 }
 .header-menu__mobile .nav--menu .item img {
   order: 1;
+  width: 25px;
+  height: 25px;
 }
 .header-menu__mobile .nav--menu .item a {
   color: white;

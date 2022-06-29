@@ -14,6 +14,17 @@ function toast() {
   }, 3000);
 }
 
+function getTextSize(strings){
+  let newString="";
+  if(strings.length>18){
+    for(var i=0;i<=18;i++){
+      
+      newString+=strings[i];
+  
+    }
+    return newString+="";
+  }
+}
 // window.addEventListener("load", function (event) {
 //   console.log("badge");
 //   window.document.querySelector(".badge").innerText = JSON.parse(
@@ -34,12 +45,12 @@ let getDataRamdom = data[0];
 
 // console.log(getDataRamdom);
 html1 = `
-          <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
+          <img class="product_s1_card_img product_link" data-id="${getDataRamdom.idProd}"  src="${getDataRamdom.imgLink}" alt="gravure 1" srcset="" />
           <div class="flex gap10 column pd10">
-            <p class="product_s1_card_name" product="${getDataRamdom.idProd}">${getDataRamdom.nomProd}</p>
+            <p class="product_s1_card_name" product="${getDataRamdom.idProd}">${getTextSize(getDataRamdom.nomProd)}</p>
             <div class="product_s1_card_detail">
               <p class="product_s1_card_price">${getDataRamdom.priceProd}€</p>
-              <a data-id="${data[0].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+              <a data-id="${data[0].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin textCenter">Ajouter au panier</a>
             </div>
           </div>
       `;
@@ -61,13 +72,13 @@ dataElements
   .map(function (content) {
     htmls += `
      <div class="product_s1_card mini_card">
-        <img class="product_s1_card_img m2" style="height: 62%" src="/Public/assets/img/product.svg" alt="gravure 2"
-          srcset="" />
+        <img class="product_s1_card_img m2 product_link" style="height: 62%" src="${content.imgLink}" alt="gravure 2"
+          srcset="" data-id="${content.idProd}" />
         <div class="flex gap10 column pd10">
-          <p class="product_s1_card_name">${content.nomProd}</p>
+          <p class="product_s1_card_name">${getTextSize(content.nomProd)}</p>
           <div class="product_s1_card_detail">
             <p class="product_s1_card_price">${content.priceProd}€</p>
-            <a data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
+            <a data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax textCenter">Ajouter au panier</a>
           </div>
         </div>
       </div>
@@ -93,13 +104,13 @@ dataElementTree
     sectionTree += `
       
       <div class="card linear_gradian scaleHover">
-        <img loading="lazy"src="/Public/assets/img/product.svg" alt="" />
+        <img class="product_link" data-id="${content.idProd}" loading="lazy"src="${content.imgLink}" alt="" />
         <div class="card__description pd1012 paddingBottom">
           <div class="card__description--text">
-            <p>${content.nomProd}</p>
+            <p>${getTextSize(content.nomProd)}</p>
             <p class="fontSize25 pd5">${content.priceProd}€</p>
           </div>
-        <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+        <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin textCenter">Ajouter au panier</a>
         </div>
       </div>
   `;
@@ -111,12 +122,12 @@ secondSectionTree.innerHTML = sectionTree;
 let contentSeven = data[6];
 let eles4 = document.querySelector("#product_s1_cardSix");
 let sectionFour = `
-  <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
+  <img class="product_s1_card_img product_link" data-id="${data[6].idProd}" src="${data[6].imgLink}" alt="gravure 1" srcset="" />
   <div class="flex gap10 column pd10">
-    <p class="product_s1_card_name" product="${data[6].idProd}">${data[6].nomProd}</p>
+    <p class="product_s1_card_name" product="${data[6].idProd}">${getTextSize(data[6].nomProd)}</p>
     <div class="product_s1_card_detail">
       <p class="product_s1_card_price">${data[6].priceProd}€</p>
-      <a href="#" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+      <a href="#" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin textCenter">Ajouter au panier</a>
       
     
     </div>
@@ -140,12 +151,12 @@ dataElementSeven
   .map(function (content) {
     sectionSeven += `
      <div class="product_s1_card mini_card linear_gradian ">
-          <img src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
+          <img class="product_link" data-id="${content.nomProd}" src="${content.imgLink}" alt="gravure 1" srcset="" />
         <div class="flex gap10 column pd10">
-              <p class="product_s1_card_name">${content.nomProd}</p>
+              <p class="product_s1_card_name">${getTextSize(content.nomProd)}</p>
               <div class="product_s1_card_detail">
                 <p class="product_s1_card_price">${content.priceProd}€</p>
-               <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
+               <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax textCenter">Ajouter au panier</a>
               </div>
             </div>
           </div>
@@ -196,3 +207,9 @@ linkDatas.forEach((linkData) => {
 
 // resolveAfter2Second();
 // asyncCall();
+
+
+
+/*REDIRECTION VERS LA PAGE DETAIL PRODUT*/
+
+//let getDetailProduit=

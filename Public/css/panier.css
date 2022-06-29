@@ -326,6 +326,8 @@ input:focus {
 }
 .header-menu__mobile .nav--menu .item img {
   order: 1;
+  width: 25px;
+  height: 25px;
 }
 .header-menu__mobile .nav--menu .item a {
   color: white;
@@ -628,6 +630,31 @@ main {
   gap: 15px;
   padding: 25px;
   font-size: 12px;
+}
+
+@media (max-width: 500px) {
+  .panier_header {
+    padding: 10px;
+    border: 1px solid;
+  }
+
+  .controlPadding {
+    padding: 0px;
+  }
+
+  .controlPadding2 {
+    padding: 5px;
+    border-radius: 0px;
+    width: -webkit-fill-available;
+  }
+
+  #panierList {
+    padding: 0px;
+  }
+
+  .pd25Custom {
+    padding: 20px 5px;
+  }
 }
 
 /*# sourceMappingURL=panier.css.map */

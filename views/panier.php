@@ -21,8 +21,8 @@
       </div>
 
     </div>
-    <section class="flex center padding20">
-      <div class="width100 bg-white pd25 borderRadius7">
+    <section class="flex center padding20 controlPadding">
+      <div class="width100 bg-white pd25 borderRadius7 controlPadding2">
 
         <section class="panier_header">
           <div class="text_center panier_item_width20">N°</div>
