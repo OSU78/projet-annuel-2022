@@ -1,0 +1,153 @@
+@import "variables";
+@import "media-queries";
+@import "animation";
+@import "utilities";
+@import "header";
+@import "card";
+@import "footer";
+
+/******table************/
+#form-submit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+.table-section {
+  width: 80%;
+  margin: 0% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-content {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.table-content > tbody > tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table-section > thead > tr,
+th {
+  color: white;
+  font-weight: bold;
+  background-color: $bg-primary;
+  padding: 10px;
+}
+.table-section tr td {
+  padding: 10px;
+  border: 1px solid white;
+  text-align: center;
+  width: calc(100% / 7);
+  height: 70px;
+  img {
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.table-content > tbody > tr {
+  background-color: white;
+}
+.cache {
+  color: red;
+  display: none;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+  width: 80%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  counter-reset: step;
+  margin: 2rem auto 4rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 10px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: red;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 4.1875rem;
+  height: 4.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.progress-step-active {
+  background-color: blue;
+  color: #f3f3f3;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
