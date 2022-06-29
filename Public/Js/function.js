@@ -2,6 +2,17 @@
 function saveUser(user) {
   localStorage.setItem("user", JSON.stringify(user));
 }
+function getTextSize(strings){
+  let newString="";
+  if(strings.length>18){
+    for(var i=0;i<=18;i++){
+      
+      newString+=strings[i];
+  
+    }
+    return newString+="";
+  }
+}
 
 // // function de recuperation des utilisateurs
 function getUser() {
@@ -154,3 +165,8 @@ var getHttpRequest = function () {
   }
   return httpRequest;
 };
+
+
+
+document.querySelector("#total-basket").innerHTML = getTotalPrice()+" €";
+    
