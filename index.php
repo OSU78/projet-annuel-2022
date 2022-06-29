@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
   <?php require "./views/includes/head.php" ?>
   <script defer src="/Public/Js/home.js"></script>
-  <title>Home page</title>
-</head>
-
 <body>
-  <div class="wrapper">
+
     <?php require "./views/includes/header.php" ?>
     <section class="banner">
       <video autoplay muted loop id="myVideo">

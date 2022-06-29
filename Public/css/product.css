@@ -344,30 +344,6 @@ input:focus {
   cursor: pointer;
 }
 
-.tooltip::before {
-  content: " ";
-  position: absolute;
-  padding: 5px;
-  height: 10px;
-  background-color: transparent;
-  width: 15px;
-  transition: 0.3s;
-  left: -12px;
-  top: 24px;
-}
-
-.tooltip:hover::before {
-  content: " ";
-  position: absolute;
-  padding: 5px;
-  width: 30px;
-  height: 10px;
-  top: 25px;
-  left: 8px;
-  transition: 0.3s;
-  background-color: #f1bc1e;
-}
-
 .panier_item_product_img {
   border: 1px solid white;
   max-height: 70px !important;
@@ -402,17 +378,37 @@ input:focus {
 .card__description {
   display: flex;
   justify-content: space-between;
-  padding: 0px 10px 10px 10px;
-}
-
-.card__description--text {
-  height: 60px;
+  padding: 5px 10px 10px 10px;
 }
 
 .card__description--text p {
   margin: 0;
 }
 
+.btn__card--text {
+  font-family: "WorkSans-Regular";
+}
+
+.btn__card--logo {
+  display: none;
+}
+
+.btn__card--logo img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 650px) {
+  .btn__card--text {
+    display: none;
+  }
+
+  .btn__card--logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .footer {
   padding-top: 20px;
   color: #ededed;
@@ -748,10 +744,23 @@ h5 {
 
 .linear_gradian {
   border: none;
+  background: linear-gradient(101.84deg, #000000 0%, rgba(0, 0, 0, 0.442708) 53.65%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.transparent {
+  background: transparent !important;
+}
+
+.btn_card2 {
+  font-size: 12px;
+  background: #f1bc1e;
+  box-shadow: 0px 0px 12px rgba(186, 153, 105, 0.23), 0px 0px 64px rgba(186, 153, 105, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: none;
   height: 30px;
   padding-inline: 5px;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 /*SVG VAGUE*/
@@ -905,6 +914,11 @@ h5 {
 
   .card img {
     width: 200px;
+  }
+
+  .linear_gradian .product_s1_card_btn {
+    width: -webkit-fill-available;
+    text-align: center;
   }
 
   .card {

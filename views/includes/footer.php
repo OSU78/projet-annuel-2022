@@ -33,7 +33,6 @@
     <span>COPYRIGHT AND REPRODUCTION RIGHTS RESERVED BY</span>
   </article>
 </footer>
-</div>
 </body>
 
 </html>

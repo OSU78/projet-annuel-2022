@@ -2,7 +2,7 @@
       <a class="active" href="#contact">Personnaliser une création</a>
       <a href="/views/product.php">Nos Oeuvres</a>
       <a href="/index.php" class="logo">
-        <img src="/Public/assets/img/logo-header.svg" alt="Logo">
+        <img src="/Public/assets/img/logo-header.svg" alt="Logo" width="321" height="104px">
       </a>
       <a href="#">
         <!-- TOOLTIP -->
@@ -12,8 +12,8 @@
             <h3 style="margin: 0px;font-size:30px;font-weight: 100;">Mon panier</h3>
 
             <div class="flex center column gap10">
-              <a href="panier.html" class="panier_btn_headerSecondary scaleHover">Voir le panier complet</a>
-              <a href="panier.html" class="panier_btn_header scaleHover">Passer à la commande</a>
+              <a href="./panier.php" class="panier_btn_headerSecondary scaleHover">Voir le panier complet</a>
+              <a href="./commande.php" class="panier_btn_header scaleHover">Passer à la commande</a>
             </div>
           </div>
           <div class="badge flex center">
