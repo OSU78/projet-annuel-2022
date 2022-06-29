@@ -14,17 +14,7 @@ function toast() {
   }, 3000);
 }
 
-function getTextSize(strings){
-  let newString="";
-  if(strings.length>18){
-    for(var i=0;i<=18;i++){
-      
-      newString+=strings[i];
-  
-    }
-    return newString+="";
-  }
-}
+
 // window.addEventListener("load", function (event) {
 //   console.log("badge");
 //   window.document.querySelector(".badge").innerText = JSON.parse(

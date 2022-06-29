@@ -23,11 +23,11 @@ document.querySelector(".tooltip").addEventListener("mouseover", () => {
           // console.log(content.idProd);
           panierItem += `
 <div class="panier_item"
-    style="display: flex;justify-content:center;align-item:center;flex-direction:row;gap: 15px ;padding:25px;font-size: 12px;">
+    style="display: flex;justify-content:space-arround;align-item:center;flex-direction:row;gap: 15px ;padding:25px;font-size: 12px;">
     <img class="panier_item_product_img" src="${content.imgLink}" alt="">
     <div class="" style="display: flex;flex-direction:column">
       <div class="flex row gap10">
-        <p style="width: max-content;font-size: 22px; margin-bottom: 5px;">${content.nomProd}</p>
+        <p style="width: max-content;font-size: 22px; margin-bottom: 5px;">${getTextSize(content.nomProd)}</p>
       </div>
       <div class="flex row gap10 colorGray" style="width: max-content">
         <p>Quantité :</p>

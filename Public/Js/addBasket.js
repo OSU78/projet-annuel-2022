@@ -43,9 +43,9 @@ results
     htmlBasket += `
             <section class="flex spaceBetween center pd25 gap15 pd25Custom">
               <div class="text_center panier_item_width20">1</div>
-                <div class="text_center panier_item_width90">${
-                  content.nomProd
-                }</div>
+                <div class="text_center panier_item_width90">
+                <img class="panier_item_product_img" src="${content.imgLink}" alt="">
+               </div>
                 <div class="text_center panier_item_width200">
                   Gravure dessiner à la main
                 </div>
@@ -106,7 +106,7 @@ mores.forEach((more) => {
     else{
       console.log("positif")
     }
-    document.querySelector("#total-basket").innerHTML = total;
+    document.querySelector("#total-basket").innerHTML = total+" €";
   });
 });
 
@@ -130,7 +130,7 @@ for (let i = 0; i < lesss.length; i++) {
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.style.display="none"
         console.log( "Suppression du panier : "+e.target.parentNode.parentNode.parentNode.parentNode.parentNode)
       }
-    document.querySelector("#total-basket").innerHTML = total;
+    document.querySelector("#total-basket").innerHTML =  total+" €";
 
     // var id = e.target.getAttribute("data-id");
     // // console.log(results[id].quantity);

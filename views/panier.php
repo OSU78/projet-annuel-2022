@@ -15,6 +15,7 @@
 <body>
   <?php require "includes/header.php" ?>
   <main class="bg-black">
+  
     <div class="flex center">
       <div class="align_left width67">
         <h1 class="enchanted white ft45">Panier</h1>
@@ -54,6 +55,7 @@
 
 
   </main>
+
 </body>
 
 </html>
