@@ -60,13 +60,6 @@
     object-fit: cover;
   }
   
-//   .banner__text {
-//     position: fixed;
-//     width: 540px;
-//     color: white;
-//     z-index: 2;
-//   }
-  
   .banner__text h1 {
     margin: 0;
   }
@@ -84,10 +77,8 @@
     position: relative;
     background: url('/Public/assets/img/bg-top.svg');
     width: 100vw;
-    // height: 1776px;
     background-position : bottom, 0px;
     padding-bottom: 250px;
-    // background-repeat: no-repeat;
   }
   
   .artwork__content {
@@ -177,8 +168,6 @@
     gap: 20px;
   }
   
-
-
   .btn__best-seller {
     width: 550px;
     margin: auto;
@@ -293,8 +282,9 @@
 }
 
 .artwork__scroll--img {
-  width: 300px;
-  height: 300px;
+  display: flex;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
   margin: 20px;
   border-radius: 5px;
@@ -312,10 +302,6 @@
 .artwork__text p {
   font-family: WorkSans-Regular;
   font-size: 18px;
-}
-
-.artwork__scroll--img {
-  display: flex;
 }
 
 .artwork__scroll--arrow {
@@ -423,6 +409,34 @@
   width: 400px;
 }
 
+.math-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: black;
+    color: white;
+    height: 400px;
+    margin: 50px 35px;
+    padding: 20px;
+}
+
+.math-description h3 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.flex{
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .btn__best-seller {
+        width: 300px;
+    }
+}
+
 @media (max-width: 1025px) {
   .custom {
     justify-content: center;
@@ -433,24 +447,10 @@
     justify-content: center;
     align-items: center;
     height: 400px;
-    // margin: 50px 35px;
-    // padding: 0px 35px 50px;
   }
   .custom .btn {
     margin-top: 50px
   }
-}
-  .math-description h3 {
-    margin: 0;
-    font-size: 40px;
-  }
-
-.math-description p {
-    text-align: center;
-}
-
-.flex{
-    display: flex;
 }
 
 @media (max-width: 1165px) {
@@ -474,14 +474,3 @@
     }
 }
 
-
-.math-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: black;
-  color: white;
-  height: 400px;
-  margin: 50px 35px;
-}

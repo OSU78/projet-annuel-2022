@@ -24,4 +24,25 @@
     margin: 0;
   }
   
+  .btn__card--logo {
+    display: none;
+  }
 
+  .btn__card--logo img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 650px) {
+    .btn__card--text {
+      display: none;
+    }
+    .btn__card--logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn__card {
+      width: 90px;
+    }
+  }
