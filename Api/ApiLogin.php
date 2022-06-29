@@ -1,7 +1,9 @@
 <?php
 // le fichier config contient le constantes definis et la connexion a la base de donnée
 require '../config.php';
-$authDB = require_once '../Models/User.php';
+$authDB = require_once '../Models/Security.php';
+$authUser = require_once '../Models/User.php';
+$authSecurity = new AuthDB($pdo);
 $user = new User($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -42,21 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
         // recuperation des informations de l'utilisateur
         $contentUserInfo = $user->getUser($getUserIdBymail['idUser']);
-        // var_dump($contentUserInfo);
-        // die();
-        // creation de de la session et stockage des informations du user
-        session_start();
-        $_SESSION['user'] = [
-          'idUser' => $contentUserInfo['idUser'],
-          'email' => $contentUserInfo['email'],
-          'idAdress' => $contentUserInfo['idAdress'],
-          'postalCode' => $contentUserInfo['postalCode'],
-          'street_number' => $contentUserInfo['street_number'],
-          'locality' => $contentUserInfo['locality'],
-          'country' => $contentUserInfo['country'],
-          'route' => $contentUserInfo['route']
-        ];
-        echo json_encode($_SESSION['user']);
+        if ($contentUserInfo) {
+          $authSecurity->login($contentUserInfo['idUser']);
+          $currentUser = $authSecurity->isLoggedin();
+          echo json_encode($currentUser);
+        }
       } else {
         echo json_encode([
           'status' => 'Le mot de passe ou l\'email est incorrect'

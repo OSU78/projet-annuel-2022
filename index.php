@@ -1,5 +1,8 @@
   <?php require "./views/includes/head.php" ?>
-  <script defer src="/Public/Js/home.js"></script>
+  <script src="/Public/Js/data.js"></script>
+  <title>Home page</title>
+</head>
+
 <body>
 
     <?php require "./views/includes/header.php" ?>
@@ -148,3 +151,4 @@
         quasi, corrupti quod deleniti, expedita aspernatur similique tempora, aliquam quae rerum nam perspiciatis.</p>
     </section>
     <?php require "./views/includes/footer.php" ?>
+    <script defer src="/Public/Js/home.js"></script>
