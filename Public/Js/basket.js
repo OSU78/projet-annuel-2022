@@ -33,3 +33,6 @@ xhr.onreadystatechange = function () {
 };
 xhr.open("GET", "/Api/ApiBasket.php?id=" + id, true);
 xhr.send();
+window.document.querySelector(".badge").innerText = JSON.parse(
+  localStorage.basket
+).length;

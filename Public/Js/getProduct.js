@@ -56,16 +56,17 @@ async function asyncCall() {
 
   // console.log(getDataRamdom);
   html1 = `
-    <div class="product_s1_card">
+   
           <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
-          <div class="flex gap10 column">
+          <div class="flex gap10 column pd10">
             <p class="product_s1_card_name" product="${getDataRamdom.idProd}">${getDataRamdom.nomProd}</p>
             <div class="product_s1_card_detail">
               <p class="product_s1_card_price">${getDataRamdom.priceProd}€</p>
-              <button data-id="${data[0].idProd}" id="basket-link" class="product_s1_card_btn">Ajouter au panier</button>
+              <a href="panier.php?=id=${data[0].idProd}" data-id="${data[0].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+      
             </div>
           </div>
-        </div>
+        
       `;
   firstSectionProd.innerHTML = html1;
 
@@ -85,13 +86,13 @@ async function asyncCall() {
     .map(function (content) {
       htmls += `
      <div class="product_s1_card mini_card">
-        <img class="product_s1_card_img m2" style="height: 75%" src="/Public/assets/img/product.svg" alt="gravure 2"
+        <img class="product_s1_card_img m2" style="height: 62%" src="/Public/assets/img/product.svg" alt="gravure 2"
           srcset="" />
-        <div class="flex gap10 column">
+        <div class="flex gap10 column pd10">
           <p class="product_s1_card_name">${content.nomProd}</p>
           <div class="product_s1_card_detail">
             <p class="product_s1_card_price">${content.priceProd}€</p>
-            <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+            <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
           </div>
         </div>
       </div>
@@ -115,14 +116,15 @@ async function asyncCall() {
   dataElementTree
     .map(function (content) {
       sectionTree += `
-      <div class="card linear_gradian">
+      
+      <div class="card linear_gradian scaleHover">
         <img loading="lazy"src="/Public/assets/img/product.svg" alt="" />
-        <div class="card__description">
+        <div class="card__description pd1012 paddingBottom">
           <div class="card__description--text">
             <p>${content.nomProd}</p>
-            <p>${content.priceProd}€</p>
+            <p class="fontSize25 pd5">${content.priceProd}€</p>
           </div>
-        <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+        <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
         </div>
       </div>
   `;
@@ -134,16 +136,17 @@ async function asyncCall() {
   let contentSeven = data[6];
   let eles4 = document.querySelector("#product_s1_cardSix");
   let sectionFour = `
-         <div class="product_s1_card">
-          <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
-          <div class="flex gap10 column">
-            <p class="product_s1_card_name" product="${data[6].idProd}">${data[6].nomProd}</p>
-            <div class="product_s1_card_detail">
-              <p class="product_s1_card_price">${data[6].priceProd}€</p>
-              <a href="panier.php?=id=${data[6].idProd}" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
-            </div>
-          </div>
-        </div>
+  <img class="product_s1_card_img" src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
+  <div class="flex gap10 column pd10">
+    <p class="product_s1_card_name" product="${data[6].idProd}">${data[6].nomProd}</p>
+    <div class="product_s1_card_detail">
+      <p class="product_s1_card_price">${data[6].priceProd}€</p>
+      <a href="panier.php?=id=${data[6].idProd}" data-id="${data[6].idProd}" id="basket-link"  class="product_s1_card_btn widthMax heightMin">Ajouter au panier</a>
+      
+    
+    </div>
+  </div>
+        
       `;
   eles4.innerHTML = sectionFour;
 
@@ -161,13 +164,13 @@ async function asyncCall() {
   dataElementSeven
     .map(function (content) {
       sectionSeven += `
-     <div class="product_s1_card mini_card linear_gradian">
+     <div class="product_s1_card mini_card linear_gradian ">
           <img src="/Public/assets/img/product.svg" alt="gravure 1" srcset="" />
-        <div class="flex gap10 column">
+        <div class="flex gap10 column pd10">
               <p class="product_s1_card_name">${content.nomProd}</p>
               <div class="product_s1_card_detail">
                 <p class="product_s1_card_price">${content.priceProd}€</p>
-               <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn">Ajouter au panier</a>
+               <a href="panier.php?=id=${content.idProd}" data-id="${content.idProd}" id="basket-link"  class="product_s1_card_btn widthMax">Ajouter au panier</a>
               </div>
             </div>
           </div>
@@ -181,13 +184,14 @@ async function asyncCall() {
 var dataBasket = [];
 function resolveAfter2Second() {
   setTimeout(() => {
+    console.log("ready")
     let linkDatas = document.querySelectorAll("#basket-link");
     // console.log(linkDatas);
     linkDatas.forEach((linkData) => {
       linkData.addEventListener("click", (e) => {
         e.preventDefault();
         var id = e.target.getAttribute("data-id");
-        console.log(id);
+        // console.log(id);
         let url = "/Api/essai.php?idProd=" + id;
         let xhr = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
 
@@ -198,6 +202,10 @@ function resolveAfter2Second() {
               dataBasket = results;
               console.log(dataBasket);
               addBasket(dataBasket);
+              window.document.querySelector(".badge").innerText = JSON.parse(
+                localStorage.basket
+              ).length;
+
               toast();
             } else {
               alert("impossible datteindre le server");
@@ -208,7 +216,15 @@ function resolveAfter2Second() {
         xhr.send();
       });
     });
-  }, 5000);
+  }, 4000);
 }
+
+window.addEventListener("load", function(event) {
+  console.log("badge")
+  window.document.querySelector(".badge").innerText = JSON.parse(
+  localStorage.basket
+).length;
+});
+
 resolveAfter2Second();
 asyncCall();

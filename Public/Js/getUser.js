@@ -102,22 +102,6 @@ function getUser() {
               </form>
               `;
 
-        // this.response.country.map(function (code) {
-        //   return (
-        //     html +
-        //     `
-        //           <select name="countryCode" id="countryCode">
-        //               <option value="${code}">Dog</option>
-        //               <option value="cat">Cat</option>
-        //               <option value="hamster">Hamster</option>
-        //               <option value="parrot">Parrot</option>
-        //               <option value="spider">Spider</option>
-        //               <option value="goldfish">Goldfish</option>
-        //           </select>
-        //           `
-        //   );
-        // });
-
         const content = document.querySelector("#wrapper");
         content.innerHTML = html;
       } else {

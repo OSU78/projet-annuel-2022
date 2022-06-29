@@ -2,34 +2,18 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <?php require "includes/head.php" ?>
   <title>Panier</title>
   <link rel="stylesheet" href="/Public/css/product.css" />
   <link rel="stylesheet" href="/Public/css/panier.css" />
-  <!-- <script defer src="/Public/Js/function.js"></script> -->
+
+  <!-- le script js -->
   <script defer src="/Public/Js/function.js"></script>
   <script defer src="/Public/Js/addBasket.js"></script>
-  <!-- <script defer src="/Public/Js/AddBasket.js"></script> -->
-
 </head>
 
 <body>
-  <header class="header" role="header">
-    <nav class="header__nav">
-      <a href="#">Nos Oeuvres</a>
-      <a href="#">Personnaliser une création</a>
-      <img loading="lazy" src="/Public/assets/img/logo-header.svg" alt="Logo" width="320" height="104" />
-      <a href="#">À propos</a>
-      <a href="product.html">
-        <img loading="lazy" src="/Public/assets/icons/icon-backet.svg" alt="Panier" />
-      </a>
-      <a href="views/login.html">
-        <img loading="lazy" src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur" />
-      </a>
-    </nav>
-  </header>
+  <?php require "includes/header.php" ?>
   <main class="bg-black">
     <div class="flex center">
       <div class="align_left width67">
@@ -39,7 +23,6 @@
     </div>
     <section class="flex center padding20">
       <div class="width100 bg-white pd25 borderRadius7">
-
 
         <section class="panier_header">
           <div class="text_center panier_item_width20">N°</div>
@@ -51,11 +34,21 @@
         </section>
 
         <div id="panierList" class="contentBaskets">
-
+          <!-- le contenu du paanier -->
 
         </div>
 
-        <button class="product_s1_card_btn" id="total-basket">Total</button>
+        <div class="flex gap15 width100 center" style="justify-content: flex-end;">
+          <div class="flex center gap10 pd13"
+            style="background-color: white;border:1px solid #0f0f0f;border-radius:10px">
+            <p>Total : </p>
+            <p id="total-basket">___€</p>
+          </div>
+          <div>
+            <a href="#" class="product_s1_card_btn widthMax heightMin scaleHover borderBlackHover">Commander</a>
+          </div>
+        </div>
+
       </div>
     </section>
 

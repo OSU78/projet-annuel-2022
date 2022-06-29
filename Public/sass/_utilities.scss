@@ -3,6 +3,8 @@ h2,
 h3,
 h4 {
   font-family: $enchanted;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -19,17 +21,16 @@ input:focus {
 }
 
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: $btn-primary;
+  color: $bg-primary;
   cursor: pointer;
-  padding: 18px;
-  width: 10%;
+  padding: 20px;
+  width: 150px;
   margin: 0 auto;
   border: none;
-  text-align: left;
+  text-align: center;
   outline: none;
-  font-size: 15px;
-  // margin: 20px;
+  font-size: 18px;
 }
 
 .active,
@@ -66,24 +67,34 @@ input:focus {
 .tooltip .bottom {
   min-width: 250px;
   // max-width: 400px;
+  position: absolute;
   top: 40px;
   left: 80%;
   transform: translate(-80%, 0);
-  padding: 20px;
-  color: $bg-primary;
-  background-color: #eeeeee;
+  // padding: 20px;
+  // color: $bg-primary;
+  // background-color: #eeeeee;
   font-weight: normal;
   font-size: 13px;
   border-radius: 8px;
-  position: absolute;
-  z-index: 99999999;
+  z-index: 999999999999999999999999;
   box-sizing: border-box;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   display: none;
+
+
+  
 }
 
 .tooltip:hover .bottom {
-  display: block;
+  
+    display: flex;
+    background-color: #0f0f0f;
+    color: white;
+    padding: 25px;
+    border: 1px solid rgba(253, 253, 253, 0.355);
+    flex-direction: column-reverse;
+  
 }
 
 .tooltip .bottom img {
@@ -96,7 +107,7 @@ input:focus {
   bottom: 100%;
   // left: 0%;
   right: 20%;
-  margin-left: -px;
+  margin-left: -10px;
   width: 24px;
   height: 12px;
   overflow: hidden;
@@ -111,8 +122,6 @@ input:focus {
   transform: translate(-50%, 50%) rotate(45deg);
   background-color: #eeeeee;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-.bottom {
 }
 
 /* Add a green text color and a checkmark when the requirements are right */
