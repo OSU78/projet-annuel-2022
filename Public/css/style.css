@@ -545,16 +545,19 @@ input:focus {
 }
 
 .btn__card {
-  font-size: 12px;
-  background: #f1bc1e;
-  box-shadow: 0px 0px 12px rgba(186, 153, 105, 0.23), 0px 0px 64px rgba(186, 153, 105, 0.5);
-  backdrop-filter: blur(8px);
+  background-color: #f1bc1e;
+  padding: 13px 13px;
   border-radius: 10px;
-  border: none;
-  font-family: "WorkSans-Bold";
-  width: 150px;
-  height: 30px;
-  align-self: flex-end;
+  color: black;
+  font-weight: bold;
+  text-decoration-line: none;
+  transition: 0.3s;
+  box-shadow: 0px 0px 3px rgba(186, 153, 105, 0.23), 0px 0px 15px rgba(186, 153, 105, 0.5);
+}
+
+.btn__card:hover {
+  background-color: #ffffff;
+  transition: 0.3s;
 }
 
 /* Landscape phones and down */
@@ -591,12 +594,20 @@ input:focus {
   width: 50%;
 }
 
+.header--mobile img {
+  object-fit: cover;
+  width: max-content;
+  max-width: 100%;
+  height: 65px;
+}
+
 .header--mobile {
   background: #0f0f0f;
-  position: relative;
+  position: sticky;
+  z-index: 888;
   top: 0;
   display: flex;
-  flex-flow: column-reverse;
+  flex-flow: column;
   padding: 10px;
   /* When the input field gets focus, change its width to 100% */
 }
@@ -606,6 +617,9 @@ input:focus {
   width: 100%;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+}
+.header--mobile .btn_box_shadow {
+  box-shadow: 0px 0px 3px rgba(186, 153, 105, 0.23), 0px 0px 15px rgba(186, 153, 105, 0.5);
 }
 .header--mobile .search-btn ::placeholder {
   color: white;
@@ -742,7 +756,7 @@ input:focus {
 .banner .banner__text {
   z-index: 999999;
   position: absolute;
-  bottom: 100px;
+  bottom: 30%;
   left: 20px;
   color: #f1f1f1;
   width: 500px;
@@ -751,7 +765,7 @@ input:focus {
 }
 @media (min-width: 501px) and (max-width: 780px) {
   .banner .banner__text {
-    bottom: 60px;
+    bottom: 12%;
     width: 350px;
   }
 }
@@ -763,7 +777,8 @@ input:focus {
 }
 @media (min-width: 501px) and (max-width: 780px) {
   .banner .banner__text h2 {
-    font-size: 32px;
+    width: max-content;
+    font-size: 44px;
   }
 }
 @media (max-width: 500px) {
@@ -807,6 +822,42 @@ input:focus {
   background-image: linear-gradient(2.46deg, #161515 5%, rgba(44, 40, 40, 0) 173.9%);
 }
 
+.banner__text p {
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .banner__text {
+    bottom: 20% !important;
+  }
+}
+@media (max-width: 660px) {
+  .banner__text p {
+    margin: 10px;
+    font-size: 22px;
+    width: 120%;
+  }
+}
+@media (max-width: 500px) {
+  .banner #myVideo {
+    opacity: 0.2;
+    transform: scale(2);
+  }
+
+  .banner__text p {
+    width: 110%;
+  }
+
+  .banner {
+    overflow: hidden;
+    z-index: -1;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    display: flex;
+    background: #0f0f0f;
+  }
+}
 .footer {
   padding-top: 20px;
   color: #ededed;
@@ -1137,8 +1188,9 @@ input[type=submit] {
   padding: 10px 10px;
   margin-right: 10px;
   object-fit: cover;
+  max-height: 350px;
   border-radius: 20px;
-  filter: drop-shadow(10px 10px 4px #373737);
+  filter: drop-shadow(10px 10px 4px rgba(55, 55, 55, 0.5));
 }
 
 .flex-item-left,
@@ -1346,13 +1398,17 @@ input[type=submit] {
 }
 @media (min-width: 1200px) {
   .banner p {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 @media (max-width: 800px) {
   .artwork {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .artwork__content--img {
+    display: none;
   }
 
   .flex-item-right {

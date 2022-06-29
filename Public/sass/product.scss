@@ -83,6 +83,7 @@ h5 {
   transform: scale(1.02);
   transition: 0.4s;
   box-shadow: 1px 2px 28px #ffffff24;
+ 
 }
 
 .product_s1_card_img {
@@ -101,6 +102,7 @@ h5 {
   font-weight: bold;
   text-decoration-line: none;
   transition: 0.3s;
+  box-shadow: 0px 0px 3px rgb(186 153 105 / 23%), 0px 0px 15px rgb(186 153 105 / 50%);
 }
 
 
@@ -349,6 +351,12 @@ h5 {
 .header__nav--badge {
   position: relative;
 }
+.header--mobile img{
+  object-fit: cover;
+  width: max-content;
+  max-width: 100%;
+  height: 65px;
+}
 
 
 /***************/
@@ -454,6 +462,9 @@ h5 {
 }
 
 @media (max-width: 987px) {
+  .panier_item_width200,.panier_item_width80,.panier_item_width20{
+    display: none;
+  }
   .card img {
     width: 200px;
   }

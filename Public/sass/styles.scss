@@ -42,8 +42,9 @@
         padding: 10px 10px;
         margin-right: 10px;
         object-fit: cover;
+        max-height: 350px;
         border-radius: 20px;
-        filter: drop-shadow(10px 10px 4px rgb(55, 55, 55));
+        filter: drop-shadow(10px 10px 4px rgba(55, 55, 55,0.5));
       }
     }
   }
@@ -261,7 +262,7 @@
 @media (min-width: 1200px) {
   .banner {
     p {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
 }
@@ -269,6 +270,9 @@
   .artwork {
     flex-direction: column;
     gap: 20px;
+  }
+  .artwork__content--img{
+    display: none;
   }
   .flex-item-right {
     order: 1;

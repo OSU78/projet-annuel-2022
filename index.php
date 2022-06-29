@@ -20,7 +20,8 @@
         <p>
           LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLore
         </p>
-        <button class="btn__card">Découvrez notre travail</button>
+        <!-- <button class="btn__card">Découvrez notre travail</button> -->
+        <a href="./views/product.php"  class="btn__card widthMax heightMin">Découvrez notre travail</a>
       </div>
       <img onclick="myFunction()" id="myBtn" class="banner__play" src="/Public/assets/icons/icon-play.svg"
         alt="play-video">
