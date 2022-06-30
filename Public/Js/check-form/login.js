@@ -32,7 +32,7 @@ form.addEventListener("submit", (e) => {
         } else {
           // saveUser(resultats);
           // setTimeout(function () {
-          //   window.location.href = "/views/profil.php";
+          window.location.href = "/views/profil.php";
           // }, 2000);
         }
       } else {

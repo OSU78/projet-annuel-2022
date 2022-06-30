@@ -44,7 +44,6 @@ form.addEventListener("submit", (e) => {
           <strong>warning!</strong> ${contentError}.
           </div>
         `;
-        // form.reset();
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");
       }

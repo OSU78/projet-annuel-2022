@@ -2,19 +2,8 @@
 function saveUser(user) {
   localStorage.setItem("user", JSON.stringify(user));
 }
-function getTextSize(strings){
-  let newString="";
-  if(strings.length>18){
-    for(var i=0;i<=18;i++){
-      
-      newString+=strings[i];
-  
-    }
-    return newString+="";
-  }
-}
 
-// // function de recuperation des utilisateurs
+// function de recuperation des utilisateurs
 function getUser() {
   let user = localStorage.getItem("user");
   if (user == null) {
@@ -23,15 +12,30 @@ function getUser() {
     return JSON.parse(user);
   }
 }
-// function changeQuantityMoin(product) {
-//   let basket = getBasket();
-//   let indice = 1;
-//   let foundProduct = basket.find((p) => p.id == product.id);
-//   if (foundProduct != undefined) {
-//     foundProduct.quantity -= 1;
-//   }
-//   saveBasket(basket);
-// }
+
+function saveOrder(order) {
+  localStorage.setItem("order", JSON.stringify(order));
+}
+
+// function de recuperation des commandes
+function getOrder() {
+  let order = localStorage.getItem("order");
+  if (order == null) {
+    return [];
+  } else {
+    return JSON.parse(order);
+  }
+}
+
+function getTextSize(strings) {
+  let newString = "";
+  if (strings.length > 18) {
+    for (var i = 0; i <= 18; i++) {
+      newString += strings[i];
+    }
+    return (newString += "");
+  }
+}
 
 function findElement(status, resultat) {
   let result = resultat;
@@ -139,7 +143,7 @@ function getTotalPriceOneProduct(product) {
   return total;
 }
 
-var getHttpRequest = function () {
+var getHttpRequest = () => {
   var httpRequest = false;
 
   if (window.XMLHttpRequest) {
@@ -165,8 +169,3 @@ var getHttpRequest = function () {
   }
   return httpRequest;
 };
-
-
-
-document.querySelector("#total-basket").innerHTML = getTotalPrice()+" €";
-    

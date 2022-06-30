@@ -2,20 +2,32 @@
 <html lang="fr">
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panier</title>
   <link rel="stylesheet" href="/Public/css/product.css" />
   <link rel="stylesheet" href="/Public/css/panier.css" />
 
   <!-- le script js -->
+
+  <!-- <script defer src="/Public/Js/order.js"></script> -->
   <script defer src="/Public/Js/function.js"></script>
   <script defer src="/Public/Js/addBasket.js"></script>
 </head>
 
 <body>
   <?php require "includes/header.php" ?>
+  <!-- Progress bar -->
+  <!-- <div class="progressbar">
+    <div class="progress" id="progress"></div>
+
+    <div class="progress-step progress-step-active" data-title="Intro"></div>
+    <div class="progress-step" data-title="Fruits"></div>
+    <div class="progress-step" data-title="Legumes"></div>
+    <div class="progress-step" data-title="Viandes"></div>
+    <div class="progress-step" data-title="Poissons"></div>
+  </div> -->
   <main class="bg-black">
-  
+
     <div class="flex center">
       <div class="align_left width67">
         <h1 class="enchanted white ft45">Panier</h1>
@@ -46,15 +58,15 @@
             <p id="total-basket">___€</p>
           </div>
           <div>
-            <a href="#" class="product_s1_card_btn widthMax heightMin scaleHover borderBlackHover">Commander</a>
+            <a href="completUserDelivery.php" id="cmd"
+              class="product_s1_card_btn widthMax heightMin scaleHover borderBlackHover">Commander</a>
           </div>
         </div>
-
       </div>
     </section>
-
-
   </main>
+  <?php require "includes/footer.php" ?>
+  <script src="/Public/Js/check.js"></script>
 
 </body>
 

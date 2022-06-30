@@ -1,6 +1,4 @@
 <?php
-// declaration de la session
-session_start();
 // le fichier config contient le constantes definis et la connexion a la base de donnée
 require '../config.php';
 // $authDB = require_once '../Models/User.php';
@@ -37,10 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // suppression des espaces avec trim
     $email           = trim($_POST['email']);
     // $idUser          = trim($_POST['idUser']) ?? '';
-    $confirmpassword = trim($_POST['confirmpassword']) ?? '';
-    $password        = trim($_POST['password']) ?? '';
-    $tel1            = trim($_POST['tel1']);
-    $tel2            = trim($_POST['tel2']) ?? '';
+    $tel1            = trim($_POST['tel_1']);
+    $tel2            = trim($_POST['tel_2']) ?? '';
     $streetNumber    = trim($_POST['street_number']);
     $country         = trim($_POST['country']);
     $route           = trim($_POST['route']);
@@ -51,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // filtrages des elements input
     $input = filter_input_array(INPUT_POST, [
       'email' => FILTER_SANITIZE_EMAIL,
-      'tel1' => FILTER_SANITIZE_NUMBER_INT,
-      'tel2' => FILTER_SANITIZE_NUMBER_INT,
+      'tel_1' => FILTER_SANITIZE_NUMBER_INT,
+      'tel_2' => FILTER_SANITIZE_NUMBER_INT,
       'street_number' => FILTER_SANITIZE_NUMBER_INT,
       'postalCode' => FILTER_SANITIZE_NUMBER_INT,
       'route' => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -64,8 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $confirmpassword = $input['confirmpassword'] ?? '';
     $password        = $input['password'] ?? '';
-    $tel1            = $input['tel1'];
-    $tel2            = $input['tel2'] ?? '';
+    $tel1            = $input['tel_1'];
+    $tel2            = $input['tel_2'] ?? '';
     $streetNumber    = $input['street_number'] ?? "";
     $country         = $input['country'] ?? "";
     $route           = $input['route'] ?? "";
@@ -73,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname       = $input['firstname'] ?? '';
     $lastname        = $input['lastname'] ?? '';
     $postalCode      = $input['postalCode'] ?? '';
-
 
     if (!$firstname) {
       $errors['firstname'] = ERROR_REQUIRED;
@@ -90,16 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errors['email'] = ERROR_EMAIL_INVALID;
     }
-    // if (!$password) {
-    //   $errors['password'] = ERROR_REQUIRED;
-    // } elseif (mb_strlen($password) < 6) {
-    //   $errors['password'] = ERROR_PASSWORD_TOO_SHORT;
-    // }
-    // if (!$confirmpassword) {
-    //   $errors['confirmpassword'] = ERROR_REQUIRED;
-    // } elseif ($confirmpassword !== $password) {
-    //   $errors['confirmpassword'] = ERROR_PASSWORD_MISMATCH;
-    // }
 
     if (!$postalCode) {
       $errors['postalcode'] = ERROR_REQUIRED;
@@ -126,9 +111,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     // verification du tableu d'erreur
     if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-      $user->sendJSON([
-        'succes' => "cool mon gars"
-      ]);
+
+      $authDbOrder = require_once '../models/Order.php';
+      //  $authDbOrder->registerDetailCommande([
+      //           'name_prod'        => $arrayContente['name'],
+      //           'id_cmd'           => $id['id_cmd'],
+      //           'id_prod'          => $contentProd['id_prod'],
+      //           'detail_qte'       => $arrayContente['quantity'],
+      //           'price_total_prod' => $arrayContente['priceTotal']
+      //         ]);
+
+      $user->sendJSON($input);
     } else {
       $user->sendJSON($errors);
     }

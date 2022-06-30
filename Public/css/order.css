@@ -126,6 +126,7 @@ input:focus {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
+  height: 100vh;
 }
 
 .tooltip {
@@ -326,6 +327,8 @@ input:focus {
 }
 .header-menu__mobile .nav--menu .item img {
   order: 1;
+  width: 25px;
+  height: 25px;
 }
 .header-menu__mobile .nav--menu .item a {
   color: white;
