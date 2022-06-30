@@ -246,10 +246,12 @@ p {
         gap: 10px;
     }
     .produit__confiance--container {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
         margin-block: 10px;
-        gap: 15px;
+        max-width: 430px;
+        align-self: center;
     }
     .produit__confiance {
         flex-direction: column;
