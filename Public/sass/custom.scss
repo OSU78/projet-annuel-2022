@@ -1,0 +1,177 @@
+@import "reset";
+@import "typo";
+@import "variables";
+@import "button";
+@import "card";
+@import "form";
+
+
+h1, h2 {
+    font-family: $enchanted;
+    align-self: start;
+    line-height: 70px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: $WorkSans-Regular;
+    font-size: 16px;
+}
+
+.produit {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: $bg-secondary;
+    background: $bg-primary;
+    padding: 20px;
+}
+
+.produit__carroussel--photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: grey;
+    border-radius: 5px;
+}
+
+.produit__scroll {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 100px);
+}
+
+.produit__scroll--img {
+    display: none;
+    object-fit: contain;
+    width: 100%;
+    max-height: 400px;
+    margin: 20px 5px;
+    border-radius: 5px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.formulaire {
+    padding: 20px;
+}
+
+.form__submit {
+    display: flex;
+    justify-content: right;
+}
+
+.description__projet {
+    margin: 0;
+}
+
+.avis {
+    background: $bg-primary;
+    color: $bg-secondary;
+    padding: 35px;
+}
+
+.avis__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    color: $bg-secondary;
+    padding-block: 30px;
+    padding-inline: 50px;
+    border-radius: 5px;
+}
+
+.avis__single {
+    display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    align-items: center;
+    // flex: 0 0 45%;
+    // flex: 1 1 0;
+    gap: 20px;
+}
+
+.avis__single--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.avis__single--text p {
+    margin: 0;
+}
+
+.avis__single--titre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.avis__prenom {
+    font-weight: 600;
+}
+
+.avis__date {
+    color: grey;
+}
+
+
+
+@media (max-width: 380px) {
+    .avis__single img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .avis__single--text p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    h1, h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .produit__scroll--arrow {
+        width: 50px;
+    }
+}
+
+@media (min-width: 380px) and (max-width: 500px) {
+    .avis__single img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 630px) {
+    .avis__container {
+        padding-inline: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .avis__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .avis__single--text p {
+        font-size: 20px;
+    }
+}
