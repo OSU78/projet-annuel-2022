@@ -1,7 +1,6 @@
 @import "media-queries";
 
 .header {
-
   background-color: $bg-primary;
   padding: 20px 20px;
   display: flex;
@@ -31,8 +30,7 @@
   width: 50%;
 }
 
-
-.header--mobile img{
+.header--mobile img {
   object-fit: cover;
   width: max-content;
   max-width: 100%;
@@ -46,8 +44,6 @@
   display: flex;
   flex-flow: column;
   padding: 10px;
-  
-
 
   input.search-btn {
     border: 1px solid $btn-primary;
@@ -59,8 +55,9 @@
     // border-radius: 8px;
   }
 
-  .btn_box_shadow{
-    box-shadow:0px 0px 3px rgb(186 153 105 / 23%), 0px 0px 15px rgb(186 153 105 / 50%);
+  .btn_box_shadow {
+    box-shadow: 0px 0px 3px rgb(186 153 105 / 23%),
+      0px 0px 15px rgb(186 153 105 / 50%);
   }
   .search-btn {
     ::placeholder {
@@ -94,8 +91,6 @@
   border-bottom: none;
   border-left: none;
   border-right: none;
-  
-
 
   .nav--menu {
     display: flex;
@@ -103,8 +98,7 @@
     justify-content: space-around;
 
     .item {
-
-      &:hover{
+      &:hover {
         transform: scale(1.1);
         transition: 0.3s;
         filter: brightness(1);
@@ -155,46 +149,18 @@
   cursor: pointer;
 }
 
-
-
-// .tooltip::before {
-//   content: " ";
-//   position: absolute;
-//   padding: 5px;
-//   height: 10px;
-//   background-color: transparent;
-//   width: 15px;
-//   transition: 0.3s;
-//   left: -12px;
-//   top: 24px;
-// }
-
-// .tooltip:hover::before {
-//   content: " ";
-//   position: absolute;
-//   padding: 5px;
-//   width: 30px;
-//   height: 10px;
-//   top: 25px;
-//   left: 8px;
-//   transition: 0.3s;
-//   background-color: #f1bc1e;
-// }
-
-
-.panier_item_product_img{
+.panier_item_product_img {
   border: 1px solid white;
-    max-height: 70px !important;
-    object-fit: cover;
-    max-width: 70px !important;
-    height: 70px !important;
-    width: 70px !important;
+  max-height: 70px !important;
+  object-fit: cover;
+  max-width: 70px !important;
+  height: 70px !important;
+  width: 70px !important;
 }
 
 /********/
 
 @media (min-width: 500px) {
-  
   .header-menu__mobile {
     display: none;
   }
@@ -202,8 +168,4 @@
   .header--mobile {
     display: none;
   }
-
-
-  
 }
-

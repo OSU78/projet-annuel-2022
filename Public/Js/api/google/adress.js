@@ -46,15 +46,7 @@ coll.addEventListener("click", function () {
     content.style.maxHeight = content.scrollHeight + "px";
   }
 });
+// console.log(getUser());
 
-// var coll = document.querySelector(".collapsible");
-// coll.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   this.classList.toggle("active");
-//   var content = this.nextElementSibling;
-//   if (content.style.maxHeight) {
-//     content.style.maxHeight = null;
-//   } else {
-//     content.style.maxHeight = content.scrollHeight + "px";
-//   }
-// });
+let email = document.querySelector("#email");
+email.value = getUser().email;

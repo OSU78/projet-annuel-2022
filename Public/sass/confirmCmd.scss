@@ -1,0 +1,82 @@
+@import "reset";
+@import "typo";
+@import "variables";
+
+.wrapper__confirmation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: $bg-primary;
+    padding-block: 60px;
+    padding-inline: 50px;
+}
+
+.message {
+    position: relative;
+    background: $bg-secondary;
+    font-family: $WorkSans-Regular;
+    font-weight: 600;
+    padding-block: 100px;
+    padding-inline: 50px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 650px;
+}
+
+.message h2 {
+    font-size: 18px;
+}
+
+.message p {
+    font-size: 14px;
+}
+
+.message__feuille {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+}
+
+.casque, .casque__retourne {
+    position: absolute;
+    height: 100px;
+}
+
+.casque {
+    top: 0;
+    right: 0;
+}
+
+.casque__retourne {
+    bottom: 0;
+    left: 0;
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 380px) {
+    .message__feuille {
+        width: 50px;
+    }
+}
+
+@media (min-width: 560px) {
+    .wrapper__confirmation {
+        padding-inline: 100px;
+    }
+    .casque, .casque__retourne {
+        height: 200px;
+    }
+    .message h2 {
+        font-size: 22px;
+    }
+    
+    .message p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 600px) {
+    .message {
+        padding-inline: 100px;
+    }
+}

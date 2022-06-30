@@ -4,6 +4,8 @@
 <head>
   <?php require "includes/head.php" ?>
   <script defer src="/Public/Js/check-form/login.js"></script>
+  <script defer src="/Public/Js/function.js"></script>
+
   <title>Connexion</title>
 </head>
 
@@ -61,3 +63,4 @@
       </form>
     </main>
     <?php require "includes/footer.php" ?>
+    <script src="/Public/Js/check.js"></script>

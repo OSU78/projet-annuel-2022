@@ -9,15 +9,12 @@ form.addEventListener("submit", (e) => {
   const requeteAjax = new XMLHttpRequest();
 
   requeteAjax.open("POST", "/Api/ApiRegister.php");
-  // requeteAjax.responseType = "json"; // Nous attendons du JSON
-
   requeteAjax.onload = function () {
     if (requeteAjax.readyState === XMLHttpRequest.DONE) {
       if (requeteAjax.status === 200) {
         const resultats = JSON.parse(requeteAjax.response);
         console.log(resultats);
         let contentError = [];
-
         if (
           "email" in resultats ||
           "password" in resultats ||
@@ -37,14 +34,16 @@ form.addEventListener("submit", (e) => {
             contentError.push(resultats.confirmpassword);
           }
           console.log(contentError);
-        }
-        let message = document.querySelector(".message");
-        message.innerHTML = `<div class="alert warning">
+          let message = document.querySelector(".message");
+          message.innerHTML = `<div class="alert warning">
           <span class="closebtn">&times;</span>  
           <strong>warning!</strong> ${contentError}.
           </div>
         `;
-        // form.reset();
+        } else {
+          saveUser(resultats);
+          window.location.href = "/views/product.php";
+        }
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");
       }

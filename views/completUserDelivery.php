@@ -1,11 +1,27 @@
+<?php
+require '../config.php';
+$authDB = require_once '../Models/Security.php';
+$currentUser = $authDB->isLoggedin();
+var_dump($currentUser);
+if (!$currentUser) {
+  // header('Location: /');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCywaY5J6pQy-QjxVyM0tQu7Rn6KYCmvSY"></script>
+  <script defer src="/Public/Js/function.js"></script>
+  <script defer src="/Public/Js/updateUser.js"></script>
+  <script defer src="/Public/Js/order.js"></script>
+
   <script defer src="/Public/Js/api/google/adress.js"></script>
-  <script defer src="/Public/Js/check.js"></script>
+  <link rel="stylesheet" href="/Public/css/product.css" />
+  <link rel="stylesheet" href="/Public/css/panier.css" />
   <?php require "includes/head.php" ?>
 
   <title>Mise à jour information</title>
@@ -116,8 +132,12 @@
               <label for="country">Pays:</label>
             </div>
             <div class="col-75">
-              <input type="text" id="country" name="country" placeholder="Your twon..">
+              <input type="text" id="country" name="country" placeholder="Your country..">
             </div>
+          </div>
+          <div class="row">
+            <button id="cmd"
+              class="product_s1_card_btn widthMax heightMin scaleHover borderBlackHover">Commander</button>
           </div>
         </div>
       </div>
