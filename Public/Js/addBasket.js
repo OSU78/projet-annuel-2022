@@ -59,9 +59,6 @@ mores.forEach((more) => {
   more.addEventListener("click", (e) => {
     e.stopPropagation();
     id = e.target.getAttribute("data-id").toString();
-    console.log("id / " + id.toString());
-    // console.log(results[id].quantity);
-    console.log(getBasket()[id]);
     changeQuantity({ idProd: id.toString() }, 1);
     let total = getTotalPrice();
     let targetParent = e.target.parentNode.parentNode.parentNode;
@@ -85,8 +82,6 @@ for (let i = 0; i < lesss.length; i++) {
   less.addEventListener("click", (e) => {
     e.stopPropagation();
     id = e.target.getAttribute("data-id").toString();
-    console.log("id / " + id.toString());
-    console.log(getBasket()[id]);
     changeQuantity({ idProd: id.toString() }, -1);
     let total = getTotalPrice();
     let targetParent = e.target.parentNode.parentNode.parentNode;
@@ -107,15 +102,13 @@ for (let i = 0; i < lesss.length; i++) {
     }
     let totalB = document.querySelector("#total-basket") ?? "";
     totalB.innerHTML = getTotalPrice() + " €";
-    // totalBasket.innerHTML = total + " €";
   });
 }
-cmd.addEventListener("click", (e) => {
-  e.preventDefault();
-  // console.log(getUser().idUser);
-  if (getUser().idUser !== undefined) {
-    window.location.href = "/views/completUserDelivery.php";
-  } else {
-    window.location.href = "/views/login.php";
-  }
-});
+// cmd.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   if (getUser().idUser !== undefined) {
+//     window.location.href = "/views/completUserDelivery.php";
+//   } else {
+//     window.location.href = "/views/login.php";
+//   }
+// });

@@ -12,18 +12,11 @@ requete.onload = function () {
     if (requete.status === 200) {
       let reponse = JSON.parse(requete.response);
       console.log(reponse);
-      if (!reponse) {
-        window.location.href = "/views/login.php";
+      if (reponse) {
+        saveUser(reponse);
+        console.log(dataUser);
       }
-      // dataUser = reponse;
-      saveUser(reponse);
-      console.log(dataUser);
-      dataOrder = {
-        totalPrice: getTotalPrice(),
-        idUser: dataUser.idUser,
-        statusCmd: "En cours de validation",
-      };
-      // console.log(reponse);
+      // window.location.href = "/views/login.php";
     } else {
       alert("Un problème est intervenu, merci de revenir plus tard.");
     }

@@ -1,10 +1,3 @@
-function resolveAfter2Seconds() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 2000);
-  });
-}
 // toast
 function toast() {
   var x = document.getElementById("snackbar");

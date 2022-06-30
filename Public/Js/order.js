@@ -1,6 +1,15 @@
 // envoie des elements de la commande dans la base de donnée
+console.log(getUser().idUser);
+var dataOrder = {
+  totalPrice: getTotalPrice(),
+  idUser: getUser().idUser,
+  statusCmd: "En cours de validation",
+};
 let cmd = document.querySelector("#cmd");
+saveOrder(dataOrder);
 console.log(getUser());
+console.log(getOrder());
+
 cmd.addEventListener("click", (e) => {
   e.preventDefault();
   let order = JSON.parse(localStorage.getItem("order"));
@@ -16,8 +25,6 @@ cmd.addEventListener("click", (e) => {
       if (requeteAjax.status === 200) {
         const resultats = JSON.parse(requeteAjax.response);
         console.log(resultats);
-        // window.location.href = "/views/profil.php";
-        // saveUser(resultats);
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");
       }
@@ -48,9 +55,5 @@ cmd.addEventListener("click", (e) => {
       }
     };
     requeteAjax.send(formaData);
-    // window.location.href = "/views/completUserDelivery.php";
-    // } else {
-    //   console.log("aucune commande en cours");
-    // }
   }, 1000);
 });

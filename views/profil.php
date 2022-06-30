@@ -1,3 +1,11 @@
+<?php
+require '../config.php';
+$authDB = require_once '../Models/Security.php';
+$currentUser = $authDB->isLoggedin();
+if (!$currentUser) {
+  header('Location: /');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

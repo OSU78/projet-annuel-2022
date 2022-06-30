@@ -1,11 +1,3 @@
-//Fonction pour recuperer un tableau dans le localStorageJS
-// function getUser(arrayName) {
-//   var array = localStorage.getItem(arrayName);
-//   // On parse le tableau en format Json
-//   array = JSON.parse(array);
-//   return array;
-// }
-
 // le formulaire
 var form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
@@ -30,10 +22,9 @@ form.addEventListener("submit", (e) => {
           </div>
         `;
         } else {
-          // saveUser(resultats);
-          // setTimeout(function () {
-          window.location.href = "/views/profil.php";
-          // }, 2000);
+          saveUser(resultats);
+          console.log(resultats);
+          window.location.href = "/views/product.php";
         }
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");

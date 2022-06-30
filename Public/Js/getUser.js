@@ -1,15 +1,4 @@
-// fonction de recuperation des données de l'utilisateur
-function testAsync() {
-  return new Promise((resolve, reject) => {
-    //here our function should be implemented
-
-    setTimeout(() => {
-      console.log("Hello from inside the testAsync function");
-      resolve();
-    }, 5000);
-  });
-}
-
+// fonction de recuperation des données de l'utilisateu
 function getUser() {
   const url = "/Api/getUser.php";
   let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
