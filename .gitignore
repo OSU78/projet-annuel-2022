@@ -10,3 +10,7 @@ package-lock.json
 composer.lock
 
 package.json
+
+Stripe/
+
+Stripe - Copy/

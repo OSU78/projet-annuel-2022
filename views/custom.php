@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/css/custom.css">
-    <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Public/css/product.css" />
+  <link rel="stylesheet" href="/Public/css/custom.css">
+  <script src="/Public/Js/data.js"></script>
+  <script defer src="/Public/Js/function.js"></script>
+  <script defer src="/Public/Js/basketTooltip.js"></script>
+
+  <title>Personnalisez votre création</title>
 </head>
 
 <body>
-
+  <?php require "includes/header.php" ?>
+  <main>
     <div class="wrapper__custom">
         
         <section class="produit">
-            <h1>Personnalisez votre création</h1>
+            <h1 class="mgLeft20">Personnalisez votre création</h1>
             <div class="produit__carroussel">
                 <div class="produit__carroussel--photo">
                     <img class="produit__scroll--arrow prev" onclick="plusSlides(-1)" src="/Public/assets/icons/icon-left-arrow.svg" alt="left-arrow">
                     <div class="produit__scroll">
-                        <img class="produit__scroll--img fade" src="https://i.ibb.co/gTZMkQP/IMG-20220609-165546.jpg" alt="Produit">
-                        <img class="produit__scroll--img fade" src="https://i.ibb.co/hM8fjQ8/thrn-7.jpg" alt="Produit">
-                        <img class="produit__scroll--img fade" src="https://i.ibb.co/0j5JQ4p/thrn-1-2.jpg" alt="Produit">
-                      <img class="produit__scroll--img fade" src="https://i.ibb.co/N9dBWdc/IMG-20220223-152446.jpg" alt="Produit">
-                      <img class="produit__scroll--img fade" src="https://i.ibb.co/NFLB0wh/IMG-20220203-132805.jpg" alt="Produit">
+                        <img class="produit__scroll--img fade cover" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Produit">
+                        <img class="produit__scroll--img fade cover" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Produit">
+                        <img class="produit__scroll--img fade cover" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Produit">
+                      <img class="produit__scroll--img fade cover" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Produit">
+                      <img class="produit__scroll--img fade cover" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Produit">
                     </div>
                     <img class="produit__scroll--arrow next" onclick="plusSlides(1)" src="/Public/assets/icons/icon-right-arrow.svg" alt="right-arrow">  
                 </div>
             </div>
             <p>Voici la dernière commande personnalisée de nos clients</p>
         </section>
+        <section class="flex center width100">
         <section class="formulaire">
             <h2>Créez votre oeuvre</h2>
             <p>Formulaire de contact pour une personnalisation complète</p>
@@ -74,11 +80,13 @@
                 </div>
 
                 <div class="form__submit">
-                  <button type="submit" class="btn small">Envoyer</button>
+                  <button type="submit" class="btn small marginTop20" style="padding: 5px 50px;">Envoyer</button>
                 </div>
 
               </form>
         </section>
+        </section>
+        
 
         <section class="avis">
             <h2>Ils nous ont apprécié</h2>
@@ -119,9 +127,6 @@
     </div>
     
 
-
+    </main>
     <script src="/Public/Js/detailProduit.js"></script>
-
-</body>
-
-</html>
+    <?php require "includes/footer.php" ?>

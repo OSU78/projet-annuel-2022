@@ -31,7 +31,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: grey;
+   // background: grey;
     border-radius: 5px;
 }
 
@@ -61,9 +61,21 @@ p {
 }
 
 .formulaire {
+    margin-top: 25px;
     padding: 20px;
+    width: -webkit-fill-available;
+    max-width: 900px;
+    margin-bottom: 25px;
 }
-
+.mgLeft20{
+    margin-left: 20px;
+}
+.cover{
+    object-fit: cover;
+}
+.marginTop20{
+    margin-top: 20px;
+}
 .form__submit {
     display: flex;
     justify-content: right;

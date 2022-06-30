@@ -168,5 +168,7 @@ var getHttpRequest = function () {
 
 
 
-document.querySelector("#total-basket").innerHTML = getTotalPrice()+" €";
+if (document.querySelector("#total-basket")){
+  document.querySelector("#total-basket").innerHTML = getTotalPrice()+" €";
+}
     
