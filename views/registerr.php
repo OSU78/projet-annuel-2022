@@ -8,8 +8,11 @@
 </head>
 
 <body>
+  <style>
+   
+  </style>
   <?php require "includes/header.php" ?>
-  <div class="wrapper">
+  <div class="wrapper" style="background-color:#0f0f0f !important">
     <form id="form" enctype='multipart/form-data'>
       <div class="form-control">
         <label for="" class="">Mail:</label>

@@ -8,7 +8,7 @@
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-bottom: 128px;
+  padding-bottom: 58px;
 
   &__element {
     width: 100%;
@@ -63,4 +63,13 @@
   h2 {
     font-size: 40px;
   }
+}
+
+
+@media ( max-width:680px){
+  .footer{
+    background-color: red;
+    padding-bottom: 128px !important;
+  }
+  
 }

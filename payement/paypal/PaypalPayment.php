@@ -1,11 +1,17 @@
 <?php
+session_start();
 require "vendor/autoload.php";
 require_once "getPanierItem.php";
-require_once "ApiOrder.php";
-var_dump($_POST);
+// require_once "ApiOrder.php";
+
+$orders=json_decode($_SESSION["order"],true);
+$totalPrice=$_SESSION["totalPrice"];
+//echo $totalPrice;
+// die();
 
 require "config.php";
-
+// $payement = new PaypalPayement(PAYPAL_ID, PAYPAL_SECRET, true);
+// echo $payement->ui();
 class PaypalPayement{
 
     public function __construct(readonly private string $clientId, readonly private string $clientSecret,readonly private bool $sandbox){
@@ -14,23 +20,38 @@ class PaypalPayement{
     
 
     public function ui(): string {
+        $totalPrice=$_SESSION["totalPrice"];
+        $orders=json_decode($_SESSION["order"],true);
         $clientId=PAYPAL_ID;
-        // $order=[
-        //     "purchase_units"=>[[
-        //         'description'=> 'Panier MathThePrinter',
-        //         'items'=> array_map(function ($product){
-        //             return [
-        //                 'name'=> $product["nomProd"],
-        //                 'quantity'=>$product["quantity"],
-        //                 'unit_amount'=>[
-        //                     'value'=>$product['price'],
-        //                     'currency_code'=>"EUR",
+        $order=json_encode([
+            "purchase_units"=>[[
+                'description'=> 'Panier MathThePrinter',
+                'items'=> array_map(function ($product){
+                    return [
+                        'name'=> $product["nomProd"],
+                        'quantity'=>$product["quantity"],
+                        'unit_amount'=>[
+                            'value'=>$product['priceProd'],
+                            'currency_code'=>"EUR",
 
-        //                 ]
-        //                 ];
-        //         },getProducts())
-        //     ]]
-            //];
+                        ]
+                        ];
+                },$orders),
+                "amount"=> [
+                    'currency_code'=>"EUR",
+                    'value'=> $totalPrice, 
+                    "breakdown"=> [
+                        'item_total'=>[
+                            'currency_code'=>'EUR',
+                            'value'=> $totalPrice,
+                        ]
+                    ]
+                ]
+            ]]
+            ]);
+            //Exemple d'affichage d'un produit*/
+            //print_r($order["purchase_units"][0]["items"][0]);
+            //die();
         return <<<HTML
                         <script src="https://www.paypal.com/sdk/js?client-id={$clientId}&currency=EUR&intent=authorize"></script>
                 <!-- Set up a container element for the button -->
@@ -41,14 +62,7 @@ class PaypalPayement{
                 paypal.Buttons({
                     // Sets up the transaction when a payment button is clicked
                     createOrder: (data, actions) => {
-                    return actions.order.create({
-                        purchase_units: [{
-                        amount: {
-                            
-                            value: '102.44' // Can also reference a variable or function
-                        }
-                        }]
-                    });
+                    return actions.order.create({$order});
                     },
                     // Finalize the transaction after payer approval
                     onApprove: async (data, actions) => {
@@ -61,10 +75,10 @@ class PaypalPayement{
                             },
                             body: JSON.stringify({authorizationId})
                         })
-                        alert('Votre paiement a bien été enregistré : '+authorizationId)
-
+                        //alert('Votre paiement a bien été enregistré : '+authorizationId)
+                        window.location.href="/views/confirmCmd.php?auth="+authorizationId;
                         /*On fait ce qu'on veut*/
-
+                           
                         // envoie des elements de la commande dans la base de donnée
                         console.log(getUser().idUser);
                         var dataOrder = {
@@ -110,6 +124,7 @@ class PaypalPayement{
                                 if (requeteAjax.status === 200) {
                                 const resultats = JSON.parse(requeteAjax.response);
                                 console.log(resultats);
+                                windows.location.href=="/views/confirmCmd.php";
                                 if (resultats.status == "succes") {
                                 } else {
                                     window.location.href = "/views/profil.php";
@@ -139,12 +154,14 @@ class PaypalPayement{
                     }
                 }).render('#paypal-button-container');
                 </script>
-    
+              
         HTML;
+        
     }
 
     public function handle(ServerRequestInterface $request, Cart $cart): void
     {
+        $totalPrice=$_SESSION["totalPrice"];
         if ($this->sandbox) {
             $environment = new \PayPalCheckoutSdk\Core\SandboxEnvironment($this->clientId, $this->clientSecret);
         } else {
@@ -154,7 +171,7 @@ class PaypalPayement{
         $authorizationId = $request->getParsedBody()['authorizationId'];
         $request = new \PayPalCheckoutSdk\Payments\AuthorizationsGetRequest($authorizationId);
         $authorizationResponse = $client->execute($request);
-        if ($authorizationResponse->result->amount->value !== number_format($cart->getTotal() / 100, 2, '.', "")) {
+        if ($authorizationResponse->result->amount->value !== number_format($totalPrice, 2, '.', "")) {
             //throw new PaymentAmountMissmatchException($amount, $cart->getTotal());
             echo "Erreur : le montant envoyé ne correspond pas au montant du produit";
         }

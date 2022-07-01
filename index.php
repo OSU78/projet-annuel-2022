@@ -154,7 +154,8 @@
       <div class="banner__text">
         <h2>Plus qu'un art, une Passion</h2>
         <p>
-          LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLore
+        Nous realisons des gravures d’univers médiéval fantaisie
+        Réalisé à la main par nos soins.
         </p>
         <!-- <button class="btn__card">Découvrez notre travail</button> -->
         <a href="./views/product.php" class="btn__card widthMax heightMin">Découvrez notre travail</a>

@@ -3,8 +3,8 @@ session_start();
 $idCmd = "";
 global $idCmd;
 
-require_once '../config.php';
-$authDbOrder = require_once '../models/Order.php';
+require_once 'config.php';
+$authDbOrder = require_once '/models/Order.php';
 global $idCmd;
 if (array_key_exists('idUser', $_POST)) {
   $count = $authDbOrder->registerOrder([

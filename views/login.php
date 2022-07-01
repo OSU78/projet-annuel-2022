@@ -123,32 +123,16 @@
     color: rgba(255, 255, 255, 0.729) !important;
   }
 
-  .panier_btn_headerSecondary:hover {
-    background-color: #ffffff54;
-    color: rgb(255, 255, 255) !important;
-    transition: 0.3s;
-  }
-
-  .panier_btn_header {
-    background-color: #f1bc1e;
-    padding: 10px 10px;
-    border-radius: 10px;
-    color: #0f0f0f !important;
-    text-decoration-line: none;
-    transition: 0.3s;
-    width: -webkit-fill-available;
-    font-family: sans-serif;
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .panier_btn_header:hover {
-    background-color: #ffffff;
-    color: #0f0f0f;
-    transition: 0.3s;
-  }
+      .panier_btn_header:hover {
+        background-color: #ffffff;
+        color: #0f0f0f;
+        transition: 0.3s;
+      }
+      p,a,label{
+        font-family: sans-serif;
+      }
   </style>
-  <div class="wrapper">
+  <div class="wrapper" style="background-color:#0f0f0f">
     <?php require "includes/header.php" ?>
     <main class="form--container">
       <form id="form" enctype='multipart/form-data' class="form">
@@ -183,7 +167,9 @@
             <span>Pas encore membre?</span> <a href="/views/register.php">Inscription</a>
           </div>
         </div>
-
+        <div class="form__submit">
+          <button type="submit" class="btn small customHover">Connexion</button>
+        </div>
         <div class="row">
           <button class="form__btn--google">
             <img src="/Public/assets/icons/icon-google.svg" alt="">
@@ -191,9 +177,7 @@
           </button>
 
         </div>
-        <div class="form__submit">
-          <button type="submit" class="btn small">Envoyer</button>
-        </div>
+       
         <p class="form__text">En vous inscrivant sur Math the printer, vous acceptez
           nos conditions d’utilisations, notre Politique de confidentialié
           et notre Politique concernant les cokkies
