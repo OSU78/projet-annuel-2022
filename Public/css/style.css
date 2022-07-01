@@ -1229,6 +1229,10 @@ span {
   border: 1px solid #f1bc1e;
 }
 
+.wrapper {
+  background-color: #0f0f0f;
+}
+
 .main {
   height: 80vh;
   display: flex;
@@ -1385,8 +1389,9 @@ span {
 
 .btn__best-seller {
   margin: auto;
-  margin-block: 50px;
+  margin-block: 35px;
   padding: 15px;
+  margin-bottom: 65px;
 }
 
 .best-seller {
@@ -1409,10 +1414,23 @@ span {
   gap: 20px;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .btn__best-seller {
   margin: auto;
   margin-block: 50px;
   padding: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover, .btn__best-seller:hover {
+  transition: 0.3s;
+  translate: scale(1.05);
+  background-color: white;
+  cursor: pointer;
 }
 
 .confiance {
@@ -1490,7 +1508,6 @@ span {
   text-align: center;
   background: black;
   color: white;
-  height: 400px;
   margin: 50px 35px;
   padding: 20px;
 }
@@ -1533,7 +1550,6 @@ span {
   align-items: center;
   background: black;
   color: white;
-  height: 400px;
   margin: 50px 35px;
 }
 
@@ -1589,6 +1605,43 @@ span {
   .flex-item-left {
     order: 2;
     text-align: center;
+  }
+}
+.math-description {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 30px;
+  background-color: black;
+  max-width: 1400px;
+  gap: 20px;
+}
+
+.math-description img {
+  width: 30%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.math-description div {
+  font-family: "WorkSans-Regular";
+  font-size: 16px;
+  color: white;
+  max-width: 900px;
+}
+
+@media (max-width: 800px) {
+  .math-description {
+    flex-direction: column;
+  }
+
+  .math-description img {
+    width: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .math-description div {
+    font-size: 18px;
   }
 }
 

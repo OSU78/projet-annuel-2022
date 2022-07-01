@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/detailProduit.css">
-  <link rel="stylesheet" href="/Public/css/style.css">
-  <!-- <script defer src="/Public/Js/detailProduit.js"></script> -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/Public/Js/detailProduit.js"></script>
   <script defer src="/Public/Js/detailProd.js"></script>
   <title>Détail produit</title>
 </head>
