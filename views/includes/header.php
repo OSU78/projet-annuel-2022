@@ -1,7 +1,14 @@
+    <style>
+      header a{
+        font-family: 'enchanted-land' !important;
+        font-size: 30px !important;
+      }
+    </style>
     <header class="header">
       <a class="active" href="/views/custom.php">Personnaliser une création</a>
       <a href="/views/product.php">Nos Oeuvres</a>
       <a href="/index.php" class="logo">
+        
         <img src="/Public/assets/img/logo-header.svg" alt="Logo" width="321" height="104px">
       </a>
       <a href="#">

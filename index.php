@@ -1,15 +1,20 @@
   <?php require "./views/includes/head.php" ?>
   <script src="/Public/Js/data.js"></script>
   <title>Home page</title>
+  <link rel="stylesheet" href="/Public/css/product.css" />
+  
   </head>
 
   <body>
 
     <?php require "./views/includes/header.php" ?>
     <style>
-      p,a,label{
+      p,
+      a,
+      label {
         font-family: sans-serif !important;
       }
+
       .badge {
         border-radius: 0px;
         background-color: #ffffff;
@@ -39,14 +44,14 @@
         margin: 12px 0;
       }
 
-    
+
       .tooltip .bottom {
         min-width: 250px;
         position: absolute;
         top: 40px;
         left: 80%;
         transform: translate(-80%, 0);
-      
+
         font-weight: normal;
         font-size: 13px;
         border-radius: 8px;
@@ -154,8 +159,8 @@
       <div class="banner__text">
         <h2>Plus qu'un art, une Passion</h2>
         <p>
-        Nous realisons des gravures d’univers médiéval fantaisie
-        Réalisé à la main par nos soins.
+          Nous realisons des gravures d’univers médiéval fantaisie
+          Réalisé à la main par nos soins.
         </p>
         <!-- <button class="btn__card">Découvrez notre travail</button> -->
         <a href="./views/product.php" class="btn__card widthMax heightMin">Découvrez notre travail</a>
@@ -211,36 +216,18 @@
     <section class="best-seller">
       <h2>Best Sellers</h2>
       <div class="best-seller__cards">
-        <div class="card">
-          <img src="Public/assets/img/product.svg" alt="">
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
-            </div>
-            <button class="btn__card">Ajouter au panier</button>
+        <!-- Section 2 des produits -->
+        <section class="flex center spaceBt padding20 gap20">
+          <div class="flex center spaceBt padding20 gap20 width1180" id="card--container">
+
           </div>
-        </div>
-        <div class="card">
-          <img src="Public/assets/img/product.svg" alt="">
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
-            </div>
-            <button class="btn__card">Ajouter au panier</button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="Public/assets/img/product.svg" alt="">
-          <div class="card__description">
-            <div class="card__description--text">
-              <p>Dimensions et description</p>
-              <p>125 €</p>
-            </div>
-            <button class="btn__card">Ajouter au panier</button>
-          </div>
-        </div>
+
+        </section>
+
+
+
+
+      </div>
       </div>
       <button class="btn btn__best-seller">Voir notre catalogue de gravures ></button>
     </section>
@@ -272,15 +259,76 @@
       <div class="custom__text">
         <h2>Envie de customisation</h2>
         <p>Nous réalisons des gravures d'univers médiéval & fantaisiste. Réalisé à la main, par nos soins.</p>
-        <button class="btn">Contactez nous maintenant</button>
+        <button class="btn contacterNous">Contactez nous maintenant</button>
       </div>
       <img src="/Public/assets/img/custom-img.svg" alt="">
     </section>
 
     <section class="math-description">
-      <h3>Description Math, son travail et photo</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro numquam maxime quam cum, libero minus optio! Sit
-        quasi, corrupti quod deleniti, expedita aspernatur similique tempora, aliquam quae rerum nam perspiciatis.</p>
+   
+<section class="math-description" style="flex-direction: row;">
+        <img src="https://i.ibb.co/rHjBKz6/photo-math.jpg" alt="photo de Math">
+        <div>
+          <h3>Math the printer</h3>
+          <p>J'ai commencé un long voyage il y a quelques années en regardant des gravures sur 
+            bois médiévales et en sentant que quelque chose était vraiment agréable à voir. 
+          </p>
+           <p>Chaque illustration passe par un processus créatif où chaque étape est faite à la main.</p>
+          <p>N'hésitez pas à nous contacter !</p>
+          <p>Math, The Printer.</p>
+        </div>
+    </section>
     </section>
     <?php require "./views/includes/footer.php" ?>
+    
+    <script>
+      
+
+
+      setTimeout(()=>{
+        let secondSectionTree = document.querySelector("#card--container");
+let dataElementTree = [];
+for (let i = 3; i <= 5; i++) {
+  console.log(data[i]);
+  dataElementTree.push(data[i]);
+}
+// console.log(dataElementTree);
+
+// 3eme section
+let sectionTree = "";
+
+dataElementTree
+  .map(function (content) {
+    sectionTree += `
+      
+      <div class="card linear_gradian scaleHover">
+        <img class="product_link" data-id="${
+          content.idProd
+        }" loading="lazy"src="${content.imgLink}" alt="" />
+        <div class="card__description pd1012 paddingBottom">
+          <div class="card__description--text">
+            <p>${getTextSize(content.nomProd)}</p>
+            <p class="fontSize25 pd5">${content.priceProd}€</p>
+          </div>
+        <a href="panier.php?=id=${content.idProd}" data-id="${
+      content.idProd
+    }" id="basket-link"  class="product_s1_card_btn widthMax heightMin textCenter">Ajouter au panier</a>
+        </div>
+      </div>
+  `;
+    return sectionTree;
+  })
+  .join("");
+secondSectionTree.innerHTML = sectionTree;
+},500)
+
+document.querySelector(".btn__best-seller").addEventListener("click",()=>{
+window.location="/views/product.php";
+});
+document.querySelector(".contacterNous").addEventListener("click",()=>{
+window.location="/views/custom.php";
+});
+
+
+    </script>
     <script defer src="/Public/Js/home.js"></script>
