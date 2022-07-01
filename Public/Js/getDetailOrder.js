@@ -1,5 +1,4 @@
-// ajouter une quantité
-const names = "id";
+const names = "idCmd";
 function getParam(param) {
   var varsp = {};
   window.location.href.replace(
@@ -14,15 +13,14 @@ function getParam(param) {
   }
   return varsp;
 }
-console.log("dialo");
 console.log(getParam(names));
-var idCmd = getParam(names);
+var id = getParam(names);
 function getDetailOrder() {
   let getLink = document.querySelector("#detail-order");
   console.log(getLink);
   //  getParam(names)
   let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
-  requete.open("GET", "/Api/ApiGetDetailOrder.php?idCmd=" + idCmd, true); // Nous récupérons juste des données
+  requete.open("GET", "/Api/ApiDetailProd.php?id=" + id, true); // Nous récupérons juste des données
 
   // requete.responseType = "json"; // Nous attendons du JSON
   requete.send(); // Nous envoyons notre requête
@@ -56,6 +54,6 @@ function getDetailOrder() {
   };
   // });
 }
-setTimeout(function () {
-  getDetailOrder();
-}, 1000); //run this thang every 2 seconds
+// setTimeout(function () {
+getDetailOrder();
+// }, 1000); //run this thang every 2 seconds

@@ -7,7 +7,7 @@
   <script src="/Public/Js/data.js"></script>
   <script src="/Public/Js/function.js"></script>
   <script src="/Public/Js/getProduct.js"></script>
-  <script defer src="/Public/Js/detailProd.js"></script>
+  <!-- <script defer src="/Public/Js/detailProd.js"></script> -->
   <script src="/Public/Js/basketTooltip.js"></script>
   <title>Nos gravures</title>
 

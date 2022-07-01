@@ -42,10 +42,10 @@
 			:quantityProd
 		)');
 
-			$this->statementReadAllFromDetailCmd		= $pdo->prepare('SELECT * FROM  detail_commande WHERE id_cmd=:id_cmd');
+			$this->statementReadAllFromDetailCmd		= $pdo->prepare('SELECT * FROM lign_commande WHERE idCmd=:idCmd');
 			$this->statementReadAllCmd				      = $pdo->prepare('SELECT * FROM commande WHERE idUser=:idUser');
-			$this->statementReadOneOrder			      = $pdo->prepare('SELECT commande.montant_cmd, detail_commande.* FROM detail_commande LEFT JOIN commande ON detail_commande.id_cmd = commande.id_cmd  WHERE commande.id_cmd=:id');
-			$this->statementReadOneFromComd         = $pdo->prepare('SELECT id_cmd FROM commande WHERE client_id=:id ORDER BY id_cmd DESC LIMIT 0, 1');
+			$this->statementReadOneOrder			      = $pdo->prepare('SELECT commande.montantCmd, products.imgLink, products.nomProd, products.description, lign_commande.* FROM lign_commande LEFT JOIN commande ON lign_commande.idCmd = commande.idCmd INNER JOIN products ON products.idProd=lign_commande.idProd WHERE commande.idCmd=:idCmd;');
+			$this->statementReadOneFromComd         = $pdo->prepare('SELECT idCmd FROM commande WHERE idUser=:idUser ORDER BY idCmd DESC LIMIT 0, 1;');
 			$this->statementReadOne                 = $pdo->prepare('SELECT idCmd FROM commande WHERE idUser=:idUser order by idCmd DESC');
 			$this->statementReadAllCommande         = $pdo->prepare('SELECT * FROM commande');
 		}
@@ -78,9 +78,9 @@
 			return $this->statementReadAllCmd->fetchAll();
 		}
 
-		public function fetchOneOrder(string $idUser): array
+		public function fetchOneOrder(string $idCmd): array
 		{
-			$this->statementReadOneOrder->bindValue(':idUser', $idUser);
+			$this->statementReadOneOrder->bindValue(':idCmd', $idCmd);
 			$this->statementReadOneOrder->execute();
 			return $this->statementReadOneOrder->fetchAll();
 		}
@@ -88,7 +88,7 @@
 
 		public function fetchAllFromDetailCmd($id): array
 		{
-			$this->statementReadAllFromDetailCmd->bindValue(':id_cmd', $id);
+			$this->statementReadAllFromDetailCmd->bindValue(':idCmd', $id);
 			$this->statementReadAllFromDetailCmd->execute();
 			return $this->statementReadAllFromDetailCmd->fetchAll();
 		}
