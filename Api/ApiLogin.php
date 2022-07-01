@@ -33,27 +33,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errors['email'] = ERROR_EMAIL_INVALID;
     }
-    $getUserIdBymail = $user->getUserBymail($email);
-    if (!$user) {
+
+    if (!$password) {
+      $errors['password'] = ERROR_REQUIRED;
+    } elseif (mb_strlen($password) < 6) {
+      $errors['password'] = ERROR_PASSWORD_TOO_SHORT;
+    }
+    $users = $user->getUserBymail($email);
+    if ($users == false) {
       $errors['email'] = ERROR_EMAIL_UNKOWN;
     } else {
-      if (!password_verify($password, $getUserIdBymail['password'])) {
+      if (!password_verify($password, $users['password'])) {
         $errors['password'] = ERROR_PASSWORD_MISMATCH;
       }
-
-      if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-        // recuperation des informations de l'utilisateur
-        $contentUserInfo = $user->getUser($getUserIdBymail['idUser']);
-        if ($contentUserInfo) {
-          $authSecurity->login($contentUserInfo['idUser']);
-          $currentUser = $authSecurity->isLoggedin();
-          echo json_encode($currentUser);
-        }
-      } else {
-        echo json_encode([
-          'status' => 'Le mot de passe ou l\'email est incorrect'
-        ]);
+    }
+    if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
+      // recuperation des informations de l'utilisateur
+      if ($users) {
+        $authSecurity->login($users['idUser']);
+        $currentUser = $authSecurity->isLoggedin();
+        echo json_encode($users);
       }
+    } else {
+      echo json_encode([
+        'status' => 'Les information sont incorrectes'
+      ]);
     }
   } else {
     echo json_encode('error reception');

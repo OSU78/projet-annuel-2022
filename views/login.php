@@ -63,4 +63,4 @@
       </form>
     </main>
     <?php require "includes/footer.php" ?>
-    <script src="/Public/Js/check.js"></script>
+    <!-- <script src="/Public/Js/check.js"></script> -->

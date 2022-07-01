@@ -3,6 +3,8 @@
 require '../config.php';
 $authDB = require_once '../Models/User.php';
 $user = new User($pdo);
+$authDBs = require_once '../Models/Security.php';
+$authSecurity = new AuthDB($pdo);
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $count = $authDB->checkMail($email);
     // var_dump($count);
 
-
     // verification de l'adresse mail
     if (!$email) {
       $errors['email'] = ERROR_REQUIRED;
@@ -33,25 +34,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($count !== 0) {
       $errors['email'] = ERROR_EMAIL_EXIST;
     }
-
+    $users = $user->getUserBymail($email);
+    if (!$users == false) {
+      $errors['email'] = "Mail deja utilisé";
+    }
     // verification du mot de passe 
     if (!$password) {
-      $errors['password'] = ERROR_REQUIRED;
+      $errors['email'] = ERROR_REQUIRED;
     } elseif (mb_strlen($password) < 6) {
-      $errors['password'] = ERROR_PASSWORD_TOO_SHORT;
+      $errors['email'] = ERROR_PASSWORD_TOO_SHORT;
     }
 
     // confirmation du mot de passe
     if (!$confirmpassword) {
-      $errors['confirmpassword'] = ERROR_REQUIRED;
+      $errors['email'] = ERROR_REQUIRED;
     } elseif ($confirmpassword !== $password) {
-      $errors['confirmpassword'] = ERROR_PASSWORD_MISMATCH;
+      $errors['email'] = ERROR_PASSWORD_MISMATCH;
     }
 
     // verification du tableu d'erreur
     if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-      // creation de de la session
-      session_start();
       // enregistrement des données en base
       $insertUser = $authDB->register([
         'email' => $email,
@@ -62,33 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if ($insertUser !== 0) {
         // recuperation des information de l'utilisateur 
         $getUserIdBymail = $user->getUserBymail($email);
-        // die();
-        if ($getUserIdBymail) {
-          $_SESSION['user'] = [
-            'email' => $email,
-            'idUser' => $getUserIdBymail['idUser']
-          ];
-
-          // enregistement de 'ID de l'utilisateur en base de donnée
-          $insertAddress = $authDB->registerAddress(
-            $getUserIdBymail['idUser']
-          );
-
-          echo json_encode([
-            'status' => "succes enregistrement",
-            'sessionEmail' => $_SESSION['user']["email"]
-          ]);
-        } else {
-          echo json_encode([
-            'status' => "Erreur d'enregistement"
-          ]);
-        }
+        echo json_encode($getUserIdBymail);
+        // enregistement de 'ID de l'utilisateur en base de donnée
+        $insertAddress = $authDB->registerAddress(
+          $getUserIdBymail['idUser']
+        );
       }
-      // si le tableau n'est pas vide on renvoie le tableau d'erreur 
     } else {
-      echo json_encode($errors);
+      echo json_encode([
+        'status' => $errors
+      ]);
     }
   }
-} else {
-  echo json_encode('mauvaise methode');
 }

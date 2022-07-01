@@ -3,9 +3,9 @@
 
 <head>
   <?php require "includes/head.php" ?>
+  <script defer src="/Public/Js/function.js"></script>
   <script defer src="/Public/Js/check-form/register.js"></script>
   <script defer src="/Public/Js/check-form/validateForm.js"></script>
-  <script defer src="/Public/Js/function.js"></script>
 
   <title>Inscription</title>
 </head>
@@ -84,4 +84,3 @@
       </form>
     </main>
     <?php require "includes/footer.php" ?>
-    <script src="/Public/Js/check.js"></script>

@@ -23,7 +23,7 @@
           </div>
         </div>
       </a>
-      <a href="views/login.php">
+      <a href="/views/login.php">
         <img src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur" width="30px" height="30px"
           style="max-width: max-content;">
       </a>

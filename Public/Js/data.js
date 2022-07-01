@@ -1,6 +1,5 @@
 let url = "/Api/getProduct.php";
 var data = [];
-
 let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
 requete.open("GET", url, true); // Nous récupérons juste des données
 // requete.responseType = "json"; // Nous attendons du JSON

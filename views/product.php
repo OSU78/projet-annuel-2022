@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/product.css" />
   <script src="/Public/Js/data.js"></script>
-  <script defer src="/Public/Js/function.js"></script>
-  <script defer src="/Public/Js/basketTooltip.js"></script>
+
+  <script src="/Public/Js/function.js"></script>
 
   <title>Nos gravures</title>
 
@@ -82,3 +82,4 @@
 
   <?php require "includes/footer.php" ?>
   <script defer src="/Public/Js/getProduct.js"></script>
+  <script defer src="/Public/Js/basketTooltip.js"></script>

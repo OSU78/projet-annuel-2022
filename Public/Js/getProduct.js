@@ -6,9 +6,7 @@ function toast() {
     x.className = x.className.replace("show", "");
   }, 3000);
 }
-
 console.log(data);
-
 let firstSectionProd = document.querySelector(".product_s1_card");
 let secondSectionProd = document.querySelector(".product_s2_mini");
 let secondSectionTree = document.querySelector("#card--container");
