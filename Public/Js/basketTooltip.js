@@ -2,6 +2,7 @@
 /*CODE POUR LE TOOLTIPS DU PANIER*/
 var panierItem = "";
 var i = 0
+if(document.querySelector(".tooltip")){
 document.querySelector(".tooltip").addEventListener("mouseover", () => {
   if (i == 0) {
 
@@ -57,5 +58,6 @@ document.querySelector(".tooltip").addEventListener("mouseover", () => {
 
   }
 })
+}
 
 /******** */

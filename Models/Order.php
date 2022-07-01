@@ -46,7 +46,7 @@
 			$this->statementReadAllCmd				      = $pdo->prepare('SELECT * FROM commande WHERE idUser=:idUser');
 			$this->statementReadOneOrder			      = $pdo->prepare('SELECT commande.montant_cmd, detail_commande.* FROM detail_commande LEFT JOIN commande ON detail_commande.id_cmd = commande.id_cmd  WHERE commande.id_cmd=:id');
 			$this->statementReadOneFromComd         = $pdo->prepare('SELECT id_cmd FROM commande WHERE client_id=:id ORDER BY id_cmd DESC LIMIT 0, 1');
-			$this->statementReadOne                 = $pdo->prepare('SELECT idCmd FROM commande WHERE idUser=:idUser');
+			$this->statementReadOne                 = $pdo->prepare('SELECT idCmd FROM commande WHERE idUser=:idUser order by idCmd DESC');
 			$this->statementReadAllCommande         = $pdo->prepare('SELECT * FROM commande');
 		}
 
