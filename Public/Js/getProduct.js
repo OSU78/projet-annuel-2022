@@ -51,7 +51,7 @@ setTimeout(() => {
      <div class="product_s1_card mini_card"  id="card-det">
         <img class="product_s1_card_img m2 product_link" style="height: 62%" src="${
           content.imgLink
-        }" alt="gravure 2"
+        }"  data-id="${content.idProd}" alt="gravure 2"
           srcset="" data-id="${content.idProd}" />
         <div class="flex gap10 column pd10">
           <p class="product_s1_card_name">${getTextSize(content.nomProd)}</p>
@@ -141,7 +141,7 @@ setTimeout(() => {
     .map(function (content) {
       sectionSeven += `
      <div class="product_s1_card mini_card linear_gradian"  id="card-det">
-          <img class="product_link" data-id="${content.nomProd}" src="${
+          <img class="product_link" data-id="${content.idProd}" src="${
         content.imgLink
       }" alt="gravure 1" srcset="" />
         <div class="flex gap10 column pd10">
@@ -195,3 +195,16 @@ setTimeout(() => {
     });
   });
 }, 800);
+
+setTimeout(() => {
+  let prodDs = document.querySelectorAll("#card-det");
+  prodDs.forEach((prodD) => {
+    prodD.addEventListener("click", (e) => {
+      // e.stopPropagation();
+      console.log("diallo");
+      id = e.target.getAttribute("data-id");
+      console.log(id);
+      document.location.href = "detailProduit.php?id=" + id;
+    });
+  });
+}, 2000);

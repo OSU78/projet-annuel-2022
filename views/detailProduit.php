@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/detailProduit.css">
-  <script defer src="/Public/Js/detailProduit.js"></script>
+  <link rel="stylesheet" href="/Public/css/style.css">
+  <!-- <script defer src="/Public/Js/detailProduit.js"></script> -->
   <script defer src="/Public/Js/detailProd.js"></script>
   <title>Détail produit</title>
 </head>
@@ -23,10 +24,10 @@
             src="/Public/assets/icons/icon-left-arrow.svg" alt="left-arrow">
           <div class="produit__scroll">
             <img class="produit__scroll--img fade" src="https://i.ibb.co/gTZMkQP/IMG-20220609-165546.jpg" alt="Produit">
-            <img class="produit__scroll--img fade" src="https://i.ibb.co/hM8fjQ8/thrn-7.jpg" alt="Produit">
+            <!-- <img class="produit__scroll--img fade" src="https://i.ibb.co/hM8fjQ8/thrn-7.jpg" alt="Produit">
             <img class="produit__scroll--img fade" src="https://i.ibb.co/0j5JQ4p/thrn-1-2.jpg" alt="Produit">
             <img class="produit__scroll--img fade" src="https://i.ibb.co/N9dBWdc/IMG-20220223-152446.jpg" alt="Produit">
-            <img class="produit__scroll--img fade" src="https://i.ibb.co/NFLB0wh/IMG-20220203-132805.jpg" alt="Produit">
+            <img class="produit__scroll--img fade" src="https://i.ibb.co/NFLB0wh/IMG-20220203-132805.jpg" alt="Produit"> -->
           </div>
           <img class="produit__scroll--arrow next" onclick="plusSlides(1)"
             src="/Public/assets/icons/icon-right-arrow.svg" alt="right-arrow">
