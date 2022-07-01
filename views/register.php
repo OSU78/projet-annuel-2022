@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" style="background : #0f0f0f">
     <?php require "includes/header.php" ?>
     <main class="form--container row">
       <form id="form" enctype='multipart/form-data' class="form">

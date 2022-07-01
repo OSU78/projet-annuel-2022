@@ -1,36 +1,48 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <?php require "includes/head.php" ?>
-  <script defer src="/Public/Js/check-form/login.js"></script>
-  <script defer src="/Public/Js/function.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/css/product.css" />
+    <link rel="stylesheet" href="/Public/css/confirmCmd.css">
+    <script src="/Public/Js/data.js"></script>
+    <script src="/Public/Js/function.js"></script>
+    <script src="/Public/Js/getProduct.js"></script>
+    <script src="/Public/Js/basketTooltip.js"></script>
 
-  <title>Connexion</title>
+    <title>Confirmation de commande</title>
+
 </head>
 
-<body>
-  <style>
-    .badge {
-    border-radius: 0px;
-    background-color: #ffffff;
-    color: black;
-    text-align: center !important;
-    position: absolute !important;
-    width: 30px !important;
-    text-align: center !important;
-    padding: 5px !important;
-    height: 20px !important;
-    font-size: 13px !important;
-    top: 24px !important;
-    left: 12px !important;
-    transition: 0.35s;
-    user-select: none;
-    cursor: pointer;
-}
 
+<?php require "includes/header.php" ?>
+<main class="wrapper__confirmation">
+<style>
+      p,a,label{
+        font-family: sans-serif !important;
+      }
+      .badge {
+        border-radius: 0px;
+        background-color: #ffffff;
+        color: black;
+        text-align: center !important;
+        position: absolute !important;
+        width: 30px !important;
+        text-align: center !important;
+        padding: 5px !important;
+        height: 18px !important;
+        font-size: 13px !important;
+        top: 24px !important;
+        left: 12px !important;
+        transition: 0.35s;
+        user-select: none;
+        cursor: pointer;
+      }
 
-.tooltip {
+      .tooltip {
         display: inline-block;
         position: relative;
         border-bottom: 1px dotted #666;
@@ -99,6 +111,7 @@
         top: 45px;
         margin: 0px;
       }
+    
 
       .indeFlex {
         flex-direction: column !important;
@@ -147,61 +160,20 @@
         color: #0f0f0f;
         transition: 0.3s;
       }
-      p,a,label{
-        font-family: sans-serif;
-      }
-  </style>
-  <div class="wrapper" style="background-color:#0f0f0f">
-    <?php require "includes/header.php" ?>
-    <main class="form--container">
-      <form id="form" enctype='multipart/form-data' class="form">
-        <h2>Connection</h2>
-        <div class="row message">
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="email">Mail:</label>
-          </div>
-          <div class="col-75">
-            <input type="email" id="email" name="email" placeholder="Your e-mail..">
-          </div>
-        </div>
+    </style>
+    <img class="casque" src="/Public/assets/img/bg-casque.svg" alt="casque">
+    <img class="casque__retourne" src="/Public/assets/img/bg-casque.svg" alt="casque">
 
-        <div class="row">
-          <div class="col-25">
-            <label for="" class="">Password:</label>
-          </div>
-          <div class="col-75">
-            <input type="password" placeholder="Your password.." name="password" id="password">
-          </div>
-        </div>
+    <section class="message jello-horizontal">
+        <h2 >Félicitation !</h2>
+        <p>Votre commande n°<?= htmlspecialchars($_GET["auth"]??"") ?> sera validée et traitée dans les plus brefs délais.</p>
+        <img class="message__feuille" src="/Public/assets/img/bg-leaf.svg" alt="feuille">
+    </section>
 
-        <div class="form__control">
-          <div class="form__remember">
-            <input class="" type="checkbox" role="" id="">
-            <label class="" for="">Se souvenir de moi </label>
-          </div>
 
-          <div class="form__link--register">
-            <span>Pas encore membre?</span> <a href="/views/register.php">Inscription</a>
-          </div>
-        </div>
-        <div class="form__submit">
-          <button type="submit" class="btn small customHover">Connexion</button>
-        </div>
-        <div class="row">
-          <button class="form__btn--google col-25">
-            <img src="/Public/assets/icons/icon-google.svg" alt="">
-            Se Connecter avec Google
-          </button>
+</main>
 
-        </div>
-       
-        <p class="form__text">En vous inscrivant sur Math the printer, vous acceptez
-          nos conditions d’utilisations, notre Politique de confidentialié
-          et notre Politique concernant les cokkies
-        </p>
-      </form>
-    </main>
-    <?php require "includes/footer.php" ?>
-    <!-- <script src="/Public/Js/check.js"></script> -->
+
+
+
+<?php require "includes/footer.php" ?>

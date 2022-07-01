@@ -918,7 +918,7 @@ input:focus {
   align-items: center;
   flex-flow: column wrap;
   gap: 50px;
-  padding-bottom: 128px;
+  padding-bottom: 58px;
 }
 .footer__element {
   width: 100%;
@@ -972,6 +972,12 @@ input:focus {
   font-size: 40px;
 }
 
+@media (max-width: 680px) {
+  .footer {
+    background-color: red;
+    padding-bottom: 128px !important;
+  }
+}
 /* ToolTip classses */
 .tooltip {
   display: inline-block;
@@ -1173,6 +1179,54 @@ input[type=submit] {
 ::placeholder {
   padding-left: 10px;
   font-style: italic;
+}
+
+span {
+  font-family: sans-serif !important;
+}
+
+.form__btn--google {
+  width: 100%;
+  height: 45px;
+  background: white;
+  box-shadow: none;
+  border-radius: 10px;
+  border: 1px solid #cacaca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.form__btn--google:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.form__submit {
+  width: -webkit-fill-available;
+  text-align: center;
+}
+
+.form__submit button {
+  width: -webkit-fill-available;
+}
+
+.customHover {
+  transition: 0.4s;
+  font-family: sans-serif !important;
+  border: 1px solid transparent;
+  padding: 5px 70px;
+}
+
+.customHover:hover {
+  transform: scale(1.04);
+  background: #ededed;
+  cursor: pointer;
+  border: 1px solid #f1bc1e;
 }
 
 .main {
