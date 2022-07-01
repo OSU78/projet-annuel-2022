@@ -9,10 +9,6 @@
 <body>
   <div class="container">
     <?php require_once '../views/includes/header.php' ?>
-    <div class="nav-link">
-      <a href="/views/index.php"> <i class="fas fa-house-user"></i>Acceuil</a> <span>/</span>
-      <a href="/views/order-lists.php">Liste</a>
-    </div>
     <main class="main-container" id="main">
       <!-- section du tableau -->
       <section class="table-section">

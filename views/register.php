@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="row">
-          <button class="form__btn--google col-25">
+          <button class="form__btn--google">
             <img src="/Public/assets/icons/icon-google.svg" alt="">
             S’inscrire avec Google
           </button>

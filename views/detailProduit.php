@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Public/css/detailProduit.css">
   <script defer src="/Public/Js/detailProduit.js"></script>
+  <script defer src="/Public/Js/detailProd.js"></script>
   <title>Détail produit</title>
 </head>
 
