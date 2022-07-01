@@ -1644,5 +1644,10 @@ span {
     font-size: 18px;
   }
 }
+@media (max-width: 815px) {
+  .math-description {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
