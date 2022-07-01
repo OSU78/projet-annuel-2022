@@ -13,9 +13,9 @@
             style="background-color:#0f0f0f;color:white;padding : 25px;border: 1px solid rgba(253, 253, 253, 0.355)">
             <h3 style="margin: 0px;font-size:30px;font-weight: 100;">Mon panier</h3>
 
-            <div class="flex center column gap10">
-              <a href="./panier.php" class="panier_btn_headerSecondary scaleHover">Voir le panier complet</a>
-              <a href="./commande.php" class="panier_btn_header scaleHover">Passer à la commande</a>
+            <div class="flex center column gap10 indexFlex">
+              <a href="/views/panier.php" class="panier_btn_headerSecondary scaleHover">Voir le panier complet</a>
+              <a href="/views/completUserDelivery.php" class="panier_btn_header scaleHover">Passer à la commande</a>
             </div>
           </div>
           <div class="badge flex center">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </a>
-      <a href="views/login.php">
+      <a href="/views/login.php">
         <img src="/Public/assets/icons/icon-profil.svg" alt="Utilisateur" width="30px" height="30px"
           style="max-width: max-content;">
       </a>

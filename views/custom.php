@@ -15,6 +15,28 @@
 <body>
   <?php require "includes/header.php" ?>
   <main>
+    <style>
+        .badge {
+    border-radius: 0px;
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    position: absolute;
+    width: 29px;
+    text-align: center;
+    padding: 5px;
+    height: 18px;
+    font-size: 13px;
+    top: 24px;
+    left: 12px;
+    transition: 0.35s;
+    user-select: none;
+    cursor: pointer;
+}
+p,a{
+    font-family: sans-serif !important;
+}
+    </style>
     <div class="wrapper__custom">
         
         <section class="produit">

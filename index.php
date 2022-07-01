@@ -1,13 +1,153 @@
   <?php require "./views/includes/head.php" ?>
   <script src="/Public/Js/data.js"></script>
   <title>Home page</title>
-</head>
+  </head>
 
-<body>
+  <body>
 
     <?php require "./views/includes/header.php" ?>
+    <style>
+      p,a,label{
+        font-family: sans-serif !important;
+      }
+      .badge {
+        border-radius: 0px;
+        background-color: #ffffff;
+        color: black;
+        text-align: center !important;
+        position: absolute !important;
+        width: 30px !important;
+        text-align: center !important;
+        padding: 5px !important;
+        height: 18px !important;
+        font-size: 13px !important;
+        top: 24px !important;
+        left: 12px !important;
+        transition: 0.35s;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .tooltip {
+        display: inline-block;
+        position: relative;
+        border-bottom: 1px dotted #666;
+        text-align: left;
+      }
+
+      .tooltip h3 {
+        margin: 12px 0;
+      }
+
+    
+      .tooltip .bottom {
+        min-width: 250px;
+        position: absolute;
+        top: 40px;
+        left: 80%;
+        transform: translate(-80%, 0);
+      
+        font-weight: normal;
+        font-size: 13px;
+        border-radius: 8px;
+        z-index: 999999999999999999999999;
+        box-sizing: border-box;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+
+      .tooltip:hover .bottom {
+        display: flex;
+        background-color: #0f0f0f;
+        color: white;
+        padding: 25px;
+        border: 1px solid rgba(253, 253, 253, 0.355);
+        flex-direction: column-reverse;
+      }
+
+      .tooltip .bottom img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+      }
+
+      .tooltip .bottom i {
+        position: absolute;
+        bottom: 100%;
+        left: 0%;
+        right: 20%;
+        margin-left: -10px;
+        width: 24px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      .tooltip .bottom i::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 50%;
+        transform: translate(-50%, 50%) rotate(45deg);
+        background-color: #eeeeee;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .bottom p {
+        top: 45px;
+        margin: 0px;
+      }
+
+      .indeFlex {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+
+      .panier_btn_headerSecondary {
+        background-color: #f1bc1e;
+        padding: 10px 10px;
+        border-radius: 10px;
+        color: #0f0f0f !important;
+        text-decoration-line: none;
+        transition: 0.3s;
+        width: -webkit-fill-available;
+        font-family: sans-serif;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .panier_btn_headerSecondary {
+        background-color: #ffffff22;
+        color: rgba(255, 255, 255, 0.729) !important;
+      }
+
+      .panier_btn_headerSecondary:hover {
+        background-color: #ffffff54;
+        color: rgb(255, 255, 255) !important;
+        transition: 0.3s;
+      }
+
+      .panier_btn_header {
+        background-color: #f1bc1e;
+        padding: 10px 10px;
+        border-radius: 10px;
+        color: #0f0f0f !important;
+        text-decoration-line: none;
+        transition: 0.3s;
+        width: -webkit-fill-available;
+        font-family: sans-serif;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .panier_btn_header:hover {
+        background-color: #ffffff;
+        color: #0f0f0f;
+        transition: 0.3s;
+      }
+    </style>
     <section class="banner">
-      <video autoplay muted loop id="myVideo">
+      <video loading="lazy" autoplay muted loop id="myVideo">
         <source src="/Public/assets/video/video-banner.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
@@ -17,10 +157,9 @@
           LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLore
         </p>
         <!-- <button class="btn__card">Découvrez notre travail</button> -->
-        <a href="./views/product.php"  class="btn__card widthMax heightMin">Découvrez notre travail</a>
+        <a href="./views/product.php" class="btn__card widthMax heightMin">Découvrez notre travail</a>
       </div>
-      <img onclick="myFunction()" id="myBtn" class="banner__play" src="/Public/assets/icons/icon-play.svg"
-        alt="play-video">
+      <img onclick="myFunction()" id="myBtn" class="banner__play" src="/Public/assets/icons/icon-play.svg" alt="play-video">
     </section>
 
     <section class="artwork ">
@@ -37,34 +176,26 @@
         </div>
       </div>
       <div class="artwork__scroll flex-item-right">
-        <img class="artwork__scroll--arrow prev" onclick="plusSlides(-1)" src="/Public/assets/icons/icon-left-arrow.svg"
-          alt="left-arrow">
+        <img class="artwork__scroll--arrow prev" onclick="plusSlides(-1)" src="/Public/assets/icons/icon-left-arrow.svg" alt="left-arrow">
         <div class="artwork__scroll--galerie ">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/5vzDDqJ/insta-nov-35.webp"
-            alt="Artwork">
-          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/dG0jnX1/insta-nov-11.webp"
-            alt="Artwork">
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/5vzDDqJ/insta-nov-35.webp" alt="Artwork">
+          <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/dG0jnX1/insta-nov-11.webp" alt="Artwork">
           <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/jvQD7Hz/insta-nov-1.webp" alt="Artwork">
           <img class="artwork__scroll--galerie__img fade" src="https://i.ibb.co/bmwCMSw/website1.webp" alt="Artwork">
         </div>
-        <img class="artwork__scroll--arrow next" onclick="plusSlides(1)" src="/Public/assets/icons/icon-right-arrow.svg"
-          alt="right-arrow">
+        <img class="artwork__scroll--arrow next" onclick="plusSlides(1)" src="/Public/assets/icons/icon-right-arrow.svg" alt="right-arrow">
       </div>
 
     </section>
     <div class="svg">
       <svg width="1780" height="492" viewBox="0 0 1780 492" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_832_1136)">
-          <path
-            d="M133 129H1647V355C1647 355 1365.32 169.411 967.978 250.731C570.641 332.051 133 209.821 133 209.821V129Z"
-            fill="#0f0f0f" />
+          <path d="M133 129H1647V355C1647 355 1365.32 169.411 967.978 250.731C570.641 332.051 133 209.821 133 209.821V129Z" fill="#0f0f0f" />
         </g>
         <defs>
-          <filter id="filter0_d_832_1136" x="0" y="0" width="1780" height="492" filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
+          <filter id="filter0_d_832_1136" x="0" y="0" width="1780" height="492" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
             <feOffset dy="4" />
             <feGaussianBlur stdDeviation="66.5" />
             <feComposite in2="hardAlpha" operator="out" />

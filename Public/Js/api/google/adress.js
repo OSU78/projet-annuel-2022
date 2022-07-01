@@ -46,7 +46,7 @@ coll.addEventListener("click", function () {
     content.style.maxHeight = content.scrollHeight + "px";
   }
 });
-// console.log(getUser());
+console.log(getUser());
 
 let email = document.querySelector("#email");
 email.value = getUser().email;

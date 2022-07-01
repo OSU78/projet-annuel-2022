@@ -1,6 +1,11 @@
 <?php
 require "vendor/autoload.php";
+require_once "getPanierItem.php";
+require_once "ApiOrder.php";
+var_dump($_POST);
+
 require "config.php";
+
 class PaypalPayement{
 
     public function __construct(readonly private string $clientId, readonly private string $clientSecret,readonly private bool $sandbox){
@@ -10,10 +15,28 @@ class PaypalPayement{
 
     public function ui(): string {
         $clientId=PAYPAL_ID;
+        // $order=[
+        //     "purchase_units"=>[[
+        //         'description'=> 'Panier MathThePrinter',
+        //         'items'=> array_map(function ($product){
+        //             return [
+        //                 'name'=> $product["nomProd"],
+        //                 'quantity'=>$product["quantity"],
+        //                 'unit_amount'=>[
+        //                     'value'=>$product['price'],
+        //                     'currency_code'=>"EUR",
+
+        //                 ]
+        //                 ];
+        //         },getProducts())
+        //     ]]
+            //];
         return <<<HTML
                         <script src="https://www.paypal.com/sdk/js?client-id={$clientId}&currency=EUR&intent=authorize"></script>
                 <!-- Set up a container element for the button -->
                 <div id="paypal-button-container"></div>
+                <script defer src="/Public/Js/function.js"></script>
+                <!-- <script defer src="/Public/Js/updateUser.js"></script> -->
                 <script>
                 paypal.Buttons({
                     // Sets up the transaction when a payment button is clicked
@@ -31,14 +54,88 @@ class PaypalPayement{
                     onApprove: async (data, actions) => {
                         const authorization = await actions.order.authorize()
                         const authorizationId = authorization.purchase_units[0].payments.authorizations[0].id
-                        await fetch('/paypal.php', {
+                        await fetch('/payement/paypal/paypal.php', {
                             method: 'post',
                             headers: {
                             'content-type': 'application/json'
                             },
                             body: JSON.stringify({authorizationId})
                         })
-                        alert('Votre paiement a bien été enregistré')
+                        alert('Votre paiement a bien été enregistré : '+authorizationId)
+
+                        /*On fait ce qu'on veut*/
+
+                        // envoie des elements de la commande dans la base de donnée
+                        console.log(getUser().idUser);
+                        var dataOrder = {
+                        totalPrice: getTotalPrice(),
+                        idUser: getUser().idUser,
+                        statusCmd: "En cours de validation",
+                        };
+                        
+                        saveOrder(dataOrder);
+                        console.log(getUser());
+                        console.log(getOrder());
+
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        var dataOrder = new FormData();
+                        for (key in order) {
+                            dataOrder.append(key, order[key]);
+                        }
+
+                        const requeteAjax = new XMLHttpRequest();
+                        requeteAjax.open("POST", "/Api/ApiOrder.php", true);
+                        requeteAjax.onload = function () {
+                            if (requeteAjax.readyState === XMLHttpRequest.DONE) {
+                            if (requeteAjax.status === 200) {
+                                const resultats = JSON.parse(requeteAjax.response);
+                                console.log(resultats);
+                            } else {
+                                alert("Un problème est intervenu, merci de revenir plus tard.");
+                            }
+                            }
+                        };
+                        requeteAjax.send(dataOrder);
+
+                        // window.location.href = "/views/completUserDelivery.php";
+                        setTimeout(() => {
+                            let basket = JSON.stringify(localStorage.getItem("basket"));
+                            var formaData = new FormData();
+                            formaData.append("basket", basket);
+                            const requeteAjax = new XMLHttpRequest();
+                            requeteAjax.open("POST", "/Api/ApiOrder.php", true);
+                            //Envoyez les informations d'en-tête appropriées avec la demande
+                            requeteAjax.onload = function () {
+                            if (requeteAjax.readyState === XMLHttpRequest.DONE) {
+                                if (requeteAjax.status === 200) {
+                                const resultats = JSON.parse(requeteAjax.response);
+                                console.log(resultats);
+                                if (resultats.status == "succes") {
+                                } else {
+                                    window.location.href = "/views/profil.php";
+                                }
+                                } else {
+                                   
+                                alert("Un problème est intervenu, merci de revenir plus tard.");
+                                }
+                            }
+                            };
+                            requeteAjax.send(formaData);
+                        },1000);
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
                     }
                 }).render('#paypal-button-container');
                 </script>

@@ -33,6 +33,9 @@ form.addEventListener("submit", (e) => {
             console.log(resultats.confirmpassword);
             contentError.push(resultats.confirmpassword);
           }
+          saveUser(resultats);
+          window.location.href = "/views/product.php";
+        } else {
           console.log(contentError);
           let message = document.querySelector(".message");
           message.innerHTML = `<div class="alert warning">
@@ -40,9 +43,6 @@ form.addEventListener("submit", (e) => {
           <strong>warning!</strong> ${contentError}.
           </div>
         `;
-        } else {
-          saveUser(resultats);
-          window.location.href = "/views/product.php";
         }
       } else {
         alert("Un problème est intervenu, merci de revenir plus tard.");

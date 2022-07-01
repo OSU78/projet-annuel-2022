@@ -7,13 +7,15 @@ function toast() {
   }, 3000);
 }
 
-console.log(data);
+
+setTimeout(()=>{
+let getDataRamdom = data[0];
+console.log(data[0]);
 
 let firstSectionProd = document.querySelector(".product_s1_card");
 let secondSectionProd = document.querySelector(".product_s2_mini");
 let secondSectionTree = document.querySelector("#card--container");
 let html1 = "";
-let getDataRamdom = data[0];
 html1 = `
           <img class="product_s1_card_img product_link" data-id="${
             getDataRamdom.idProd
@@ -193,3 +195,5 @@ linkDatas.forEach((linkData) => {
     xhr.send();
   });
 });
+}
+,800)

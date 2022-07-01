@@ -2,7 +2,7 @@
 require '../config.php';
 $authDB = require_once '../Models/Security.php';
 $currentUser = $authDB->isLoggedin();
-var_dump($currentUser);
+//var_dump($currentUser);
 if (!$currentUser) {
   // header('Location: /');
 }
@@ -22,14 +22,38 @@ if (!$currentUser) {
   <script defer src="/Public/Js/api/google/adress.js"></script>
   <link rel="stylesheet" href="/Public/css/product.css" />
   <link rel="stylesheet" href="/Public/css/panier.css" />
+  <link rel="stylesheet" href="/Public/css/repearTooltip.css">
   <?php require "includes/head.php" ?>
 
   <title>Mise à jour information</title>
 </head>
 
 <body>
+<style>
+  
+p,a,li,ul,label{
+  font-family: sans-serif !important;
+}
+  .badge {
+  border-radius: 0px;
+  background-color: #ffffff;
+  color: black;
+  text-align: center !important;
+  position: absolute !important;
+  width: 30px !important;
+  text-align: center !important;
+  padding: 5px !important;
+  height: 20px !important;
+  font-size: 13px !important;
+  top: 24px !important;
+  left: 12px !important;
+  transition: 0.35s;
+  user-select: none;
+  cursor: pointer;
+}
 
-  <div class="wrapper">
+</style>
+  <div class="wrapper" style="background: #0f0f0f;">
     <?php require "includes/header.php" ?>
 
     <form id="form" enctype='multipart/form-data' class="form">

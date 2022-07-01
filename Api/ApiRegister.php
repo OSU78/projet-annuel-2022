@@ -3,6 +3,8 @@
 require '../config.php';
 $authDB = require_once '../Models/User.php';
 $user = new User($pdo);
+$authDBs = require_once '../Models/Security.php';
+$authSecurity = new AuthDB($pdo);
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirmpassword = $_POST['confirmpassword'] ?? '';
 
-    $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
+    $regex = "/^([a-zA-Z0-9.]+@+[a-zA-Z]+(.)+[a-zA-Z]{2,3})$/";
     $contentDataBemail = $authDB->validatePregGrep($email);
     $count = $authDB->checkMail($email);
     // var_dump($count);
@@ -74,10 +76,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $getUserIdBymail['idUser']
           );
 
-          echo json_encode([
-            'status' => "succes enregistrement",
-            'sessionEmail' => $_SESSION['user']["email"]
-          ]);
+
+          $contentUserInfo = $user->getUser($getUserIdBymail['idUser']);
+          if ($contentUserInfo) {
+            $authSecurity->login($contentUserInfo['idUser']);
+            $currentUser = $authSecurity->isLoggedin();
+            echo json_encode($currentUser);
+          } else {
+            echo json_encode([
+              'error' => "Aucun utilisateur trouvé"
+            ]);
+          }
         } else {
           echo json_encode([
             'status' => "Erreur d'enregistement"
