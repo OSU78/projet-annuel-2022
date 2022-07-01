@@ -11,6 +11,7 @@
 @import "form";
 @import "register";
 @import "profil";
+@import "alert";
 
 .artwork {
   display: flex;
@@ -44,7 +45,7 @@
         object-fit: cover;
         max-height: 350px;
         border-radius: 20px;
-        filter: drop-shadow(10px 10px 4px rgba(55, 55, 55,0.5));
+        filter: drop-shadow(10px 10px 4px rgba(55, 55, 55, 0.5));
       }
     }
   }
@@ -202,31 +203,31 @@
 }
 
 .math-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: black;
-    color: white;
-    height: 400px;
-    margin: 50px 35px;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: black;
+  color: white;
+  height: 400px;
+  margin: 50px 35px;
+  padding: 20px;
 }
 
 .math-description h3 {
-    margin: 0;
-    font-size: 40px;
+  margin: 0;
+  font-size: 40px;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
 @media (max-width: 600px) {
-    .btn__best-seller {
-        width: 300px;
-    }
+  .btn__best-seller {
+    width: 300px;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -297,7 +298,7 @@
     flex-direction: column;
     gap: 20px;
   }
-  .artwork__content--img{
+  .artwork__content--img {
     display: none;
   }
   .flex-item-right {
