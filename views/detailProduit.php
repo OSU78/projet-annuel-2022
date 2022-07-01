@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/Public/css/detailProduit.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="/Public/Js/detailProduit.js"></script>
+  <script defer src="/Public/Js/detailProd.js"></script>
   <title>Détail produit</title>
 </head>
 

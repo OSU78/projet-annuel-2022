@@ -1,3 +1,7 @@
+//
+.wrapper {
+  background-color: $bg-primary;
+}
 .main {
   // background: green;
   height: calc(80vh);
@@ -5,17 +9,22 @@
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  padding-bottom: 50px;
-  // background-color: $bg-primary;
+  padding-bottom: 50px 50px;
+  background-color: $bg-primary;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-block: 50px;
   h1 {
-    color: white;
-    font-size: 78px;
-    margin-bottom: 100px;
+    a {
+      color: $bg-primary;
+      font-size: 78px;
+      margin-bottom: 100px;
+    }
   }
   .profil {
     color: $bg-primary;
     // margin: 50px auto;
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 100%;
     // background-color: rgb(80, 80, 94);
     // padding: 80px;
@@ -33,6 +42,7 @@
       padding: 10px;
       height: 200px;
       background-color: $bg-secondary;
+      color: black;
       // border: 1px solid red;
     }
   }

@@ -1229,22 +1229,29 @@ span {
   border: 1px solid #f1bc1e;
 }
 
+.wrapper {
+  background-color: #0f0f0f;
+}
+
 .main {
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  padding-bottom: 50px;
+  padding-bottom: 50px 50px;
+  background-color: #0f0f0f;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-block: 50px;
 }
-.main h1 {
-  color: white;
+.main h1 a {
+  color: #0f0f0f;
   font-size: 78px;
   margin-bottom: 100px;
 }
 .main .profil {
   color: #0f0f0f;
-  border: 1px solid red;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -1261,6 +1268,7 @@ span {
   padding: 10px;
   height: 200px;
   background-color: #ededed;
+  color: black;
 }
 
 .alert {

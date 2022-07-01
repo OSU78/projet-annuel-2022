@@ -16,14 +16,15 @@
 }
 .table-section {
   width: 80%;
-  margin: 0% auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-between;
+  flex-flow: column nowrap;
   align-items: center;
+  gap: 20px;
 }
 .table-content {
   width: 100%;
-
   border-collapse: collapse;
 }
 

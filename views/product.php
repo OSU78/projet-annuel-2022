@@ -6,8 +6,9 @@
   <link rel="stylesheet" href="/Public/css/product.css" />
   <script src="/Public/Js/data.js"></script>
   <script src="/Public/Js/function.js"></script>
-  <script  src="/Public/Js/getProduct.js"></script>
-  <script  src="/Public/Js/basketTooltip.js"></script>
+  <script src="/Public/Js/getProduct.js"></script>
+  <script defer src="/Public/Js/detailProd.js"></script>
+  <script src="/Public/Js/basketTooltip.js"></script>
   <title>Nos gravures</title>
 
 </head>
@@ -15,9 +16,9 @@
 <body>
   <?php require "includes/header.php" ?>
   <style>
-    #product_s1{
-      min-height: 70vh !important;
-    }
+  #product_s1 {
+    min-height: 70vh !important;
+  }
   </style>
   <main style="height: 100%">
     <div id="snackbar">Produit ajouté au panier</div>
@@ -86,4 +87,3 @@
   </main>
 
   <?php require "includes/footer.php" ?>
-
